@@ -1,2 +1,2 @@
-- [ ] 需要在一级路径下建立一个index.html文件，自动跳转到dist/index.html中
+- [x] 使用了`github action`自动构建和部署
 
