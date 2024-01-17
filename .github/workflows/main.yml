@@ -20,7 +20,17 @@ jobs:
       # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
       - name: Setup Pages
         uses: actions/configure-pages@v3
-        
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: current directory
+        run: |
+          pwd
+          ls
+  
       - name: Install and Build with VitePress # 下载依赖 打包项目
         run: |
           npm install 
