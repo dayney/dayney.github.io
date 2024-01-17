@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-17 11:49:36
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-01-17 16:00:16
+ * @LastEditTime: 2024-01-17 16:24:11
  * @FilePath: /dayney.github.io/docs/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -47,13 +47,6 @@ export default defineConfig({
       { text: 'Home', link: '/index' },
       { text: 'Examples', link: '/examples/markdown-examples' },
       { text: 'Demo', link: '/demo/markdown-examples' },
-      { text: '有子菜单',
-        items: [
-          { text: 'Item A', link: '/api-examples' },
-          { text: 'Item B', link: '/api-examples' },
-          { text: 'Item C', link: '/api-examples' }
-        ]
-      },
       { text: '关于作者', link: '/about' }
     ],
 
