@@ -12,6 +12,11 @@ jobs:
   # 构建工作
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node_version: [18, 20, 21]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -24,14 +29,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-
-      - name: current directory
-        run: |
-          pwd
-          ls
+          node-version: '18'
   
       - name: Install and Build with VitePress # 下载依赖 打包项目
         run: |
           npm install 
           npm run docs:build
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          echo "node_modules" >> .gitignore
+          git add .
+          git commit -m "Auto-deploy from GitHub Actions"
+          git push origin main:main --force
