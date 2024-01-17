@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./chunks/framework.58kB5Xqm.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"prologue.md","filePath":"prologue.md","lastUpdated":1705477980000}'),a={name:"prologue.md"};function r(s,p,c,n,d,l){return o(),t("div")}const m=e(a,[["render",r]]);export{i as __pageData,m as default};

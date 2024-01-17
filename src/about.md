@@ -15,7 +15,7 @@ import {
 
 const members = [
   {
-    avatar: './public/logo.jpeg',
+    avatar: '/logo.jpeg',
     name: '小宇',
     title: 'Creator',
     links: [

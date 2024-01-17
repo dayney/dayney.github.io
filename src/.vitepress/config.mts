@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-17 11:49:36
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-01-17 15:51:52
+ * @LastEditTime: 2024-01-17 16:00:16
  * @FilePath: /dayney.github.io/docs/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -17,7 +17,7 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   // base: '/blog/',
   cleanUrls: true,
-  srcDir: './',
+  // srcDir: './',
   outDir: '../docs',
   cacheDir: './.vitepress/.vite', // 缓存文件的路径
   lastUpdated: true, // 是否使用 Git 获取每个页面的最后更新时间戳
@@ -41,7 +41,7 @@ export default defineConfig({
     // }
   },
   themeConfig: {
-    logo: '/public/logo.jpeg',
+    logo: '/logo.jpeg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/index' },

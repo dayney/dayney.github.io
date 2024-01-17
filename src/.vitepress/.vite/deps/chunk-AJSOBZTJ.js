@@ -33,7 +33,7 @@ import {
   version,
   watch,
   watchEffect
-} from "./chunk-Z6MH53MM.js";
+} from "./chunk-UASK3DFV.js";
 
 // node_modules/.pnpm/vue-demi@0.14.6_vue@3.4.14/node_modules/vue-demi/lib/index.mjs
 var isVue2 = false;
@@ -8949,4 +8949,4 @@ export {
   useWindowScroll,
   useWindowSize
 };
-//# sourceMappingURL=chunk-VTNGZLV5.js.map
+//# sourceMappingURL=chunk-AJSOBZTJ.js.map
