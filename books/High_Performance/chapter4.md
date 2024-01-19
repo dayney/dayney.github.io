@@ -3,9 +3,7 @@ outline: deep
 editLink: false
 ---
 
-# 高性能JavaScript读书笔记--DOM编程
-
-# 需要加强的
+### 需要加强的
 
 \[ \] 1. document.createTextNode()
 
@@ -28,7 +26,7 @@ document.querySelectorAll();
 
 3.5 document.forms\[0\].elements
 
-\[ \] 4. node 相关
+ [ ] 4. node 相关
 
 4.1 nodeName
 
@@ -36,9 +34,9 @@ document.querySelectorAll();
 
 4.3 tagName（非node，但）
 
-\[ \] 5. tagName
+[ ] 5. tagName
 
-\[ \] 6. 获取DOM元素，用`jquery`比较多，有相似的地方
+[ ] 6. 获取DOM元素，用`jquery`比较多，有相似的地方
 
 6.1 childNodes
 
@@ -68,15 +66,14 @@ document.querySelectorAll();
 
 7.1 document.createDocumentFragment()
 
-**爬虫相关**
+### **爬虫相关**
 
 1.  document.images
 2.  document.links
 
-\[ \]
 可以参考使用`css3 animation`来制作动画，原则：能用css解决的尽量使用css解决；
 
-**制作动画需要谨慎的事**
+### **制作动画需要谨慎的事**
 
 1.  使用绝对位置定位页面上的动画元素，将其脱离文档流；
 2.  让元素动起来。当它扩大时，会临时覆盖部分页面。但这只是页面一个小区域的重绘过程，不会产生重排并重绘页面的大部分内容；

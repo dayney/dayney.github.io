@@ -3,8 +3,6 @@ outline: deep
 editLink: false
 ---
 
-# 高性能JavaScript读书笔记--数据存储
-
 # 小结
 
 > 1.  访问字面量和局部变量的速度最快，相反，访问数组元素和对象成员相对较慢

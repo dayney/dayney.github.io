@@ -3,11 +3,9 @@ outline: deep
 editLink: false
 ---
 
-# 高性能JavaScript读书笔记--快速响应的用户界面
+### 需要尝试的
 
-# 需要尝试的
-
-\[ \] 1. Web Workers的用法，需要在生产环境中尝试使用。
+[ ] 1. Web Workers的用法，需要在生产环境中尝试使用。
 
 ### 小结
 

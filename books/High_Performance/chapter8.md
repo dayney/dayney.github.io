@@ -3,9 +3,7 @@ outline: deep
 editLink: false
 ---
 
-# 高性能JavaScript读书笔记--Ajax
-
-# 五种常用技术用于向服务器请求数据
+### 五种常用技术用于向服务器请求数据
 
 1.  XMLHttpRequest(XHR)
 2.  Dynamic scripts tag insertion
@@ -14,7 +12,7 @@ editLink: false
 4.  Comer 【"常用"】
 5.  Multipart XHR 【"常用"】
 
-#### Dynamic scripts tag insertion 动态脚本注入 的优缺点
+### Dynamic scripts tag insertion 动态脚本注入 的优缺点
 
 **优点：**
 

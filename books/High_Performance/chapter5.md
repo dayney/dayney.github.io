@@ -3,11 +3,9 @@ outline: deep
 editLink: false
 ---
 
-# 高性能JavaScript读书笔记--算法和流程控制
+### 需要加强的是
 
-# 需要加强的是
-
-\[ \] 1.
+[ ] 1.
 Memozation(tabulation)，名词很陌生，就是混存之前的计算结果，但是平时使用的比较多；
 
 ### 小结

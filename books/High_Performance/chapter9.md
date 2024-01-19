@@ -3,9 +3,7 @@ outline: deep
 editLink: false
 ---
 
-# 高性能JavaScript读书笔记--编程实践
-
-# 小结
+### 小结
 
 > 1.  通过避免使用eval()和Function()构造器来避免双重求值带来的性能消耗。同样的，给setTimeout()和setInterval()传递函数而不是字符串作为参数；
 >

@@ -3,20 +3,18 @@ outline: deep
 editLink: false
 ---
 
-# 高性能JavaScript读书笔记--工具
-
 ### 实际环境【chrome develop tool】
 
 > 参考学习的资料时[50 个 Chrome Developer Tools
 > 必备技巧](https://www.youtube.com/watch?v=xSrpjGSNqvI&list=PLXbU-2B80FvBhAYNx8qqx6gaNSKX9HlCm){target="_blank"}
 
-移动端的抓包工具有
+### 移动端的抓包工具有
 
 1.  windows 推荐使用【fiddler】
 2.  mac推荐使用【charles,相关的教程推荐[Charles
     从入门到精通](http://blog.devtang.com/2015/11/14/charles-introduction/){target="_blank"}】
 
-**平时收藏的性能小案例** [google的性能要点小知识JavaScript
+### **平时收藏的性能小案例** [google的性能要点小知识JavaScript
 API](https://crxdoc-zh.appspot.com/apps/api_index){target="_blank"}
 [谷歌性能小案例](https://googlechrome.github.io/devtools-samples/jank/){target="_blank"}
 [前端性能优化の备忘录（2018版)](https://w3ctech.com/topic/2089){target="_blank"}

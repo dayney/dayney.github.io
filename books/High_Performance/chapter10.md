@@ -3,9 +3,7 @@ outline: deep
 editLink: false
 ---
 
-# 高性能JavaScript读书笔记--构建并部署高性能JavaScript应用
-
-# 实际环境
+### 实际环境
 
 1.  目前使用webpack/gulp完全可以做到打包。
 2.  部署需要使用到shell来进行文件的移动。
