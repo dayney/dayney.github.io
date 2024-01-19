@@ -1,0 +1,106 @@
+---
+outline: deep
+editLink: false
+---
+
+# 高性能JavaScript读书笔记--Ajax
+
+# 五种常用技术用于向服务器请求数据
+
+1.  XMLHttpRequest(XHR)
+2.  Dynamic scripts tag insertion
+    动态脚本注入【require.js就是这样的方式】【"常用"】文
+3.  iframes 【比较老的一种框架了】
+4.  Comer 【"常用"】
+5.  Multipart XHR 【"常用"】
+
+#### Dynamic scripts tag insertion 动态脚本注入 的优缺点
+
+**优点：**
+
+1.  能跨域请求数据。
+
+**缺点**
+
+1.  不能设置请求头信息；
+
+2.  只能使用`GET`方式而不能使用`POST`方式；
+
+3.  不能设置请求的超时处理或重试；
+
+4.  不能访问请求头，也不能把整个响应信息作为字符串来处理；
+
+5.  响应消息作为脚本标签的源码，必须是可执行的JavaScript代码。不能是纯XML，纯JSON或其他任何格式的数据。无论什么格式的数据，都需要封装在一个回调函数中；
+
+6.  没有权限和访问控制的概念，使用动态脚本注入添加到页面中的任何代码都可以完全控制整个页面。包括修改任何内容，把用户重定向到其他网站，甚至跟踪用户在页面上的操作并发送数据到第三方服务器。
+    因此引用第三方来源的代码时需要多加小心；
+
+### Multipart XHR
+
+
+允许客户端只用一个HTTP请求就可以从服务器端向客户端传送多个资源。它通过在服务器端资源（CSS文件，HTML片段，JavaScript代码或base64编码的图片）打包成一个由双方约定的字符串分割的长字符串并发送到客户端。然后用JavaScript代码处理这个长字符串，并根据它的mime-type类型和传入的其他"头信息"解析每个资源。
+
+**拓展**
+
+1.  实际开发中用到的场景时：图片转化成base64的好处；一次传输多张图片信息（都是字符串），减少请求，前端拿到字符串之后在加工处理；
+2.  其他格式的文件也可以，如JavaScript，CSS等，都可以使用MXHR技术；
+
+**缺点**
+
+1.  使用这种方式获取的资源不能被浏览器缓存；
+2.  老版本的IE不支持readyState为3的状态和data: URL。
+    IE8支持，在IE6/IE7需要变通；
+
+**优点**
+
+1.  页面包含了大量其他地方用不到的资源（因此也无需缓存），尤其是图片；
+2.  网站已经在每个页面中使用一个独立打包的JavaScript或CSS文件以减少HTTP请求；因为对每个页面来说这些文件都是唯一的，所以并不需要从缓存中读数据，除非重载页面；
+
+### 数据传输
+
+1.  XMLHttpRequest 1.1 GET 1.2 POST
+
+2.  Beacons 2.1
+    类似如`Dynamic scripts tag insertion`,但是并不插入DOM中，是将数据传输给服务器，参考案例是图片信标，
+    new Image(),配置参数
+
+        (new Image()).src= url + '?' + paras.join('&');
+
+2.2
+通过监听图片的`load`事件和图片的参数（事先约定好的width/height的值）来获悉服务器的状态；
+
+2.3
+信标的缺点是：接收到的响应类型是有限的，如果需要返回大量的数据给客户端，那就需要使用XHR。如果只关心发送数据到服务器（可能需要极少的返回信息），可以使用图片信标；w
+
+### 小结
+
+> 1.  减少请求，可通过合并JavaScript和CSS文件，或使用MXHR；
+>
+> 2.  缩短页面的加载时间，页面主要内容加载完成后，用Ajax获取那些次要的文件；
+>
+> 3.  确保你的代码错误不会输出给用户，并在服务器端处理错误；
+>
+> 4.  知道何时使用成熟的Ajax类库，以及何时编写自己的底层Ajax代码；
+:::
+:::
+
+::: search-results
+::: has-results
+# []{.search-results-count} results matching \"[]{.search-query}\" {#results-matching .search-results-title}
+:::
+
+::: no-results
+# No results matching \"[]{.search-query}\" {#no-results-matching .search-results-title}
+:::
+:::
+:::
+:::
+:::
+:::
+
+[](chapter6.html){.navigation .navigation-prev
+aria-label="Previous page: 快速响应的用户界面"}
+[](chapter8.html){.navigation .navigation-next
+aria-label="Next page: 编程实践"}
+:::
+:::
