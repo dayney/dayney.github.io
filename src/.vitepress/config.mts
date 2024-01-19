@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-17 11:49:36
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-01-19 15:52:10
+ * @LastEditTime: 2024-01-19 17:09:02
  * @FilePath: /dayney.github.io/docs/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -46,7 +46,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/index' },
       { text: '前端', link: '/frontend/demo' },
-      { text: '书籍', link: '/books/markdown-examples' },
+      { text: '书籍', link: '/books/index' },
       // {
       //   text: '含二级菜单',
       //   items: [
@@ -84,17 +84,17 @@ export default defineConfig({
           items: [
             { text: '高性能JavaScript',
               items: [
-                { text: '简介', link: '/books/High_Performance/index' },
-                { text: '加载和执行', link: '/books/High_Performance/chapter1' },
-                { text: '数据存储', link: '/books/High_Performance/chapter2' },
-                { text: 'DOM编程', link: '/books/High_Performance/chapter3' },
-                { text: '算法和流程控制', link: '/books/High_Performance/chapter4' },
-                { text: '字符串和正则表达式', link: '/books/High_Performance/chapter5' },
-                { text: '快速响应的用户界面', link: '/books/High_Performance/chapter6' },
-                { text: 'Ajax', link: '/books/High_Performance/chapter7' },
-                { text: '编程实践', link: '/books/High_Performance/chapter8' },
-                { text: '构建并部署高性能JavaScript应用', link: '/books/High_Performance/chapter9' },
-                { text: '工具', link: '/books/High_Performance/chapter10' },
+                { text: '简介', link: '/books/High_Performance/chapter1' },
+                { text: '加载和执行', link: '/books/High_Performance/chapter2' },
+                { text: '数据存储', link: '/books/High_Performance/chapter3' },
+                { text: 'DOM编程', link: '/books/High_Performance/chapter4' },
+                { text: '算法和流程控制', link: '/books/High_Performance/chapter5' },
+                { text: '字符串和正则表达式', link: '/books/High_Performance/chapter6' },
+                { text: '快速响应的用户界面', link: '/books/High_Performance/chapter7' },
+                { text: 'Ajax', link: '/books/High_Performance/chapter8' },
+                { text: '编程实践', link: '/books/High_Performance/chapter9' },
+                { text: '构建并部署高性能JavaScript应用', link: '/books/High_Performance/chapter10' },
+                { text: '工具', link: '/books/High_Performance/chapter11' },
               ]
             },
           ]

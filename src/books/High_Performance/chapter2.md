@@ -3,19 +3,36 @@ outline: deep
 editLink: false
 ---
 
-# 高性能JavaScript读书笔记--数据存储
+# 高性能JavaScript读书笔记--加载和执行
 
-# 小结
+### 拓展
 
-> 1.  访问字面量和局部变量的速度最快，相反，访问数组元素和对象成员相对较慢
+\[ \] 1. 需要研究现在常用的lazyload的原理。 ​
+​1.1
+书中提到的[lazyload]()([https://github.com/rgrove/lazyload](https://github.com/rgrove/lazyload){target="_blank"})
+
+1.2
+书中提到的，具有局限性的[labjs](https://github.com/getify/LABjs){target="_blank"}
+
+1.3 目前AMD模式的[require]()
+
+1.4 目前CMD模式的，其实与[require]()就是加载前置和使用的时候加载的区别 ​
+
+懒加载工具
+[另一个无阻塞加载工具1-雅虎大神的作品lazyload](https://github.com/rgrove/lazyload){target="_blank"}
+
+[另一个无阻塞加载工具2-lab.js](https://github.com/getify/LABjs){target="_blank"}
+
+### 小结： {#小结：}
+
+> 1.  `</body>`闭合标签之前，将所有`<script>`标签放到页面的底部，这样确保在脚本执行前页面已经完成了渲染
 >
-> 2.  由于局部变量存在与作用域链的起始位置，因此访问局部变量比访问跨作用域变量更快。变量在作用域链中的位置越深，访问所需时间就越长。由于全局变量总处于作用域链的最末端，因此访问速度也是最慢的。
+> 2.  合并脚本。页面中的`<script>`标签越少，加载速度就越快，响应也更迅捷。无论外链文件还是内嵌脚本都是如此。
 >
-> 3.  避免使用with语句，因为它会改变执行环境作用域链。同样，try-catch语句中的catch子句也有同样的影响，因此也要小心使用。
+> 3.  有多种无阻塞下载JavaScript的方法。
 >
-> 4.  嵌套的对象成员会明显影响性能，尽量少用。
->
-> 5.  属性或方法在原型链中的位置越深，访问它的速度也越慢。
->
-> 6.  通常来说，你可以通过把常用的对象成员/数组元素/跨域变量保存在局部变量中来改善JavaScript性能，因为局部变量访问速度更快。
+>     > 3.1
+>     > 使用`<script>`标签的`defer`属性；在`HTML5`中有`async`属性，提供异步下载的功能；
+>     > 3.2 使用动态创建的`<script>`元素来下载并执行代码； 3.3
+>     > 使用`XHR`对象下载`JavaScript`代码并注入页面中；
 

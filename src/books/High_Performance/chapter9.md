@@ -3,21 +3,19 @@ outline: deep
 editLink: false
 ---
 
-# 高性能JavaScript读书笔记--构建并部署高性能JavaScript应用
+# 高性能JavaScript读书笔记--编程实践
 
-# 实际环境
+# 小结
 
-1.  目前使用webpack/gulp完全可以做到打包。
-2.  部署需要使用到shell来进行文件的移动。
-
-### 小结（Apache Ant） {#小结（apache-ant）}
-
-> 1.  合并JavaScript文件以减少HTTP请求；
+> 1.  通过避免使用eval()和Function()构造器来避免双重求值带来的性能消耗。同样的，给setTimeout()和setInterval()传递函数而不是字符串作为参数；
 >
-> 2.  使用YUI Compressor压缩JavaScript；
+> 2.  尽量使用直接量创建对象和数组。直接量的创建和初始化都比非直接量形式要快；
 >
-> 3.  在服务器端压缩JavaScript文件(Gzip编码);
+> 3.  避免做重复的工作。当需要检测浏览器时，可使用延迟加载或条件预加载；
 >
-> 4.  通过正确设置HTTP响应头来缓存JavaScript文件，通过向文件名增加时间戳来避免缓存问题；
+> 4.  在进行数学计算时，考虑使用直接操作数字的二进制形式的位运算；【有难度，一般都直接操作，没有转化为二进制】
 >
-> 5.  使用CDN提供JavaScript文件，CDN不仅可以提升性能，它也为你管理文件压缩与缓存；
+> 5.  JavaScript的原生方法总比你写的任何代码都要快。尽量使用原生的方法。[don't
+>     use
+>     jquery](https://github.com/nefe/You-Dont-Need-jQuery){target="_blank"};
+      
