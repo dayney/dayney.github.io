@@ -36,7 +36,6 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          echo "node_modules" >> .gitignore
           git add .
           git commit -m "Auto-deploy from GitHub Actions"
           git push origin main:main --force
