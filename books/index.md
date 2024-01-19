@@ -1,3 +1,11 @@
+<!--
+ * @Author: krui krui0728@gmail.com
+ * @Date: 2024-01-19 18:25:38
+ * @LastEditors: krui krui0728@gmail.com
+ * @LastEditTime: 2024-01-19 20:30:48
+ * @FilePath: /dayney.github.io/books/index.md
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: doc
@@ -7,9 +15,6 @@ editLink: true
 
 - 高性能JavaScript
 
-# Site Config
-### Title <Badge type="info" text="default" />
 
-Site config is where you can define the global settings of the site. App config options define settings that apply to every VitePress site, regardless of what theme it is using. For example, the base directory or the title of the site.
 
 
