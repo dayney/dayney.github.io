@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-02-05 15:54:38
+ * @LastEditTime: 2024-02-05 17:09:11
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -11,7 +11,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "小宇的学习笔记",
-  description: "A VitePress Site",
+  description: "小宇的学习笔记",
   
   outDir: './docs',
   // cacheDir: './.vitepress/.vite', // 缓存文件的路径
@@ -35,7 +35,7 @@ export default defineConfig({
       { text: '首页', link: '/index' },
       { text: '前端', link: '/frontend/index' },
       { text: '提效', link: '/efficiency/index' },
-      { text: '书籍', link: '/books/index' },
+      { text: '阅读', link: '/books/index' },
       { text: '关于作者', link: '/about' }
     ],
 
@@ -120,7 +120,7 @@ export default defineConfig({
     ],
     footer: {
     message: 'Released under the MIT License.',
-    copyright: 'Copyright © 2019-present Evan You'
+    copyright: 'Copyright © 2019-present dayney'
     },
     lastUpdated: {
       text: 'Updated at',
