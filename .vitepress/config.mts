@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-02-05 15:29:56
+ * @LastEditTime: 2024-02-05 15:54:38
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -33,8 +33,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/index' },
-      { text: '前端', link: '/frontend/demo' },
-      { text: '提效', link: '/efficiency/demo' },
+      { text: '前端', link: '/frontend/index' },
+      { text: '提效', link: '/efficiency/index' },
       { text: '书籍', link: '/books/index' },
       { text: '关于作者', link: '/about' }
     ],
@@ -86,7 +86,7 @@ export default defineConfig({
         {
           text: 'VS code相关',
           items: [
-            { text: 'Github Copilot', link: '/efficiency/github/copilot' },
+            { text: 'Github Copilot', link: '/efficiency/vscode/copilot' },
           ],
           
         }

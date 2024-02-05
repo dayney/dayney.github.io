@@ -5,4 +5,4 @@ title: 个人读书记录
 editLink: true
 ---
 
-- [高性能JavaScript](./High_Performance/chapter1)
+- [VS code相关](./vscode/copilot)
