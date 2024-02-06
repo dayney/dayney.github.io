@@ -3,7 +3,7 @@ outline: deep
 editLink: false
 ---
 
-### Github Copilot如何使用
+### Github Copilot快捷键
 
 Copilot 也提供了一些快捷键，可以很方便地使用。【如果快捷键没有反应，大概是与其他快捷键冲突了，自行研究哈】
 
