@@ -14,10 +14,11 @@ editLink: false
 2.  mac推荐使用【charles,相关的教程推荐[Charles
     从入门到精通](http://blog.devtang.com/2015/11/14/charles-introduction/){target="_blank"}】
 
-### **平时收藏的性能小案例** [google的性能要点小知识JavaScript
-API](https://crxdoc-zh.appspot.com/apps/api_index){target="_blank"}
-[谷歌性能小案例](https://googlechrome.github.io/devtools-samples/jank/){target="_blank"}
-[前端性能优化の备忘录（2018版)](https://w3ctech.com/topic/2089){target="_blank"}
+### **平时收藏的性能小案例** 
+
+### [google的性能要点小知识JavaScript API](https://crxdoc-zh.appspot.com/apps/api_index)
+[谷歌性能小案例](https://googlechrome.github.io/devtools-samples/jank/)
+[前端性能优化の备忘录（2018版)
 
 ### 小结
 
