@@ -149,6 +149,44 @@ module.exports = {
 
 在每次 `git add filename`之后使用 `git cz` 就会提示 commit的规范
 
+### 3.5 commit的校验规则
+
+```
+// type 类型定义，表示 git 提交的 type 必须在以下类型范围内
+'type-enum': [
+  2,
+  'always',
+  [
+    'feat', // 新功能 feature
+    'fix', // 修复 bug
+    'docs', // 文档注释
+    'style', // 代码格式(不影响代码运行的变动)
+    'refactor', // 重构(既不增加新功能，也不是修复bug)
+    'perf', // 性能优化
+    'test', // 增加测试
+    'chore', // 构建过程或辅助工具的变动
+    'revert', // 回退
+    'build', // 打包
+    'ci', // 配置文件修改
+    'init' // 初始化
+  ]
+]
+```
+
+在每次 `git commit`的时候，会自动检测**commit**中的内容是否含有以上的关键词，如果没有则会提示
+```
+⧗   input: xxx
+✖   subject may not be empty [subject-empty]
+✖   type may not be empty [type-empty]
+
+✖   found 2 problems, 0 warnings
+ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+husky - commit-msg script failed (code 1)
+```
+需用使用者直接修改**commit**之后再提交，虽然可以人为的去在**commit**中使用以上关键词，但是不建议这样使用，为了保持大家格式统一，要求使用**git cz**代替**git commit**。
 
 
 ## 参考文件
