@@ -16,7 +16,8 @@
     "@commitlint/config-conventional": "^18.4.4",
     "commitizen": "^4.3.0",
     "cz-git": "^1.8.0",
-    "vitepress": "1.0.0-rc.39"
+    "vitepress": "1.0.0-rc.39",
+    "vite": ">=5.0.12"
   },
   "config": {
     "commitizen": {
