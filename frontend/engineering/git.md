@@ -23,10 +23,17 @@ editLink: false
 
 #### 3.1 安装
 
+- 需要在使用的时候全局安装 **commitizen**，不安装会出现如下提示
+
+  ![git-cz](./git-cz.jpg)
+
+  安装命令
+```
+npm i -g commitizen
+```
+
 ```javascript
-@commitlint/config-conventional
-commitizen
-cz-git
+npm i -D @commitlint/config-conventional commitizen cz-git
 ```
 
 3.2 配置模版
