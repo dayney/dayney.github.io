@@ -36,7 +36,7 @@ npm i -g commitizen
 npm i -D @commitlint/config-conventional commitizen cz-git
 ```
 
-3.2 配置模版
+#### 3.2 配置模版
 
 ```javascript
 在项目的根目录下配置添加文件 commitlint.config.js 并写入如下代码
