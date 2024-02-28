@@ -15,7 +15,7 @@ editLink: false
 
 本文不会详细介绍 Web 安全的攻击和防御技术，所以请先参考如下资料了解相关知识：
 
-[XSS]()
+[XSS](https://xie.infoq.cn/article/f66e5094d1d0ee538cf8814dd)
 
 ## XSS防御
 
