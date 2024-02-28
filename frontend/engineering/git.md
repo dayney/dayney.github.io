@@ -28,9 +28,6 @@ editLink: false
   ![git-cz](./git-cz.jpg)
 
   安装命令
-```
-npm i -g commitizen
-```
 
 ```javascript
 npm i -D @commitlint/config-conventional commitizen cz-git
