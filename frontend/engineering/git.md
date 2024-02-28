@@ -153,31 +153,48 @@ module.exports = {
 
 在每次 `git add filename`之后使用 `git cz` 就会提示 commit的规范
 
-### 3.5 commit的校验规则
+## commit的校验规则
 
-```
-// type 类型定义，表示 git 提交的 type 必须在以下类型范围内
-'type-enum': [
-  2,
-  'always',
-  [
-    'feat', // 新功能 feature
-    'fix', // 修复 bug
-    'docs', // 文档注释
-    'style', // 代码格式(不影响代码运行的变动)
-    'refactor', // 重构(既不增加新功能，也不是修复bug)
-    'perf', // 性能优化
-    'test', // 增加测试
-    'chore', // 构建过程或辅助工具的变动
-    'revert', // 回退
-    'build', // 打包
-    'ci', // 配置文件修改
-    'init' // 初始化
-  ]
-]
+此时还不并不能自动校验`commit`的规则，需要进行如下操作才行，本操作需要使用**node 14**以上的版本，在 **node 14**以下会出现如下问题：
+```javascript
+internal/process/esm_loader.js:74
+    internalBinding('errors').triggerUncaughtException(
+                              ^
+
+Error [ERR_UNKNOWN_BUILTIN_MODULE]: No such built-in module: node:timers/promises
+    at Loader.builtinStrategy (internal/modules/esm/translators.js:285:11)
+    at new ModuleJob (internal/modules/esm/module_job.js:59:26)
+    at Loader.getModuleJob (internal/modules/esm/loader.js:257:11)
+    at async ModuleWrap.<anonymous> (internal/modules/esm/module_job.js:74:21)
+    at async Promise.all (index 1)
+    at async link (internal/modules/esm/module_job.js:79:9) {
+  code: 'ERR_UNKNOWN_BUILTIN_MODULE'
+}
 ```
 
-在每次 `git commit`的时候，会自动检测**commit**中的内容是否含有以上的关键词，如果没有则会提示
+解决方案来自于[Support Node 14 #428](https://github.com/google/zx/issues/428)，建议使用高版本的**node**
+
+#### 1. 添加挂钩
+
+```javascript
+npm install --save-dev husky
+```
+
+#### 2. **node v16**中初始化 `husky`
+
+- 在`packjason.json`的`scripts`中添加
+  ```
+  "prepare": "husky install"
+  ```
+
+- 添加 `commit-msg`检测方法
+
+  ```
+  # Add commit message linting to commit-msg hook
+  echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+  ```
+
+此时不符合规范的提示就是
 ```
 ⧗   input: xxx
 ✖   subject may not be empty [subject-empty]
@@ -186,13 +203,60 @@ module.exports = {
 ✖   found 2 problems, 0 warnings
 ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
 
-error Command failed with exit code 1.
-info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 husky - commit-msg script failed (code 1)
 ```
+
+作为替代方案，您可以在内部创建一个脚本`package.json`
+
+```
+npm pkg set scripts.commitlint="commitlint --edit"
+echo "npm run commitlint \${1}" > .husky/commit-msg
+```
+
+
+#### 3. **node v20**中初始化 `husky`
+
+- 在`packjason.json`的`scripts`中添加
+  ```
+  npx husky init
+  ```
+- 删除默认自带的 `pre-commit` 文件，文件里面是有个`npm test`,  `pre-commit`文件可以做一些前置校验，如eslint、pretty、ts的校验等， 文件路径是`.husky/pre-commit`
+
+
+- 添加 `commit-msg`检测方法
+
+  ```
+  # Add commit message linting to commit-msg hook
+  echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+  ```
+
+
+作为替代方案，您可以在内部创建一个脚本`package.json`
+
+```
+npm pkg set scripts.commitlint="commitlint --edit"
+echo "npm run commitlint \${1}" > .husky/commit-msg
+```
+
+
+此时不符合规范的提示就是
+```
+⧗   input: xxx
+✖   subject may not be empty [subject-empty]
+✖   type may not be empty [type-empty]
+
+✖   found 2 problems, 0 warnings
+ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+```
+
+
+#### 4.  测试钩子函数在每次 `git commit`的时候，会自动检测**commit**中的内容是否含有以上的关键词，如果没有则会提示
+
 需用使用者直接修改**commit**之后再提交，虽然可以人为的去在**commit**中使用以上关键词，但是不建议这样使用，为了保持大家格式统一，要求使用**git cz**代替**git commit**。
 
 
 ## 参考文件
 
 [git-cz](https://cz-git.qbb.sh/zh/guide/)
+
+[commitlint](https://commitlint.js.org/)
