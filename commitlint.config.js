@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-03 16:13:59
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-02-28 21:48:18
+ * @LastEditTime: 2024-02-28 23:27:53
  * @FilePath: /blog-frontend/commitlint.config.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -76,7 +76,8 @@ module.exports = {
     emojiAlign: 'center',
     themeColorCode: '',
     customScopesAlign: 'bottom',
-    customScopesAlias: '以上都不是？我要自定义',
+    customScopesAlias: 'custom',
+    emptyScopesAlias: 'empty',
     defaultScope: '___CUSTOM___:',
     scopeOverrides: undefined,
     // scopeOverrides: { "test": ["e2eTest", "unitTest"] },
@@ -96,12 +97,12 @@ module.exports = {
     allowBreakingChanges: ['feat', 'fix'],
     breaklineNumber: 100,
     breaklineChar: '|',
-    // skipQuestions: ['scope', 'customScope', 'body', 'breaking', 'footer', 'footerPrefix', 'customFooterPrefixs'],
+    skipQuestions: ['scope', 'customScope', 'body', 'breaking', 'footer', 'footerPrefix', 'customFooterPrefixs'],
     issuePrefixs: [{ value: 'closed', name: 'closed:   ISSUES has been processed' }],
     customIssuePrefixsAlign: 'top',
-    // // allowCustomScopes: true,
-    allowEmptyScopes: false,
-    emptyScopesAlias: 'empty',
+    allowCustomScopes: true,
+    // allowEmptyScopes: false,
+    
     upperCaseSubject: false,
     markBreakingChangeMode: false,
     emptyIssuePrefixsAlias: 'skip',
