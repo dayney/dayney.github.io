@@ -153,7 +153,7 @@ module.exports = {
 
 在每次 `git add filename`之后使用 `git cz` 就会提示 commit的规范
 
-## commit的校验规则
+## 4. commit的校验规则
 
 此时还不并不能自动校验`commit`的规则，需要进行如下操作才行，本操作需要使用**node 14**以上的版本，在 **node 14**以下会出现如下问题：
 ```javascript
