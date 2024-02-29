@@ -8,8 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview",
-    "prepare": "husky"
+    "docs:preview": "vitepress preview"
   },
   "author": "",
   "license": "ISC",
