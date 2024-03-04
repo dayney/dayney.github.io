@@ -254,6 +254,11 @@ echo "npm run commitlint \${1}" > .husky/commit-msg
 
 需用使用者直接修改**commit**之后再提交，虽然可以人为的去在**commit**中使用以上关键词，但是不建议这样使用，为了保持大家格式统一，要求使用**git cz**代替**git commit**。
 
+#### 5. 使用小技巧
+```
+换行的时候，使用 \n 来换行
+```
+![换行示例](./huanhang.jpg)
 
 ## 参考文件
 
