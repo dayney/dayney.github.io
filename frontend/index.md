@@ -7,6 +7,7 @@ editLink: true
 ---
 
 - [前端工程化](./engineering/git)
+- [微信小程序](./weixin/miniProgramLife)
 - [其他](./others/projectHandover)
 - [VUE](./vue/style)
 - [HTML](./html/style)
