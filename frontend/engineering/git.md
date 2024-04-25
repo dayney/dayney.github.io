@@ -30,7 +30,7 @@ editLink: false
   安装命令
 
 ```javascript
-npm i -D @commitlint/config-conventional commitizen cz-git
+npm i -D commitlint @commitlint/config-conventional commitizen cz-git
 ```
 
 #### 3.2 配置模版
