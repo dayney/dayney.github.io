@@ -1,0 +1,87 @@
+import{_ as a,c as s,o as n,V as e}from"./chunks/framework.C-fAE6Ku.js";const p="/assets/git-commit-001.DSEPVH3x.png",i="/assets/git-commit-002.BtANty5I.png",t="/assets/git-commit-003.hx2tXg2r.png",l="/assets/git-commit-004.CVH5aYPI.png",o="/assets/git-commit-005.IhoDum-4.png",c="/assets/git-commit-006.C6rlWzXc.png",q=JSON.parse('{"title":"Git提交规范--适配 node V14.x的版本","description":"","frontmatter":{"outline":"deep","editLink":false},"headers":[],"relativePath":"frontend/engineering/git-node-14.md","filePath":"frontend/engineering/git-node-14.md","lastUpdated":1714118899000}'),r={name:"frontend/engineering/git-node-14.md"},h=e('<h1 id="git提交规范-适配-node-v14-x的版本" tabindex="-1">Git提交规范--适配 node V14.x的版本 <a class="header-anchor" href="#git提交规范-适配-node-v14-x的版本" aria-label="Permalink to &quot;Git提交规范--适配 node V14.x的版本&quot;">​</a></h1><h2 id="_1-效果演示" tabindex="-1">1. 效果演示 <a class="header-anchor" href="#_1-效果演示" aria-label="Permalink to &quot;1. 效果演示&quot;">​</a></h2><p><img src="'+p+'" alt="git-commit-001"></p><p><img src="'+i+'" alt="git-commit-002"></p><p><img src="'+t+`" alt="git-commit-003"></p><h2 id="_2-主要插件" tabindex="-1">2. 主要插件 <a class="header-anchor" href="#_2-主要插件" aria-label="Permalink to &quot;2. 主要插件&quot;">​</a></h2><ul><li>commitizen: 代码提交辅助工具</li><li>commitlint: 代码校验工具</li><li>husky: githook 插件（有版本要求，是使用v8.x）</li><li>git-cz： 自定义提交配置</li></ul><h2 id="_3-添加-git-cz" tabindex="-1">3. 添加 git-cz <a class="header-anchor" href="#_3-添加-git-cz" aria-label="Permalink to &quot;3. 添加 git-cz&quot;">​</a></h2><h4 id="_3-1-安装插件" tabindex="-1">3.1 安装插件 <a class="header-anchor" href="#_3-1-安装插件" aria-label="Permalink to &quot;3.1 安装插件&quot;">​</a></h4><p>全局安装的 commitizen 不需要每个项目项目都执行，本机执行一次即可</p><div class="language-node vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">node</span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>npm i -g commitizen</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>npm i -D  @commitlint/cli@^17 @commitlint/config-conventional@^17 husky@^8 cz-git</span></span></code></pre></div><h4 id="_3-2-配置插件" tabindex="-1">3.2 配置插件 <a class="header-anchor" href="#_3-2-配置插件" aria-label="Permalink to &quot;3.2 配置插件&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>在项目的根目录下配置添加文件 commitlint.config.js 并写入如下代码</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/** @type {import(&#39;cz-git&#39;).UserConfig} */</span></span>
+<span class="line"><span>// eslint-disable-next-line no-undef</span></span>
+<span class="line"><span>module.exports = {</span></span>
+<span class="line"><span>  extends: [&#39;@commitlint/config-conventional&#39;],</span></span>
+<span class="line"><span>  rules: {</span></span>
+<span class="line"><span>    // @see: https://commitlint.js.org/#/reference-rules</span></span>
+<span class="line"><span>    // &#39;header-max-length&#39;: [0, &#39;always&#39;, 72],</span></span>
+<span class="line"><span>    // type 类型定义，表示 git 提交的 type 必须在以下类型范围内</span></span>
+<span class="line"><span>    &#39;type-enum&#39;: [</span></span>
+<span class="line"><span>      2,</span></span>
+<span class="line"><span>      &#39;always&#39;,</span></span>
+<span class="line"><span>      [</span></span>
+<span class="line"><span>        &#39;feat&#39;, // 新功能开发</span></span>
+<span class="line"><span>        &#39;fix&#39;, // Bug修复</span></span>
+<span class="line"><span>        &#39;refactor&#39;, // 重构（refactoring production code）</span></span>
+<span class="line"><span>        &#39;style&#39;, // 代码排版格式修改，比如行尾添加分号等</span></span>
+<span class="line"><span>        &#39;docs&#39;, // 文档修改</span></span>
+<span class="line"><span>        &#39;build&#39;, // 构建流程或依赖管理等修复</span></span>
+<span class="line"><span>        &#39;ci&#39;, // ci相关的修改</span></span>
+<span class="line"><span>        &#39;test&#39;, // 测试用例补充、修改或重构</span></span>
+<span class="line"><span>        &#39;perf&#39;, // 性能优化</span></span>
+<span class="line"><span>        &#39;revert&#39;, // 回滚</span></span>
+<span class="line"><span>        &#39;chore&#39;, // 杂务，对外部用户不可见的工具、配置等的修改，如修改.gitignore</span></span>
+<span class="line"><span>      ]</span></span>
+<span class="line"><span>    ]</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  prompt: {</span></span>
+<span class="line"><span>    messages: {</span></span>
+<span class="line"><span>      type: &#39;请选择提交类型:&#39;,</span></span>
+<span class="line"><span>      scope: &#39;请按Enter键之后填写影响范围:&#39;,</span></span>
+<span class="line"><span>      customScope: &#39;本次提交的影响范围:&#39;,</span></span>
+<span class="line"><span>      subject: &#39;请简要描述提交(必填):&#39;,</span></span>
+<span class="line"><span>      body: &#39;请输入详细变更 (可选). 使用 &quot;|&quot; 换行:\\n&#39;,</span></span>
+<span class="line"><span>      confirmCommit: &#39;确认使用以上信息提交?(y/n)&#39;</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>    types: [</span></span>
+<span class="line"><span>      { value: &#39;feat&#39;, name: &#39;feat:新功能开发&#39;, emoji: &#39;:sparkles:&#39; },</span></span>
+<span class="line"><span>      { value: &#39;fix&#39;, name: &#39;fix:Bug修复&#39;, emoji: &#39;:bug:&#39; },</span></span>
+<span class="line"><span>      {</span></span>
+<span class="line"><span>        value: &#39;refactor&#39;,</span></span>
+<span class="line"><span>        name: &#39;refactor:重构（refactoring production code）&#39;,</span></span>
+<span class="line"><span>        emoji: &#39;:recycle:&#39;</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      { value: &#39;style&#39;, name: &#39;style:代码排版格式修改，比如行尾添加分号等&#39;, emoji: &#39;:lipstick:&#39; },</span></span>
+<span class="line"><span>      { value: &#39;docs&#39;, name: &#39;docs:文档修改&#39;, emoji: &#39;:memo:&#39; },</span></span>
+<span class="line"><span>      {</span></span>
+<span class="line"><span>        value: &#39;build&#39;,</span></span>
+<span class="line"><span>        name: &#39;build:构建流程或依赖管理等修复&#39;,</span></span>
+<span class="line"><span>        emoji: &#39;:package:&#39;</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      { value: &#39;ci&#39;, name: &#39;ci:ci相关的修改&#39;, emoji: &#39;:ferris_wheel:&#39; },</span></span>
+<span class="line"><span>      {</span></span>
+<span class="line"><span>        value: &#39;test&#39;,</span></span>
+<span class="line"><span>        name: &#39;test:测试用例补充、修改或重构&#39;,</span></span>
+<span class="line"><span>        emoji: &#39;:white_check_mark:&#39;</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      { value: &#39;perf&#39;, name: &#39;perf:性能优化&#39;, emoji: &#39;:zap:&#39; },</span></span>
+<span class="line"><span>      { value: &#39;revert&#39;, name: &#39;revert:回滚&#39;, emoji: &#39;:rewind:&#39; },</span></span>
+<span class="line"><span>      { value: &#39;chore&#39;, name: &#39;chore:杂务，对外部用户不可见的工具、配置等的修改，如修改.gitignore&#39;, emoji: &#39;:hammer:&#39; },</span></span>
+<span class="line"><span>    ],</span></span>
+<span class="line"><span>    skipQuestions: [&#39;body&#39;, &#39;breaking&#39;, &#39;footer&#39;, &#39;footerPrefix&#39;, &#39;customFooterPrefixs&#39;],</span></span>
+<span class="line"><span>    allowBreakingChanges: [&#39;feat&#39;, &#39;fix&#39;],</span></span>
+<span class="line"><span>    breaklineNumber: 100,</span></span>
+<span class="line"><span>    breaklineChar: &#39;|&#39;,</span></span>
+<span class="line"><span>    useEmoji: true,</span></span>
+<span class="line"><span>    maxHeaderLength: Infinity,</span></span>
+<span class="line"><span>    maxSubjectLength: Infinity,</span></span>
+<span class="line"><span>    themeColorCode: &#39;&#39;,</span></span>
+<span class="line"><span>    allowEmptyScopes: false,</span></span>
+<span class="line"><span>    customScopesAlias: &#39;请按Enter键之后填写影响范围&#39;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>};</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>在package.json添加配置</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&quot;config&quot;: {</span></span>
+<span class="line"><span>    &quot;commitizen&quot;: {</span></span>
+<span class="line"><span>      &quot;path&quot;: &quot;node_modules/cz-git&quot;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>  在scripts中添加</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span>  &quot;prepare&quot;: &quot;husky install&quot;</span></span></code></pre></div><h4 id="_3-3-初始化-husky" tabindex="-1">3.3 初始化 husky <a class="header-anchor" href="#_3-3-初始化-husky" aria-label="Permalink to &quot;3.3 初始化 husky&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>npm run prepare</span></span></code></pre></div><h4 id="_3-4-在-husky中添加-commit-msg-hook" tabindex="-1">3.4 在 husky中添加 commit-msg hook <a class="header-anchor" href="#_3-4-在-husky中添加-commit-msg-hook" aria-label="Permalink to &quot;3.4 在 husky中添加 commit-msg hook&quot;">​</a></h4><ul><li><h4 id="mac-上使用以下代码" tabindex="-1">mac 上使用以下代码 <a class="header-anchor" href="#mac-上使用以下代码" aria-label="Permalink to &quot;mac 上使用以下代码&quot;">​</a></h4></li></ul><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>npx husky add .husky/commit-msg &#39;npx --no-install commitlint --edit &quot;$1&quot;&#39;</span></span></code></pre></div><ul><li>window中，需要在 根路径 .husky 下 新建文件 commit-msg， 并且清空这个文件中的所有内容，添加如下内容，特别要注意koroFileHeader，在文件前面添加的 author信息，一定要删除，否则shell命令不生效</li></ul><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>#!/usr/bin/env sh</span></span>
+<span class="line"><span>. &quot;$(dirname -- &quot;$0&quot;)/_/husky.sh&quot;</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span>npx --no-install commitlint --edit &quot;$1&quot;</span></span></code></pre></div><h2 id="_4-如何使用" tabindex="-1">4. 如何使用 <a class="header-anchor" href="#_4-如何使用" aria-label="Permalink to &quot;4. 如何使用&quot;">​</a></h2><h4 id="_4-1-在修改文件之后-正常使用-git-add" tabindex="-1">4.1 在修改文件之后，正常使用 git add <a class="header-anchor" href="#_4-1-在修改文件之后-正常使用-git-add" aria-label="Permalink to &quot;4.1  在修改文件之后，正常使用 git add&quot;">​</a></h4><h4 id="_4-2-使用-git-cz-代替-git-commit" tabindex="-1">4.2 使用 git cz 代替 git commit <a class="header-anchor" href="#_4-2-使用-git-cz-代替-git-commit" aria-label="Permalink to &quot;4.2  使用 git cz 代替 git commit&quot;">​</a></h4><p><img src="`+l+'" alt="git-commit-004"></p><h4 id="_4-3-正常使用-git-push-提交代码" tabindex="-1">4.3 正常使用 git push 提交代码 <a class="header-anchor" href="#_4-3-正常使用-git-push-提交代码" aria-label="Permalink to &quot;4.3  正常使用 git push 提交代码&quot;">​</a></h4><h4 id="_4-4-错误演示" tabindex="-1">4.4 错误演示 <a class="header-anchor" href="#_4-4-错误演示" aria-label="Permalink to &quot;4.4 错误演示&quot;">​</a></h4><p><img src="'+o+'" alt="git-commit-005"></p><h4 id="_4-5-gitlab上查看效果" tabindex="-1">4.5 gitlab上查看效果 <a class="header-anchor" href="#_4-5-gitlab上查看效果" aria-label="Permalink to &quot;4.5 gitlab上查看效果&quot;">​</a></h4><p><img src="'+c+'" alt="git-commit-006"></p><h2 id="参考文件" tabindex="-1">参考文件 <a class="header-anchor" href="#参考文件" aria-label="Permalink to &quot;参考文件&quot;">​</a></h2><p><a href="https://cz-git.qbb.sh/zh/guide/" target="_blank" rel="noreferrer">git-cz</a></p><p><a href="https://github.com/typicode/husky/releases/tag/v9.0.1" target="_blank" rel="noreferrer">husky v8</a></p><p><a href="https://commitlint.js.org/" target="_blank" rel="noreferrer">commitlint</a></p>',35),m=[h];function d(u,g,b,k,_,f){return n(),s("div",null,m)}const y=a(r,[["render",d]]);export{q as __pageData,y as default};
