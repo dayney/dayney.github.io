@@ -23,7 +23,11 @@ editLink: false
 
 #### 3.1 安装插件
 
+全局安装的 commitizen 不需要每个项目项目都执行，本机执行一次即可
+
 ```node
+npm i -g commitizen
+
 npm i -D  @commitlint/cli@^17 @commitlint/config-conventional@^17 husky@^8 cz-git
 ```
 
@@ -44,90 +48,64 @@ module.exports = {
       2,
       'always',
       [
-        'feat', // 新功能 feature
-        'fix', // 修复 bug
-        'docs', // 文档注释
-        'style', // 代码格式(不影响代码运行的变动)
-        'refactor', // 重构(既不增加新功能，也不是修复bug)
+        'feat', // 新功能开发
+        'fix', // Bug修复
+        'refactor', // 重构（refactoring production code）
+        'style', // 代码排版格式修改，比如行尾添加分号等
+        'docs', // 文档修改
+        'build', // 构建流程或依赖管理等修复
+        'ci', // ci相关的修改
+        'test', // 测试用例补充、修改或重构
         'perf', // 性能优化
-        'test', // 增加测试
-        'chore', // 构建过程或辅助工具的变动
-        'revert', // 回退
-        'build', // 打包
-        'ci', // 配置文件修改
-        'init' // 初始化
+        'revert', // 回滚
+        'chore', // 杂务，对外部用户不可见的工具、配置等的修改，如修改.gitignore
       ]
     ]
   },
   prompt: {
     messages: {
       type: '请选择提交类型:',
-      scope: '本次提交的影响范围 (可选):',
+      scope: '请按Enter键之后填写影响范围:',
       customScope: '本次提交的影响范围:',
       subject: '请简要描述提交(必填):',
       body: '请输入详细变更 (可选). 使用 "|" 换行:\n',
-      breaking: '本次提交列出破坏性改动 (可选). 使用 "|" 换行:\n',
-      footerPrefixsSelect: '本次提交修复的issue (可选):',
-      customFooterPrefixs: '请输入issue前缀:',
-      footer: '本次提交修复的issue. 例如.: #31, #34:\n',
       confirmCommit: '确认使用以上信息提交?(y/n)'
     },
     types: [
-      { value: 'feat', name: 'feat:     ✨  新功能', emoji: ':sparkles:' },
-      { value: 'fix', name: 'fix:      🐛  修复问题', emoji: ':bug:' },
-      { value: 'docs', name: 'docs:     📝  文档变更', emoji: ':memo:' },
-      { value: 'style', name: 'style:    💄  代码格式/样式(不影响代码运行)', emoji: ':lipstick:' },
+      { value: 'feat', name: 'feat:新功能开发', emoji: ':sparkles:' },
+      { value: 'fix', name: 'fix:Bug修复', emoji: ':bug:' },
       {
         value: 'refactor',
-        name: 'refactor: ♻️   重构(不含bug修复、没有功能新增)',
+        name: 'refactor:重构（refactoring production code）',
         emoji: ':recycle:'
       },
-      { value: 'perf', name: 'perf:     ⚡️  性能优化', emoji: ':zap:' },
-      {
-        value: 'test',
-        name: 'test:     ✅  增加测试',
-        emoji: ':white_check_mark:'
-      },
+      { value: 'style', name: 'style:代码排版格式修改，比如行尾添加分号等', emoji: ':lipstick:' },
+      { value: 'docs', name: 'docs:文档修改', emoji: ':memo:' },
       {
         value: 'build',
-        name: 'build:    📦️  构建打包',
+        name: 'build:构建流程或依赖管理等修复',
         emoji: ':package:'
       },
-      { value: 'ci', name: 'ci:       🎡  配置文件修改', emoji: ':ferris_wheel:' },
-      { value: 'chore', name: 'chore:    🔨  构建过程或辅助工具的变动', emoji: ':hammer:' },
-      { value: 'revert', name: 'revert:   ⏪️  回退、撤销', emoji: ':rewind:' },
-      { value: 'init', name: 'init:     🎉  首次提交、初始化', emoji: ':tada:' }
+      { value: 'ci', name: 'ci:ci相关的修改', emoji: ':ferris_wheel:' },
+      {
+        value: 'test',
+        name: 'test:测试用例补充、修改或重构',
+        emoji: ':white_check_mark:'
+      },
+      { value: 'perf', name: 'perf:性能优化', emoji: ':zap:' },
+      { value: 'revert', name: 'revert:回滚', emoji: ':rewind:' },
+      { value: 'chore', name: 'chore:杂务，对外部用户不可见的工具、配置等的修改，如修改.gitignore', emoji: ':hammer:' },
     ],
-    useEmoji: true,
-    emojiAlign: 'center',
-    themeColorCode: '',
-    scopes: [],
-    allowCustomScopes: true,
-    allowEmptyScopes: true,
-    customScopesAlign: 'bottom',
-    customScopesAlias: 'custom',
-    emptyScopesAlias: 'empty',
-    upperCaseSubject: false,
-    markBreakingChangeMode: false,
+    skipQuestions: ['body', 'breaking', 'footer', 'footerPrefix', 'customFooterPrefixs'],
     allowBreakingChanges: ['feat', 'fix'],
     breaklineNumber: 100,
     breaklineChar: '|',
-    skipQuestions: ['scope', 'customScope', 'body', 'breaking', 'footer', 'footerPrefix', 'customFooterPrefixs'],
-    issuePrefixs: [{ value: 'closed', name: 'closed:   ISSUES has been processed' }],
-    customIssuePrefixsAlign: 'top',
-    emptyIssuePrefixsAlias: 'skip',
-    customIssuePrefixsAlias: 'custom',
-    allowCustomIssuePrefixs: true,
-    allowEmptyIssuePrefixs: true,
-    confirmColorize: true,
+    useEmoji: true,
     maxHeaderLength: Infinity,
     maxSubjectLength: Infinity,
-    minSubjectLength: 0,
-    scopeOverrides: undefined,
-    defaultBody: '',
-    defaultIssues: '',
-    defaultScope: '',
-    defaultSubject: ''
+    themeColorCode: '',
+    allowEmptyScopes: false,
+    customScopesAlias: '请按Enter键之后填写影响范围'
   }
 };
 ```
@@ -155,8 +133,20 @@ npm run prepare
 ```
 
 #### 3.4 在 husky中添加 commit-msg hook
+
+- ####  mac 上使用以下代码
+
 ```
 npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
+```
+
+- window中，需要在 根路径 .husky 下 新建文件 commit-msg， 并且清空这个文件中的所有内容，添加如下内容，特别要注意koroFileHeader，在文件前面添加的 author信息，一定要删除，否则shell命令不生效
+
+```
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+ 
+npx --no-install commitlint --edit "$1"
 ```
 
 ## 4. 如何使用
@@ -186,3 +176,4 @@ npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
 [husky v8](https://github.com/typicode/husky/releases/tag/v9.0.1)
 
 [commitlint](https://commitlint.js.org/)
+
