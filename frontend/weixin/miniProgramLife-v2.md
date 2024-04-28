@@ -166,12 +166,12 @@ step: 0, // 引导步骤,  此处后续肯定有 1，2，应该不止这一步
    │   ├── const.js  // 此文件是当前页面使用的常量
    │   ├── utls.js   // 此文件是当前页面使用通用的方法
    │   ├── component   // 当前页面抽离出来的组件，仅供当前页面使用，主要是当前业务复杂，场景多的情况
-   │   ├── componentDeom
-   │   │   ├── componentDeom.js
-   │   │   ├── componentDeom.json
-   │   │   ├── componentDeom.wxml
-   │   │   └── componentDeom.wxss
-   │   └── ……
+   │   │   ├── componentDeom
+   │   │   │   ├── componentDeom.js
+   │   │   │   ├── componentDeom.json
+   │   │   │   ├── componentDeom.wxml
+   │   │   │   └── componentDeom.wxss
+   │   │   └── ……
    │   ├── archivesDetails.js
    │   ├── archivesDetails.json
    │   ├── archivesDetails.wxml
