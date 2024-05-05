@@ -3,7 +3,7 @@ outline: deep
 editLink: false
 ---
 
-# Vue编码规范
+# VUE 2.x编码规范
 
 ## 1 前言
 
