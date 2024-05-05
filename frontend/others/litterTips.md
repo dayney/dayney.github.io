@@ -89,7 +89,7 @@ editLink: false
    let test2 = test1 || '';
    ```
 
-5. 使用操作符 ??
+5. 使用操作符 空值合并操作符 ??, 如果某个属性不为 null 和 undefined，那么就获取该属性，如果该属性为 null 或 undefined，则取一个默认值：
 
    ```
    const test= null ?? 'default';
@@ -98,6 +98,10 @@ editLink: false
    const test1 = 0 ?? 2;
    console.log(test1);
    // expected output: 0
+   
+   const test1 = '' ?? 2;
+   console.log(test1); // ''
+   // expected output: 
    ```
-
+   
    
