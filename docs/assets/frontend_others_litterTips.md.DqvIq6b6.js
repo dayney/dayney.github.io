@@ -1,4 +1,4 @@
-import{_ as s,c as n,o as a,V as p}from"./chunks/framework.C-fAE6Ku.js";const g=JSON.parse('{"title":"编程小技巧","description":"","frontmatter":{"outline":"deep","editLink":false},"headers":[],"relativePath":"frontend/others/litterTips.md","filePath":"frontend/others/litterTips.md","lastUpdated":1714114452000}'),e={name:"frontend/others/litterTips.md"},l=p(`<h1 id="编程小技巧" tabindex="-1">编程小技巧 <a class="header-anchor" href="#编程小技巧" aria-label="Permalink to &quot;编程小技巧&quot;">​</a></h1><ol><li><p>超过3个if...else if的使用技巧</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span></span></span>
+import{_ as s,c as n,o as a,V as p}from"./chunks/framework.C-fAE6Ku.js";const g=JSON.parse('{"title":"编程小技巧","description":"","frontmatter":{"outline":"deep","editLink":false},"headers":[],"relativePath":"frontend/others/litterTips.md","filePath":"frontend/others/litterTips.md","lastUpdated":1714875627000}'),e={name:"frontend/others/litterTips.md"},l=p(`<h1 id="编程小技巧" tabindex="-1">编程小技巧 <a class="header-anchor" href="#编程小技巧" aria-label="Permalink to &quot;编程小技巧&quot;">​</a></h1><ol><li><p>超过3个if...else if的使用技巧</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span></span></span>
 <span class="line"><span>if（condition）{</span></span>
 <span class="line"><span>} else if (condition) {</span></span>
 <span class="line"><span>} else if (condition) {</span></span>
@@ -57,9 +57,13 @@ import{_ as s,c as n,o as a,V as p}from"./chunks/framework.C-fAE6Ku.js";const g=
 <span class="line"><span>    let test2 = test1;</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span>// Shorthand</span></span>
-<span class="line"><span>let test2 = test1 || &#39;&#39;;</span></span></code></pre></div></li><li><p>使用操作符 ??</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>const test= null ?? &#39;default&#39;;</span></span>
+<span class="line"><span>let test2 = test1 || &#39;&#39;;</span></span></code></pre></div></li><li><p>使用操作符 空值合并操作符 ??, 如果某个属性不为 null 和 undefined，那么就获取该属性，如果该属性为 null 或 undefined，则取一个默认值：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>const test= null ?? &#39;default&#39;;</span></span>
 <span class="line"><span>console.log(test);</span></span>
 <span class="line"><span>// expected output: &quot;default&quot;</span></span>
 <span class="line"><span>const test1 = 0 ?? 2;</span></span>
 <span class="line"><span>console.log(test1);</span></span>
-<span class="line"><span>// expected output: 0</span></span></code></pre></div></li></ol>`,4),i=[l];function t(c,o,d,r,h,u){return a(),n("div",null,i)}const f=s(e,[["render",t]]);export{g as __pageData,f as default};
+<span class="line"><span>// expected output: 0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const test1 = &#39;&#39; ?? 2;</span></span>
+<span class="line"><span>console.log(test1); // &#39;&#39;</span></span>
+<span class="line"><span>// expected output:</span></span></code></pre></div></li></ol>`,4),t=[l];function i(c,o,d,r,u,h){return a(),n("div",null,t)}const f=s(e,[["render",i]]);export{g as __pageData,f as default};
