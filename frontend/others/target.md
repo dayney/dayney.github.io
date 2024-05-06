@@ -11,7 +11,7 @@ editLink: false
    2. 定义接口
    3. 事件
    4. 工具约束代码规范
-      1. 代码规范, [HTML编码规范]()、[CSS编码规范](frontend/css/style)、[SASS编码规范](/frontend/css/sass)、[JavaScript编码规范](frontend/javascript/style)、[Vue 2.x编码规范](frontend/vue/style)
+      1. 代码规范, [HTML编码规范](/frontend/html/style)、[CSS编码规范](/frontend/css/style)、[SASS编码规范](/frontend/css/sass)、[JavaScript编码规范](/frontend/javascript/style)、[Vue 2.x编码规范](/frontend/vue/style)
    5. [git提交规范](/frontend/engineering/git)
 3. 状态管理器优化和统一
    1. 优化状态管理
