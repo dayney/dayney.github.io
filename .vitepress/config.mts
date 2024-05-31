@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-05-28 14:57:05
+ * @LastEditTime: 2024-05-31 10:19:22
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -169,7 +169,7 @@ export default defineConfig({
           text: 'JavaSript',
           items: [
             { text: 'JavaSript编码规范', link: '/frontend/javascript/style' },
-            { text: 'Markdown Examples', link: '/frontend/demo' },
+            { text: 'JavaSript精度问题', link: '/frontend/javascript/precision' },
           ]
         }
       ],
