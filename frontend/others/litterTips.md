@@ -7,7 +7,7 @@ editLink: false
 
 1. 超过3个if...else if的使用技巧
 
-   ```
+   ```javascript
    
    if（condition）{
    } else if (condition) {
