@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-06-05 16:34:57
+ * @LastEditTime: 2024-06-05 17:30:49
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -166,6 +166,7 @@ export default defineConfig({
             { text: '超行省略号代替', link: '/frontend/css/clamp' },
             { text: 'CSS中子元素居中', link: '/frontend/css/center' },
             { text: 'CSS中常用单位', link: '/frontend/css/units' },
+            { text: 'CSS选中变色', link: '/frontend/css/selection' },
           ]
         },
         {
