@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-06-05 17:37:23
+ * @LastEditTime: 2024-06-26 21:45:59
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -196,6 +196,12 @@ export default defineConfig({
           text: '检索资料',
           items: [
             { text: 'google检索技巧', link: '/efficiency/google/google' },
+          ],
+        },
+        {
+          text: '开发小技巧',
+          items: [
+            { text: 'mockjs', link: '/efficiency/skill/mockjs' },
           ],
         }
       ],
