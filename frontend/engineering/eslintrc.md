@@ -17,7 +17,7 @@ editLink: false
 - 配合**VS Code**中的插件`eslint`,在编写代码的时候时时提示代码的风格
 
 ```
-# eslint.config.js
+/* eslint.config.js */
 
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution');
