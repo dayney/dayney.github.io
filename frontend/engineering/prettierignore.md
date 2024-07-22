@@ -11,7 +11,7 @@ editLink: false
 ## 1. 用于`.prettierignore`完全忽略（即不重新格式化）某些文件和文件夹。
 
 ```
-# .eslintignore
+# .prettierignore
 
 
 node_modules
