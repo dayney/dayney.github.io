@@ -23,7 +23,7 @@ npm install git+https://isaacs@github.com/npm/npm.git
 #### 3. 从指定的镜像源安装
 ```
 # npm --registry 【临时镜像地址】install 【包名称】 
-npm --registry http://npm-vue.test.ybm100.com install hyjk-logger-sdk
+npm --registry http://www.xxxx.com install logger-sdk
 ```
 
 #### 4. 换回国外官方源
