@@ -62,6 +62,50 @@ sentrycli_cdnurl=https://npmmirror.com/mirrors/sentry-cli/
 sqlite3_binary_site=https://npmmirror.com/mirrors/sqlite3/
 ```
 
+#### 7. 使用 `npm`（Node 包管理器）来执行某个文件夹下的 `package.json` 中定义的脚本。
+
+使用 `npm` 的 `--prefix` 参数指定要运行的脚本所在的文件夹：
+
+```
+npm --prefix [目录地址路径] run start
+
+npm --prefix ./folder1 run start
+```
+
+#### 8. 在 `package.json` 文件中，`main` 和 `module` 的区别及使用方式；
+
+在 `package.json` 文件中，`main` 和 `module` 字段指定了项目的入口点文件路径，用于指示不同环境如何加载模块。这些字段在模块打包和分发时非常重要，因为它们告诉模块解析器（如 Node.js 或打包工具）应该使用哪个文件作为入口点。
+
+### `main` 字段
+
+- **`main` 字段** 指定了当模块被 `require` 时使用的入口文件。通常用于 CommonJS 环境（例如 Node.js）。
+- 例如，当你在 Node.js 中执行 `require('your-module')` 时，`main` 字段指定的文件将被加载。
+- 当你使用 `require('my-library')` 时，Node.js 或 CommonJS 模块解析器将会加载 `dist/tool.umd.js` 文件。
+- 这个文件通常是 UMD（Universal Module Definition）格式，可以在多种环境下运行（如 CommonJS、AMD 和浏览器全局变量）。
+
+### `module` 字段
+
+- **`module` 字段** 提供了 ES Module 规范的入口文件路径。这通常用于现代 JavaScript 打包工具（如 Webpack、Rollup 和 Parcel）以优化和处理 ES6 模块。
+
+- 当使用 ES Module 导入语法（`import`）时，打包工具会优先选择 `module` 字段指定的文件。
+
+- 当你使用 `import { something } from 'my-library'` 时，打包工具（如 Webpack 或 Rollup）将会优先加载 `dist/tool.es.js` 文件。
+
+- 这个文件通常是 ES Module 格式，具有静态分析的优点，有助于 Tree Shaking 和更好的优化。
+
+
+#### 示例
+假设你的 `package.json` 文件中有以下内容：
+
+```
+{
+  "name": "my-library",
+  "version": "1.0.0",
+  "main": "dist/tool.umd.js",
+  "module": "dist/tool.es.js"
+}
+```
+
 
 
 #### npm 安装 git 仓库的协议：
