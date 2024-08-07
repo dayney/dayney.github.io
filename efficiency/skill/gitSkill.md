@@ -20,6 +20,9 @@ git reset --soft <commit-hash>
 
 git reset --soft HEAD^  撤销上一次的commit
 git git rm --cached 【文件路径】    // 将文件从缓存区中删除，并保留文件
+
+# 给分支重新命名
+git branch -m old-name new-name
 ```
 
 
