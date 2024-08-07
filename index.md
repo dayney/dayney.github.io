@@ -22,10 +22,19 @@ hero:
 
 features:
   - title: 前端
+    icon: 
+      src: /public/icons/fe-icon.png
     details: 前端知识的笔记，学习及平时开发记录的知识点
+    link: /frontend/index
   - title: 提效
+    icon: 
+      src: /public/icons/efficiencyImprovement-icon.png
     details: 助力编码和协作，提高单位时间内的产出
+    link: /efficiency/index
   - title: 阅读
+    icon: 
+      src: /public/icons/read-icon.png
     details: 读书、视频学习，不限于技术类书籍
+    link: /books/index
 ---
 
