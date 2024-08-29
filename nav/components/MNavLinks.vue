@@ -1,0 +1,68 @@
+<!--
+ * @Author: krui krui0728@gmail.com
+ * @Date: 2024-08-11 17:39:20
+ * @LastEditors: cheftchen cheft.chen@newtype.games
+ * @LastEditTime: 2024-08-29 23:11:20
+ * @FilePath: /dayney.github.io/docs/nav/components/MNavLinks.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<script setup lang="ts">
+import { computed } from 'vue'
+import { slugify } from '@mdit-vue/shared'
+import MNavLink from './MNavLink.vue'
+import type { NavLink } from './type'
+
+const props = defineProps<{
+  title: string
+  items: NavLink[]
+}>()
+
+const formatTitle = computed(() => {
+  return slugify(props.title)
+})
+</script>
+
+<template>
+  <h2 v-if="title" :id="formatTitle" tabindex="-1">
+    {{ title }}
+    <a class="header-anchor" :href="`#${formatTitle}`" aria-hidden="true">#</a>
+  </h2>
+  <div class="m-nav-links">
+    <MNavLink
+      v-for="{ icon, title, desc, link, badge } in items"
+      :key="link"
+      :icon="icon"
+      :title="title"
+      :desc="desc"
+      :link="link"
+      :badge="badge"
+    />
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.m-nav-links {
+  --gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-row-gap: var(--gap);
+  grid-column-gap: var(--gap);
+  grid-auto-flow: row dense;
+  justify-content: center;
+  margin-top: var(--gap);
+}
+
+@each $media, $size in (500px: 140px, 640px: 155px, 768px: 175px, 960px: 200px, 1440px: 240px) {
+  @media (min-width: $media) {
+    .m-nav-links {
+      grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .m-nav-links {
+    --gap: 20px;
+  }
+}
+</style>
