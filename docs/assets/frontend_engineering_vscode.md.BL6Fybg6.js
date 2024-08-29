@@ -1,0 +1,8 @@
+import{_ as e,c as s,o as n,V as a}from"./chunks/framework.CthfA3PS.js";const g=JSON.parse('{"title":"项目中需要统一安装的插件","description":"","frontmatter":{"outline":"deep","editLink":false},"headers":[],"relativePath":"frontend/engineering/vscode.md","filePath":"frontend/engineering/vscode.md","lastUpdated":1721222158000}'),t={name:"frontend/engineering/vscode.md"},o=a(`<h1 id="项目中需要统一安装的插件" tabindex="-1">项目中需要统一安装的插件 <a class="header-anchor" href="#项目中需要统一安装的插件" aria-label="Permalink to &quot;项目中需要统一安装的插件&quot;">​</a></h1><h2 id="_1-需要本级安装好-在git识辨变动文件的时候会自动使用到" tabindex="-1">1. 需要本级安装好，在git识辨变动文件的时候会自动使用到 <a class="header-anchor" href="#_1-需要本级安装好-在git识辨变动文件的时候会自动使用到" aria-label="Permalink to &quot;1. 需要本级安装好，在git识辨变动文件的时候会自动使用到&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>#.vscode/extensions.json</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> &quot;streetsidesoftware.code-spell-checker&quot;,</span></span>
+<span class="line"><span> &quot;esbenp.prettier-vscode&quot;,</span></span>
+<span class="line"><span> &quot;rvest.vs-code-prettier-eslint&quot;,</span></span>
+<span class="line"><span> &quot;editorconfig.editorconfig&quot;,</span></span>
+<span class="line"><span> &quot;eamodio.gitlens&quot;,</span></span>
+<span class="line"><span> &quot;dbaeumer.vscode-eslint&quot;</span></span></code></pre></div>`,3),i=[o];function p(c,l,r,d,_,u){return n(),s("div",null,i)}const f=e(t,[["render",p]]);export{g as __pageData,f as default};
