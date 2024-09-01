@@ -52,6 +52,7 @@ export const NAV_DATA: NavData[] = [
       },
       
       {
+        badge: "VS code插件好用",
         icon: "/icons/icon-tongyi.png",
         title: "通义千问",
         link: "https://tongyi.aliyun.com/qianwen/",
@@ -222,20 +223,20 @@ export const NAV_DATA: NavData[] = [
         link: "https://developer.mozilla.org/zh-CN",
       },
       {
-        icon: "/icons/runoob.png",
+        icon: "/icons/icon-runoob.ico",
         title: "菜鸟教程",
         desc: "学的不仅是技术，更是梦想！",
         link: "https://www.runoob.com",
       },
       {
-        icon: "/icons/es6.svg",
+        icon: "/icons/icon-es6.ico",
         title: "ES6 入门教程",
         desc: "开源的 JavaScript 语言教程，全面介绍 ECMAScript 6 新引入的语法特性",
         link: "http://es6.ruanyifeng.com",
       },
       {
         badge: "官网",
-        icon: "https://www.typescriptlang.org/icons/icon-72x72.png?v=8944a05a8b601855de116c8a56d3b3ae",
+        icon: "/icons/icon-typescript.png",
         title: "TypeScript",
         desc: "TypeScript 是具有类型语法的 JavaScript",
         link: "https://www.typescriptlang.org/zh/",
@@ -308,12 +309,6 @@ export const NAV_DATA: NavData[] = [
         link: "https://vant-ui.github.io/vant",
       },
       {
-        icon: "https://webapp.didistatic.com/static/webapp/shield/Cube-UI_logo.ico",
-        title: "Cube UI",
-        desc: "基于 Vue.js 实现的精致移动端组件库",
-        link: "https://didi.github.io/cube-ui",
-      },
-      {
         icon: "https://img14.360buyimg.com/imagetools/jfs/t1/167902/2/8762/791358/603742d7E9b4275e3/e09d8f9a8bf4c0ef.png",
         title: "NutUI",
         desc: "京东风格的轻量级移动端组件库",
@@ -325,16 +320,16 @@ export const NAV_DATA: NavData[] = [
     title: "JavaScript 框架类库",
     items: [
       {
-        icon: "https://svelte.dev/svelte-logo-horizontal.svg",
+        icon: "/icons/icon-svelte.png",
         title: "Svelte",
         desc: "将声明性组件转换为精准高效更新 DOM 的 JavaScript 代码",
         link: "https://svelte.dev",
       },
       {
-        icon: "/icons/jquery.svg",
+        icon: "/icons/icon-jquery.ico",
         title: "jQuery API 中文文档",
         desc: "一个兼容多浏览器的 JavaScript 框架",
-        link: "https://jquery.cuishifeng.cn",
+        link: "https://jquery.com",
       },
     ],
   },
@@ -342,19 +337,19 @@ export const NAV_DATA: NavData[] = [
     title: "CSS 相关",
     items: [
       {
-        icon: "/icons/postcss.svg",
+        icon: "/icons/icon-postcss.svg",
         title: "PostCSS",
         desc: "一个用 JavaScript 转换 CSS 的工具",
         link: "https://postcss.org",
       },
       {
-        icon: "/icons/sass.svg",
+        icon: "/icons/icon-sass.png",
         title: "Sass",
         desc: "一个成熟，稳定，功能强大的专业级 CSS 扩展语言",
         link: "https://sass-lang.com",
       },
       {
-        icon: "/icons/tailwindcss.png",
+        icon: "/icons/icon-tailwindcss.png",
         title: "TailwindCSS 中文网",
         desc: "一个功能类优先的 CSS 框架",
         link: "https://www.tailwindcss.cn",
@@ -372,7 +367,7 @@ export const NAV_DATA: NavData[] = [
         link: "https://lhammer.cn/You-need-to-know-css/#/zh-cn/",
       },
       {
-        icon: "/icons/qishaoxuan-css-tricks.png",
+        icon: "/icons/icon-tricks.png",
         title: "CSS 常用样式",
         desc: "CSS 常用样式和奇技淫巧总结",
         link: "https://qishaoxuan.github.io/css_tricks/",
@@ -398,31 +393,25 @@ export const NAV_DATA: NavData[] = [
         desc: "微信小程序官方开发者文档",
         link: "https://developers.weixin.qq.com/miniprogram/dev/framework/",
       },
-      {
-        icon: "/icons/alipay.svg",
-        title: "支付宝小程序文档",
-        desc: "支付宝小程序官方开发者文档",
-        link: "https://opendoc.alipay.com/mini/",
-      },
     ],
   },
   {
     title: "跨平台",
     items: [
       {
-        icon: "/icons/electron.svg",
+        icon: "/icons/icon-electron.svg",
         title: "Electron",
         desc: "使用 Web 技术构建跨平台桌面应用程序",
         link: "https://www.electronjs.org/zh/",
       },
       {
-        icon: "/icons/tauri.png",
+        icon: "/icons/icon-tauri.png",
         title: "Tauri",
         desc: "使用 Web 技术构建更小、更快、更安全的桌面应用程序",
-        link: "https://tauri.app/zh-cn/",
+        link: "https://taro.zone",
       },
       {
-        icon: "/icons/taro.svg",
+        icon: "/icons/icon-jd.ico",
         title: "Taro",
         desc: "多端统一开发解决方案",
         link: "https://taro.jd.com",
@@ -451,19 +440,19 @@ export const NAV_DATA: NavData[] = [
     title: "Node 相关",
     items: [
       {
-        icon: "/icons/nodejs.svg",
+        icon: "/icons/icon-nodejs.png",
         title: "Node.js",
         desc: "Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境",
         link: "https://nodejs.org/zh-cn",
       },
       {
-        icon: "/icons/npm.svg",
+        icon: "/icons/icon-npm.png",
         title: "npm",
         desc: "JavaScript 的包管理和分发工具",
         link: "https://docs.npmjs.com/cli",
       },
       {
-        icon: "/icons/pnpm.svg",
+        icon: "/icons/icon-pnpm.png",
         title: "pnpm",
         desc: "快速的、节省磁盘空间的包管理工具",
         link: "https://pnpm.io/zh",
@@ -481,13 +470,7 @@ export const NAV_DATA: NavData[] = [
         link: "https://koajs.com",
       },
       {
-        icon: "https://www.eggjs.org/favicon.png",
-        title: "Egg",
-        desc: "为企业级框架和应用而生",
-        link: "https://www.eggjs.org/zh-CN",
-      },
-      {
-        icon: "https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg",
+        icon: "/icons/icon-nestjs.png",
         title: "Nest.js 中文文档",
         desc: "用于构建高效且可伸缩的服务端应用程序的渐进式 Node.js 框架",
         link: "https://docs.nestjs.cn",
@@ -498,31 +481,31 @@ export const NAV_DATA: NavData[] = [
     title: "可视化",
     items: [
       {
-        icon: "/icons/echarts.png",
+        icon: "/icons/icon-echarts.png",
         title: "ECharts",
         desc: "一个基于 JavaScript 的开源可视化图表库",
         link: "https://echarts.apache.org/zh/index.html",
       },
       {
-        icon: "/icons/antv.png",
+        icon: "/icons/icon-antv.png",
         title: "AntV",
         desc: "蚂蚁集团全新一代数据可视化解决方案，致力于提供一套简单方便、专业可靠、无限可能的数据可视化最佳实践。",
         link: "https://antv.vision/zh/",
       },
       {
-        icon: "/icons/d3js.svg",
+        icon: "/icons/icon-d3js.png",
         title: "D3.js",
         desc: "一个遵循 Web 标准用于可视化数据的 JavaScript 库",
         link: "https://d3js.org",
       },
       {
-        icon: "https://www.chartjs.org/favicon.ico",
+        icon: "/icons/icon-chartjs.ico",
         title: "Chart.js",
         desc: "一个简单而灵活的 JavaScript 图表库",
         link: "https://www.chartjs.org",
       },
       {
-        icon: "https://threejs.org/files/favicon.ico",
+        icon: "/icons/icon-threejs.ico",
         title: "Three.js",
         desc: "JavaScript 3d 库",
         link: "https://threejs.org",
@@ -592,7 +575,7 @@ export const NAV_DATA: NavData[] = [
         link: "https://iconpark.oceanengine.com/official",
       },
       {
-        icon: "/icons/iconify.png",
+        icon: "/icons/icon-iconify.ico",
         title: "Iconify",
         desc: "一个开源的图标集合和图标工具",
         link: "https://iconify.design",
@@ -604,13 +587,13 @@ export const NAV_DATA: NavData[] = [
         link: "https://icones.js.org",
       },
       {
-        icon: "/icons/simpleicons.svg",
+        icon: "/icons/icon-simple.png",
         title: "Simple Icons",
         desc: "包含 2457 种流行品牌的免费 SVG 图标库",
         link: "https://simpleicons.org",
       },
       {
-        icon: "/icons/unicornicons.svg",
+        icon: "/icons/icon-unicornicons.png",
         title: "Animated icons",
         desc: "自带动画的 Icon 图标库",
         link: "https://unicornicons.com/icons",
@@ -641,9 +624,7 @@ export const NAV_DATA: NavData[] = [
     items: [
       {
         title: "Github",
-        icon: {
-          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>',
-        },
+        icon: '/icons/icon-electron.svg',
         desc: "一个面向开源及私有软件项目的托管平台",
         link: "https://github.com",
       },
