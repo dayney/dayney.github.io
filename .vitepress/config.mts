@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: cheftchen cheft.chen@newtype.games
- * @LastEditTime: 2024-08-23 19:38:31
+ * @LastEditTime: 2024-09-02 20:19:38
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -46,7 +46,14 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/index' },
-      { text: '前端', link: '/frontend/index' },
+      // { text: '前端', link: '/frontend/index' },
+      { text: '前端', 
+        items: [
+          { text: '前端知识', link: '/frontend/index' },
+          { text: '前端工程化', link: '/frontend/engineering/index' },
+          // { text: 'typescript', link: '/frontend/typescript/index' },
+        ]
+      },
       { text: '提效', link: '/efficiency/index' },
       { text: '阅读', link: '/books/index' },
       { text: '前端导航', link: '/nav/index' },
@@ -55,62 +62,6 @@ export default defineConfig({
 
     sidebar: {
       '/frontend/': [
-        {
-          text: '前端工程化',
-          items: [
-            { 
-              text: 'VS Code中一些配置文件',
-              items: [
-                { 
-                  text: 'gitignore',
-                  link: '/frontend/engineering/gitignore'
-                },
-                { 
-                  text: 'browserslistrc',
-                  link: '/frontend/engineering/browserslistrc'
-                },
-                { 
-                  text: 'editorconfig',
-                  link: '/frontend/engineering/editorconfig'
-                },
-                { 
-                  text: 'eslintignore',
-                  link: '/frontend/engineering/eslintignore'
-                },
-                { 
-                  text: 'eslintrc',
-                  link: '/frontend/engineering/eslintrc'
-                },
-                { 
-                  text: 'npmrc',
-                  link: '/frontend/engineering/npmrc'
-                },
-                { 
-                  text: 'prettierignore',
-                  link: '/frontend/engineering/prettierignore'
-                },
-                { 
-                  text: 'prettierrc',
-                  link: '/frontend/engineering/prettierrc'
-                },
-              ],
-            },
-            { 
-              text: 'git相关',
-              items: [
-                { 
-                  text: 'git commit 规范',
-                  link: '/frontend/engineering/git'
-                },
-                { 
-                  text: 'git commit 规范（适配node v14.X）',
-                  link: '/frontend/engineering/git-node-14'
-                },
-              ],
-            },
-            { text: '终端尺寸', link: '/frontend/engineering/terminalSize' },
-          ]
-        },
         {
           text: '微信小程序',
           items: [
@@ -169,6 +120,50 @@ export default defineConfig({
             { text: '数据字典', link: '/frontend/javascript/dictionaries-map' },
           ]
         }
+      ],
+      '/frontend/engineering/': [
+        {
+          text: '前端工程化',
+          items: [
+            { 
+              text: 'VS Code中一些配置文件',
+              items: [
+                { 
+                  text: 'gitignore',
+                  link: '/frontend/engineering/gitignore'
+                },
+                { 
+                  text: 'browserslistrc',
+                  link: '/frontend/engineering/browserslistrc'
+                },
+                { 
+                  text: 'editorconfig',
+                  link: '/frontend/engineering/editorconfig'
+                },
+                { 
+                  text: 'eslintignore',
+                  link: '/frontend/engineering/eslintignore'
+                },
+                { 
+                  text: 'eslintrc',
+                  link: '/frontend/engineering/eslintrc'
+                },
+                { 
+                  text: 'npmrc',
+                  link: '/frontend/engineering/npmrc'
+                },
+                { 
+                  text: 'prettierignore',
+                  link: '/frontend/engineering/prettierignore'
+                },
+                { 
+                  text: 'prettierrc',
+                  link: '/frontend/engineering/prettierrc'
+                },
+              ],
+            },
+          ]
+        }    
       ],
       '/efficiency/': [
         {
