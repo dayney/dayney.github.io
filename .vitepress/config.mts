@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: cheftchen cheft.chen@newtype.games
- * @LastEditTime: 2024-09-08 20:47:02
+ * @LastEditTime: 2024-09-08 21:55:09
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -72,8 +72,9 @@ export default defineConfig({
         {
           text: '其他',
           items: [
-            { text: '前端优化', link: '/frontend/others/performance' },
+            // { text: '前端优化', link: '/frontend/others/performance' },
             { text: '函数执行计时', link: '/frontend/others/consoleTime' },
+            { text: '函数的柯里化', link: '/frontend/others/curry' },
             { text: '前端交接', link: '/frontend/others/projectHandover' },
             { text: '安全规范', link: '/frontend/others/secure' },
             { text: 'task', link: '/frontend/others/target' },
