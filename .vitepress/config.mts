@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: cheftchen cheft.chen@newtype.games
- * @LastEditTime: 2024-09-08 21:55:09
+ * @LastEditTime: 2024-09-10 10:11:59
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -130,16 +130,16 @@ export default defineConfig({
               text: '规范化',
               items: [
                 { 
+                  text: '编码格式editorconfig',
+                  link: '/frontend/engineering/editorconfig'
+                },
+                { 
                   text: 'gitignore',
                   link: '/frontend/engineering/gitignore'
                 },
                 { 
                   text: 'browserslistrc',
                   link: '/frontend/engineering/browserslistrc'
-                },
-                { 
-                  text: 'editorconfig',
-                  link: '/frontend/engineering/editorconfig'
                 },
                 { 
                   text: 'eslintignore',
