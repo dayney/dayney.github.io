@@ -4,7 +4,7 @@ editLink: false
 
 ---
 
-## **.gitignore**文件的设置
+# 项目中**.gitignore**的常规配置
 
 
 
