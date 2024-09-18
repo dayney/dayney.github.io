@@ -9,6 +9,7 @@ editLink: false
 
 
 ## 1. 用于`.prettierignore`完全忽略（即不重新格式化）某些文件和文件夹。
+此文件与`.gitignore`的功能是一样的，忽略项目中某一类型/某一个文件
 
 ```
 # .prettierignore
