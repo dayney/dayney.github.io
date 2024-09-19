@@ -46,4 +46,4 @@ editLink: false
 
 
 参考网站
-[prettier官网](https://prettier.io/docs/en/options.html)
+prettier官网[https://prettier.io/docs/en/options.html](https://prettier.io/docs/en/options.html)
