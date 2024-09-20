@@ -43,6 +43,38 @@ editLink: false
 }
 ```
 
+## 2. 在项目中实践--检查配置是否生效
+
+在**vscode**中安装**Prettier**插件，设置 **Prettier**是默认格式化工具，查看当前****Prettier****配置是否生效。
+
+1. 选中项目中一个文件
+
+2. 有件格式化当前文件
+   ![image-20240920151439128](./prettierrc-001.png)
+
+3. 查看是否按照 **.prettierrc**的方式来格式化文件的
+
+## 2. 在项目中实践--设置自动格式化
+
+在当前项目的**.vscode**目录下新建文件**settings.json**添加如下配置
+```
+# 文件路径是 .vscode/settings.json
+
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",   // 设置 Prettier 为默认格式化工具
+  "editor.formatOnSave": true                                         //  保存时自动格式化
+}
+
+```
+每次修改好文件，保存文件的时候，就会自动按照当前配置好的**.prettierrc**的格式来格式化文件。
+
+
+
+
+
+
+
+
 
 
 参考网站
