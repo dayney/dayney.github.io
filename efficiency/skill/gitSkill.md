@@ -23,6 +23,22 @@ git git rm --cached 【文件路径】    // 将文件从缓存区中删除，�
 
 # 给分支重新命名
 git branch -m old-name new-name
+
+# 终止变基
+git rebase --abort
+
+# 终止merge
+git merge --abort
+
+# 查看全局配置
+git config --list
+
+# 修改全局配置 -- 修改当前用户名
+git config --global user.name "Your New Name"
+
+# 修改全局配置 -- 修改当前邮箱
+git config --global user.email "your.email@example.com"
+
 ```
 
 
