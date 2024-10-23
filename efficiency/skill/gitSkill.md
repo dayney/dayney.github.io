@@ -39,6 +39,12 @@ git config --global user.name "Your New Name"
 # 修改全局配置 -- 修改当前邮箱
 git config --global user.email "your.email@example.com"
 
+# 将提交复制到不同的分支
+git cherry-pick commitId
+
+# commitId 可以通过 git log 获取，
+
+
 ```
 
 
