@@ -3,7 +3,7 @@ outline: deep
 editLink: false
 ---
 
-## Git 使用小技巧
+# Git 使用小技巧
 
 ---
 
@@ -44,7 +44,9 @@ git cherry-pick commitId
 
 # commitId 可以通过 git log 获取，
 
-
+# 放弃（撤销）未 git add 的文件修改
+git restore .：恢复所有未暂存的修改，恢复后文件会回到上一次提交的状态。
+git restore <file_name>：只恢复指定文件的更改。
 ```
 
 
