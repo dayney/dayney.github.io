@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-10-15 16:29:56
+ * @LastEditTime: 2024-11-01 15:55:11
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -63,6 +63,44 @@ export default defineConfig({
     sidebar: {
       '/frontend/': [
         {
+          text: 'JavaSript',
+          items: [
+            { text: 'JavaSript编码规范', link: '/frontend/javascript/style' },
+            { text: 'JavaSript精度问题', link: '/frontend/javascript/precision' },
+            { text: 'repalceAll匹配标记', link: '/frontend/javascript/replaceAll' },
+            { text: '数据字典', link: '/frontend/javascript/dictionaries-map' },
+            { text: 'async await中使用finally', link: '/frontend/javascript/async' },
+          ]
+        },
+        {
+          text: 'HTML',
+          items: [
+            { text: 'HTML编码规范', link: '/frontend/html/style' },
+            { text: 'Img懒加载', link: '/frontend/html/imgLazy' },
+          ]
+        },
+        {
+          text: 'CSS相关',
+          items: [
+            { text: 'CSS编码规范', link: '/frontend/css/style' },
+            { text: 'SASS编码规范', link: '/frontend/css/sass' },
+            { text: 'SASS小技巧', link: '/frontend/css/sassTips' },
+            { text: 'margin-line', link: '/frontend/css/margin-inline' },
+            { text: 'CSS蒙层', link: '/frontend/css/mask' },
+            { text: '超行省略号代替', link: '/frontend/css/clamp' },
+            { text: 'CSS中子元素居中', link: '/frontend/css/center' },
+            { text: 'CSS中常用单位', link: '/frontend/css/units' },
+            { text: 'CSS小技巧', link: '/frontend/css/tips' },
+          ]
+        },
+        {
+          text: 'VUE',
+          items: [
+            { text: 'VUE2.x编码规范', link: '/frontend/vue/style' },
+            { text: 'VUE3.x - composition自动引入', link: '/frontend/vue/composition' },
+          ]
+        },
+        {
           text: '微信小程序',
           items: [
             { text: '微信小程序生命周期', link: '/frontend/weixin/miniProgramLife' },
@@ -82,51 +120,110 @@ export default defineConfig({
             { text: 'chrome设置跨域', link: '/frontend/others/chromeSetsCrossDomain' },
           ]
         },
-        {
-          text: 'VUE',
-          items: [
-            { text: 'VUE2.x编码规范', link: '/frontend/vue/style' },
-            { text: 'VUE3.x - composition自动引入', link: '/frontend/vue/composition' },
-            { text: 'Markdown Examples', link: '/frontend/demo' },
-          ]
-        },
-        {
-          text: 'HTML',
-          items: [
-            { text: 'HTML编码规范', link: '/frontend/html/style' },
-            { text: 'Img懒加载', link: '/frontend/html/imgLazy' },
-            
-          ]
-        },
-        {
-          text: 'CSS相关',
-          items: [
-            { text: 'CSS编码规范', link: '/frontend/css/style' },
-            { text: 'SASS编码规范', link: '/frontend/css/sass' },
-            { text: 'SASS小技巧', link: '/frontend/css/sassTips' },
-            { text: 'margin-line', link: '/frontend/css/margin-inline' },
-            { text: 'CSS蒙层', link: '/frontend/css/mask' },
-            { text: '超行省略号代替', link: '/frontend/css/clamp' },
-            { text: 'CSS中子元素居中', link: '/frontend/css/center' },
-            { text: 'CSS中常用单位', link: '/frontend/css/units' },
-            { text: 'CSS小技巧', link: '/frontend/css/tips' },
-          ]
-        },
-        {
-          text: 'JavaSript',
-          items: [
-            { text: 'JavaSript编码规范', link: '/frontend/javascript/style' },
-            { text: 'JavaSript精度问题', link: '/frontend/javascript/precision' },
-            { text: 'repalceAll匹配标记', link: '/frontend/javascript/replaceAll' },
-            { text: '数据字典', link: '/frontend/javascript/dictionaries-map' },
-            { text: 'async await中使用finally', link: '/frontend/javascript/async' },
-          ]
-        }
       ],
       '/frontend/engineering/': [
         {
           text: '前端工程化',
           items: [
+
+            { 
+              text: '规范化',
+              items: [
+                {
+                  text: '编码规范',
+                  link: '' 
+                },
+                {
+                  text: '命名规范',
+                  link: ''
+                },
+                {
+                  text: 'gitflow规范',
+                  link: ''
+                },
+                {
+                  text: 'commmit规范',
+                  link: ''
+                },
+                {
+                  text: 'workflow规范',
+                  link: ''
+                },
+                {
+                  text: '技术方案规范',
+                  link: ''
+                },
+                {
+                  text: '开发及部署流程规范',
+                  link: ''
+                },
+              ]
+            },
+            { 
+              text: '模块化',
+              items: [
+                { 
+                  text: '项目目录结构',
+                  link: ''
+                },
+                { 
+                  text: '公共方法（含私服）',
+                  link: ''
+                },
+                { 
+                  text: '公共组件（含私服）',
+                  link: ''
+                },
+              ]
+            },
+            { 
+              text: '可维护性',
+              items: [
+                { 
+                  text: '文档和注释',
+                  link: ''
+                },
+                { 
+                  text: '文档记录',
+                  link: ''
+                },
+              ]
+            },
+            { 
+              text: '质量保障',
+              items: [
+                { 
+                  text: 'code review',
+                  link: ''
+                },
+                { 
+                  text: '测试脚本',
+                  link: ''
+                },
+              ]
+            },
+            { 
+              text: '自动化',
+              items: [
+                { 
+                  text: 'scripts中脚本的功能',
+                  link: ''
+                }
+              ]
+            },
+            { 
+              text: '持续集成与持续交付（CI/CD）',
+              items: [
+                { 
+                  text: 'Jenkins使用文档',
+                  link: ''
+                },
+                { 
+                  text: 'gitlab actions',
+                  link: ''
+                }
+              ]
+            },
             { 
               text: '相关配置',
               items: [
