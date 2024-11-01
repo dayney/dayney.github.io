@@ -3,7 +3,7 @@ outline: deep
 editLink: false
 ---
 
-## Npm 使用小技巧
+# Npm 使用小技巧
 
 ---
 
