@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-11-03 19:58:24
+ * @LastEditTime: 2024-11-03 20:02:52
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -130,6 +130,10 @@ export default defineConfig({
               text: '规范化',
               items: [
                 {
+                  text: '命名规范',
+                  link: ''
+                },
+                {
                   text: '编码规范',
                   items: [
                     {
@@ -149,10 +153,6 @@ export default defineConfig({
                       link: '/frontend/html/style' 
                     },
                   ]
-                },
-                {
-                  text: '命名规范',
-                  link: ''
                 },
                 {
                   text: 'gitflow规范',
