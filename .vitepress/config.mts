@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-11-22 15:31:53
+ * @LastEditTime: 2024-11-27 13:58:14
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -325,7 +325,7 @@ export default defineConfig({
         {
           text: '开发小技巧',
           items: [
-            { text: 'mockjs', link: '/efficiency/skill/mockjs' },
+            { text: 'YAPI中使用mockjs', link: '/efficiency/skill/mockjs' },
             { 
               text: 'git常用命令',
               link: '/efficiency/skill/gitSkill'

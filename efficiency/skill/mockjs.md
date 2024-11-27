@@ -30,7 +30,8 @@ editLink: false
 
 - 方式二
 ![第30步](./yapi0030.jpg)
-![第31步](./yapi0031.jpg)
+![第31步](./yapi0031.png)
+![第33步](./yapi0032.jpg)
 
 
 ##### YAPI有自动的提示
