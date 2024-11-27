@@ -17,8 +17,16 @@ git checkout -b branchNane tagName
 
 # git会退到指定的commit并且保留之前修改的文件
 git reset --soft <commit-hash>
-
 git reset --soft HEAD^  撤销上一次的commit
+
+# 移动 HEAD 指针，并清空暂存区，但保留工作区的内容。
+git reset --mixed <commit>
+# 等价于
+git reset <commit>
+
+# 移动 HEAD 指针，同时清空暂存区，并将工作区恢复到指定提交的状态。
+git reset --hard <commit>
+
 git git rm --cached 【文件路径】    // 将文件从缓存区中删除，并保留文件
 
 # 给分支重新命名
