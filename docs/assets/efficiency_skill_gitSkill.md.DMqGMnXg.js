@@ -1,4 +1,4 @@
-import{_ as s,c as n,o as a,V as p}from"./chunks/framework.CthfA3PS.js";const _=JSON.parse('{"title":"Git 使用小技巧","description":"","frontmatter":{"outline":"deep","editLink":false},"headers":[],"relativePath":"efficiency/skill/gitSkill.md","filePath":"efficiency/skill/gitSkill.md","lastUpdated":1730453214000}'),e={name:"efficiency/skill/gitSkill.md"},l=p(`<h1 id="git-使用小技巧" tabindex="-1">Git 使用小技巧 <a class="header-anchor" href="#git-使用小技巧" aria-label="Permalink to &quot;Git 使用小技巧&quot;">​</a></h1><hr><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>创建一个干净的分支（无历史记录的分支）</span></span>
+import{_ as s,c as n,o as a,V as p}from"./chunks/framework.CthfA3PS.js";const _=JSON.parse('{"title":"Git 使用小技巧","description":"","frontmatter":{"outline":"deep","editLink":false},"headers":[],"relativePath":"efficiency/skill/gitSkill.md","filePath":"efficiency/skill/gitSkill.md","lastUpdated":1732687824000}'),e={name:"efficiency/skill/gitSkill.md"},l=p(`<h1 id="git-使用小技巧" tabindex="-1">Git 使用小技巧 <a class="header-anchor" href="#git-使用小技巧" aria-label="Permalink to &quot;Git 使用小技巧&quot;">​</a></h1><hr><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>创建一个干净的分支（无历史记录的分支）</span></span>
 <span class="line"><span>git checkout --orphan branchNane</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 基于标签 v1.0 创建并切换到新分支</span></span>
@@ -7,8 +7,16 @@ import{_ as s,c as n,o as a,V as p}from"./chunks/framework.CthfA3PS.js";const _=
 <span class="line"><span></span></span>
 <span class="line"><span># git会退到指定的commit并且保留之前修改的文件</span></span>
 <span class="line"><span>git reset --soft &lt;commit-hash&gt;</span></span>
-<span class="line"><span></span></span>
 <span class="line"><span>git reset --soft HEAD^  撤销上一次的commit</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 移动 HEAD 指针，并清空暂存区，但保留工作区的内容。</span></span>
+<span class="line"><span>git reset --mixed &lt;commit&gt;</span></span>
+<span class="line"><span># 等价于</span></span>
+<span class="line"><span>git reset &lt;commit&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 移动 HEAD 指针，同时清空暂存区，并将工作区恢复到指定提交的状态。</span></span>
+<span class="line"><span>git reset --hard &lt;commit&gt;</span></span>
+<span class="line"><span></span></span>
 <span class="line"><span>git git rm --cached 【文件路径】    // 将文件从缓存区中删除，并保留文件</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 给分支重新命名</span></span>
