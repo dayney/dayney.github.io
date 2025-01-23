@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2024-12-30 15:23:40
+ * @LastEditTime: 2025-01-23 21:20:39
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -138,8 +138,8 @@ export default defineConfig({
               text: '规范化',
               items: [
                 {
-                  text: '命名规范',
-                  link: ''
+                  text: '[ ]命名规范',
+                  link: '/frontend/engineering/nameStyle.md'
                 },
                 {
                   text: '编码规范',
@@ -163,88 +163,88 @@ export default defineConfig({
                   ]
                 },
                 {
-                  text: 'gitflow规范',
+                  text: '[ ]gitflow规范',
                   link: ''
                 },
                 {
-                  text: 'commmit规范',
-                  link: ''
+                  text: '[ ]commmit规范',
+                  link: '[ ]'
                 },
                 {
                   text: 'workflow规范',
+                  link: '[ ]'
+                },
+                {
+                  text: '[ ]技术方案规范',
                   link: ''
                 },
                 {
-                  text: '技术方案规范',
-                  link: ''
-                },
-                {
-                  text: '开发及部署流程规范',
+                  text: '[ ]开发及部署流程规范',
                   link: ''
                 },
               ]
             },
             { 
-              text: '模块化',
+              text: '[ ]模块化',
               items: [
                 { 
-                  text: '项目目录结构',
+                  text: '[ ]项目目录结构',
                   link: ''
                 },
                 { 
-                  text: '公共方法（含私服）',
+                  text: '[ ]公共方法（含私服）',
                   link: ''
                 },
                 { 
-                  text: '公共组件（含私服）',
+                  text: '[ ]公共组件（含私服）',
                   link: ''
                 },
               ]
             },
             { 
-              text: '可维护性',
+              text: '[ ]可维护性',
               items: [
                 { 
-                  text: '文档和注释',
+                  text: '[ ]文档和注释',
                   link: ''
                 },
                 { 
-                  text: '文档记录',
+                  text: '[ ]文档记录',
                   link: ''
                 },
               ]
             },
             { 
-              text: '质量保障',
+              text: '[ ]质量保障',
               items: [
                 { 
-                  text: 'code review',
+                  text: '[ ]code review',
                   link: ''
                 },
                 { 
-                  text: '测试脚本',
+                  text: '[ ]测试脚本',
                   link: ''
                 },
               ]
             },
             { 
-              text: '自动化',
+              text: '[ ]自动化',
               items: [
                 { 
-                  text: 'scripts中脚本的功能',
+                  text: '[ ]scripts中脚本的功能',
                   link: ''
                 }
               ]
             },
             { 
-              text: '持续集成与持续交付（CI/CD）',
+              text: '[ ]持续集成与持续交付（CI/CD）',
               items: [
                 { 
-                  text: 'Jenkins使用文档',
+                  text: '[ ]Jenkins使用文档',
                   link: ''
                 },
                 { 
-                  text: 'gitlab actions',
+                  text: '[ ]gitlab actions',
                   link: ''
                 }
               ]
@@ -310,25 +310,37 @@ export default defineConfig({
         {
           text: 'Code review',
           items: [
-            { text: 'Code review常用缩写', link: '/efficiency/codeReview/code-review-acronyms' },
+            { 
+              text: 'Code review常用缩写',
+              link: '/efficiency/codeReview/code-review-acronyms'
+            },
           ],
         },
         {
           text: 'VS code相关',
           items: [
-            { text: 'Github Copilot快捷键', link: '/efficiency/vscode/copilot' },
+            { 
+              text: 'Github Copilot快捷键',
+              link: '/efficiency/vscode/copilot'
+            },
           ],
         },
         {
           text: '检索资料',
           items: [
-            { text: 'google检索技巧', link: '/efficiency/google/google' },
+            { 
+              text: 'google检索技巧',
+              link: '/efficiency/google/google'
+            },
           ],
         },
         {
           text: '开发小技巧',
           items: [
-            { text: 'YAPI中使用mockjs', link: '/efficiency/skill/mockjs' },
+            { 
+              text: 'YAPI中使用mockjs',
+              link: '/efficiency/skill/mockjs'
+            },
             { 
               text: 'git常用命令',
               link: '/efficiency/skill/gitSkill'
