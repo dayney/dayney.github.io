@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-03-24 15:55:31
+ * @LastEditTime: 2025-03-24 16:55:04
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -164,23 +164,23 @@ export default defineConfig({
                 },
                 {
                   text: '[ ]gitflow规范',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
                 {
                   text: '[ ]commmit规范',
-                  link: '[ ]'
+                  link: '/frontend/engineering/example.md'
                 },
                 {
                   text: 'workflow规范',
-                  link: '[ ]'
+                  link: '/frontend/engineering/example.md'
                 },
                 {
                   text: '[ ]技术方案规范',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
                 {
                   text: '[ ]开发及部署流程规范',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
               ]
             },
@@ -189,15 +189,15 @@ export default defineConfig({
               items: [
                 { 
                   text: '[ ]项目目录结构',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
                 { 
                   text: '[ ]公共方法（含私服）',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
                 { 
                   text: '[ ]公共组件（含私服）',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
               ]
             },
@@ -206,11 +206,11 @@ export default defineConfig({
               items: [
                 { 
                   text: '[ ]文档和注释',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
                 { 
                   text: '[ ]文档记录',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
               ]
             },
@@ -219,11 +219,11 @@ export default defineConfig({
               items: [
                 { 
                   text: '[ ]code review',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
                 { 
                   text: '[ ]测试脚本',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
               ]
             },
@@ -232,7 +232,7 @@ export default defineConfig({
               items: [
                 { 
                   text: '[ ]scripts中脚本的功能',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 }
               ]
             },
@@ -241,11 +241,11 @@ export default defineConfig({
               items: [
                 { 
                   text: '[ ]Jenkins使用文档',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 },
                 { 
                   text: '[ ]gitlab actions',
-                  link: ''
+                  link: '/frontend/engineering/example.md'
                 }
               ]
             },
