@@ -58,7 +58,7 @@ editLink: false
 yarn create vue
 ```
 
-![image-20240829165427030](imgs/image-20240829165427030.png)
+![image-20240829165427030](./images/create-project.png)
 
 ## 1 styleLint 【采用】
 
@@ -249,7 +249,7 @@ npm install -D sass postcss postcss-html postcss-scss sass stylelint stylelint-c
 npx @antfu/eslint-config@latest
 ```
 
-![image-20240828111807759](imgs/image-20240828111807759.png)
+![image-20240828111807759](./images/antfu.png)
 
 ### 依赖包
 
