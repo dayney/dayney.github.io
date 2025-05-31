@@ -100,8 +100,26 @@ export default defineConfig({
         {
           text: 'CSS相关',
           items: [
-            { text: 'CSS编码规范', link: '/frontend/css/style' },
-            { text: 'SASS编码规范', link: '/frontend/css/sass' },
+            { 
+              text: 'CSS命名规范',
+              items: [
+                {
+                  text: 'CSS命名规范',
+                  link: '/efficiency/namingStyle/css',
+                  target: '_blank'
+                },
+                {
+                  text: 'BEM命名规则',
+                  link: '/efficiency/namingStyle/bem',
+                  target: '_blank'
+                },
+                {
+                  text: 'SASS命名规范',
+                  link: '/efficiency/namingStyle/sass',
+                  target: '_blank'
+                }
+              ]
+            },
             { text: 'SASS小技巧', link: '/frontend/css/sassTips' },
             { text: 'margin-line', link: '/frontend/css/margin-inline' },
             { text: 'CSS蒙层', link: '/frontend/css/mask' },
@@ -423,12 +441,29 @@ export default defineConfig({
           text: '命名规范',
           items: [
             { 
+              text: '通用命名规范',
+              link: '/efficiency/namingStyle/common',
+            },
+            { 
               text: 'html命名规范',
               link: '/efficiency/namingStyle/html',
             },
             { 
-              text: 'css命名规范',
-              link: '/efficiency/namingStyle/css',
+              text: 'CSS命名规范',
+              items: [
+                {
+                  text: 'CSS命名规范',
+                  link: '/frontend/css/style'
+                },
+                {
+                  text: 'BEM命名规则',
+                  link: '/efficiency/namingStyle/bem'
+                },
+                {
+                  text: 'SASS命名规范',
+                  link: '/efficiency/namingStyle/sass'
+                }
+              ]
             },
             {  
               text: 'js命名规范',
@@ -437,10 +472,6 @@ export default defineConfig({
             { 
               text: 'vue命名规范',
               link: '/efficiency/namingStyle/vue',
-            },
-            { 
-              text: 'sass命名规范',
-              link: '/efficiency/namingStyle/sass',
             },
             { 
               text: '小程序命名规范',
