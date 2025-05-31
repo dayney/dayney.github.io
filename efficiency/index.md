@@ -9,3 +9,4 @@ editLink: true
 - [VS code相关](./vscode/copilot)
 - [google检索技巧](./google/google)
 - [YAPI中使用mockjs](./skill/mockjs)
+- [命名规范](./namingStyle/bem)

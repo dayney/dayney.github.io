@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-05-30 14:15:13
+ * @LastEditTime: 2025-05-31 22:30:04
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -85,9 +85,9 @@ export default defineConfig({
             { text: '动态添加脚本（script脚本）', link: '/frontend/javascript/dynamicAddScript' },
             { text: '浏览器处理响应头', link: '/frontend/javascript/responseHeader' },
             { text: '立即执行函数', link: '/frontend/javascript/iife' },
-            { text: 'BEM格式命名', link: '/frontend/javascript/bem' },
             { text: 'Web Component', link: '/frontend/javascript/webComponent' },
             { text: 'promise.race应用', link: '/frontend/javascript/promiseRace' },
+            { text: 'BEM命名方式', link: '/efficiency/namingStyle/bem' },
           ]
         },
         {
@@ -169,10 +169,7 @@ export default defineConfig({
               text: '技术分享与指导',
               link: '/frontend/engineering/guide/tech-sharing.md'
             },
-            {
-              text: '[ ]命名规范',
-              link: '/frontend/engineering/nameStyle.md'
-            },
+            
             {
               text: '[ ]编码规范',
               link: '/frontend/engineering/code-style.md'
@@ -185,10 +182,7 @@ export default defineConfig({
             { 
               text: '规范化',
               items: [
-                {
-                  text: '[ ]命名规范',
-                  link: '/frontend/engineering/nameStyle.md'
-                },
+                
                 {
                   text: '编码规范',
                   items: [
@@ -423,6 +417,35 @@ export default defineConfig({
               text: '安装私有包',
               link: '/efficiency/skill/npmSkill'
             }, 
+          ],
+        },
+        {
+          text: '命名规范',
+          items: [
+            { 
+              text: 'html命名规范',
+              link: '/efficiency/namingStyle/html',
+            },
+            { 
+              text: 'css命名规范',
+              link: '/efficiency/namingStyle/css',
+            },
+            {  
+              text: 'js命名规范',
+              link: '/efficiency/namingStyle/js',
+            },
+            { 
+              text: 'vue命名规范',
+              link: '/efficiency/namingStyle/vue',
+            },
+            { 
+              text: 'sass命名规范',
+              link: '/efficiency/namingStyle/sass',
+            },
+            { 
+              text: '小程序命名规范',
+              link: '/efficiency/namingStyle/miniprogram',
+            },
           ],
         },
       ],
