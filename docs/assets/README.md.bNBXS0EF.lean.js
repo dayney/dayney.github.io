@@ -1,1 +1,0 @@
-import{_ as t,c as e,o,V as c}from"./chunks/framework.CthfA3PS.js";const h=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md","lastUpdated":1725279694000}'),a={name:"README.md"},i=c("",1),n=[i];function _(r,d,s,l,m,p){return o(),e("div",null,n)}const u=t(a,[["render",_]]);export{h as __pageData,u as default};

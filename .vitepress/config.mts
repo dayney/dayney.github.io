@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-03-24 17:44:02
+ * @LastEditTime: 2025-05-30 14:15:13
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -62,6 +62,17 @@ export default defineConfig({
 
     sidebar: {
       '/frontend/': [
+        {
+          text: '新人指南',
+          items: [
+            { text: '开发环境搭建指南', link: '/frontend/engineering/guide/environment' },
+            { text: '编码规范与最佳实践', link: '/frontend/engineering/guide/coding-standards' },
+            { text: '工作流程指导', link: '/frontend/engineering/guide/workflow' },
+            { text: '项目介绍', link: '/frontend/engineering/guide/project-intro' },
+            { text: '项目熟悉指南', link: '/frontend/engineering/guide/project-familiar' },
+            { text: '技术分享与指导', link: '/frontend/engineering/guide/tech-sharing' },
+          ]
+        },
         {
           text: 'JavaSript',
           items: [
@@ -132,6 +143,43 @@ export default defineConfig({
       ],
       '/frontend/engineering/': [
         {
+          text: '前端新人指南',
+          items: [
+            {
+              text: '开发环境搭建指南',
+              link: '/frontend/engineering/guide/environment.md'
+            },
+            {
+              text: '编码规范与最佳实践',
+              link: '/frontend/engineering/guide/coding-standards.md'
+            },
+            {
+              text: '工作流程指导',
+              link: '/frontend/engineering/guide/workflow.md'
+            },
+            {
+              text: '项目介绍',
+              link: '/frontend/engineering/guide/project-intro.md'
+            },
+            {
+              text: '项目熟悉指南',
+              link: '/frontend/engineering/guide/project-familiar.md'
+            },
+            {
+              text: '技术分享与指导',
+              link: '/frontend/engineering/guide/tech-sharing.md'
+            },
+            {
+              text: '[ ]命名规范',
+              link: '/frontend/engineering/nameStyle.md'
+            },
+            {
+              text: '[ ]编码规范',
+              link: '/frontend/engineering/code-style.md'
+            },
+          ]
+        },  
+        {
           text: '前端工程化',
           items: [
             { 
@@ -150,7 +198,8 @@ export default defineConfig({
                     },
                     {
                       text: 'js编码规范',
-                      link: '/frontend/javascript/style' 
+                      link: '/frontend/javascript/style',
+                      target: '_blank'
                     },
                     {
                       text: 'css编码规范',

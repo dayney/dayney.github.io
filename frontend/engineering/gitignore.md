@@ -9,7 +9,7 @@ editLink: false
 
 
 ###  一、使用命令行工具生成
-``` node
+```bash
 npx gitignore node
 ```
 

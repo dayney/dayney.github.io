@@ -25,7 +25,7 @@ editLink: false
 
 全局安装的 commitizen 不需要每个项目项目都执行，本机执行一次即可
 
-```node
+```bash
 npm i -g commitizen
 
 npm i -D  @commitlint/cli@^17 @commitlint/config-conventional@^17 husky@^8 cz-git
@@ -33,7 +33,7 @@ npm i -D  @commitlint/cli@^17 @commitlint/config-conventional@^17 husky@^8 cz-gi
 
 #### 3.2 配置插件
 
-```
+```javascript
 在项目的根目录下配置添加文件 commitlint.config.js 并写入如下代码
 
 /** @type {import('cz-git').UserConfig} */
@@ -110,7 +110,7 @@ module.exports = {
 };
 ```
 
-```
+```json
 在package.json添加配置
 
 "config": {
@@ -120,7 +120,7 @@ module.exports = {
   }
 ```
 
-```  
+```json
   在scripts中添加
   
   "prepare": "husky install"
@@ -128,7 +128,7 @@ module.exports = {
 
 #### 3.3 初始化 husky
 
-```
+```bash
 npm run prepare
 ```
 
@@ -136,13 +136,13 @@ npm run prepare
 
 - ####  mac 上使用以下代码
 
-```
+```bash
 npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
 ```
 
 - window中，需要在 根路径 .husky 下 新建文件 commit-msg， 并且清空这个文件中的所有内容，添加如下内容，特别要注意koroFileHeader，在文件前面添加的 author信息，一定要删除，否则shell命令不生效
 
-```
+```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
  
