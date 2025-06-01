@@ -122,6 +122,9 @@ export default defineConfig({
                 }
               ]
             },
+            { text: '样式组织', link: '/frontend/css/style-organization' },
+            { text: '响应式设计', link: '/frontend/css/responsive-design' },
+            { text: '性能优化', link: '/frontend/css/performance-optimization' },
             { text: 'SASS小技巧', link: '/frontend/css/sassTips' },
             { text: 'margin-line', link: '/frontend/css/margin-inline' },
             { text: 'CSS蒙层', link: '/frontend/css/mask' },
