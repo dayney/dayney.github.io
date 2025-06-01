@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-05-31 23:12:06
+ * @LastEditTime: 2025-06-01 14:40:08
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -132,12 +132,26 @@ export default defineConfig({
           ]
         },
         {
-          text: 'VUE',
+          text: 'Vue',
           items: [
-            { text: 'VUE2.x编码规范', link: '/frontend/vue/style' },
-            { text: 'VUE3.x - composition自动引入', link: '/frontend/vue/composition' },
-            { text: '下拉刷新，上拉加载更多', link: '/frontend/vue/loadMore' },
-            
+            {
+              text: 'Vue2',
+              items: [
+                { text: '组件结构规范', link: '/frontend/javascript/vue2/component-structure' },
+                { text: '生命周期使用规范', link: '/frontend/javascript/vue2/lifecycle' },
+                { text: '状态管理规范', link: '/frontend/javascript/vue2/state-management' }
+              ]
+            },
+            {
+              text: 'Vue3',
+              items: [
+                { text: '组件结构规范', link: '/frontend/javascript/vue3/component-structure' },
+                { text: '生命周期使用规范', link: '/frontend/javascript/vue3/lifecycle' },
+                { text: '状态管理规范', link: '/frontend/javascript/vue3/state-management' }
+              ]
+            },
+            { text: 'Vue3.x - composition自动引入', link: '/frontend/vue/composition' },
+            { text: '下拉刷新，上拉加载更多', link: '/frontend/vue/loadMore' }
           ]
         },
         {
