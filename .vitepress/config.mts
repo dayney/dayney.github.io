@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-06-01 22:59:08
+ * @LastEditTime: 2025-06-01 23:37:58
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -308,48 +308,6 @@ export default defineConfig({
               text: '安装私有包',
               link: '/efficiency/skill/npmSkill'
             }, 
-          ],
-        },
-        {
-          text: '命名规范',
-          items: [
-            { 
-              text: '通用命名规范',
-              link: '/efficiency/namingStyle/common',
-            },
-            { 
-              text: 'html命名规范',
-              link: '/efficiency/namingStyle/html',
-            },
-            { 
-              text: 'CSS命名规范',
-              items: [
-                {
-                  text: 'CSS命名规范',
-                  link: '/frontend/css/style'
-                },
-                {
-                  text: 'BEM命名规则',
-                  link: '/efficiency/namingStyle/bem'
-                },
-                {
-                  text: 'SASS命名规范',
-                  link: '/efficiency/namingStyle/sass'
-                }
-              ]
-            },
-            {  
-              text: 'js命名规范',
-              link: '/efficiency/namingStyle/js',
-            },
-            { 
-              text: 'vue命名规范',
-              link: '/efficiency/namingStyle/vue',
-            },
-            { 
-              text: '小程序命名规范',
-              link: '/efficiency/namingStyle/miniprogram',
-            },
           ],
         },
       ],

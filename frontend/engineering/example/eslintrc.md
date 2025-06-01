@@ -7,7 +7,7 @@ editLink: false
 
 # .eslintrc
 
-## 1. ESLint 是一种用于识别和报告 ECMAScript/JavaScript 代码中发现的模式的工具，其目标是使代码更加一致并避免错误。
+## 1. ESLint 9.x 是一种用于识别和报告 ECMAScript/JavaScript 代码中发现的模式的工具，其目标是使代码更加一致并避免错误。
 
 - 有两种模式，在项目代码中用来检测代码的规范，如使用命令`npm run eslint`, 如果需要使用`git hook`可以配合`husky`一起使用,会有更好的体验
   ```
