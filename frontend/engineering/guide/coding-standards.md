@@ -2,9 +2,9 @@
 
 ## JavaScript 规范
 - [命名规范](/efficiency/namingStyle/js.md){:target="_blank"}
-- 注释规范
-- 代码格式
-- 最佳实践
+- [注释规范](./coding-standards/javascript-comment)
+- [代码格式](./coding-standards/javascript-format)
+- [最佳实践](./coding-standards/javascript-best-practices)
 
 ## Vue 规范
 - [命名规范](/efficiency/namingStyle/vue.md){:target="_blank"}

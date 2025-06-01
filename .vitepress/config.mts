@@ -76,7 +76,9 @@ export default defineConfig({
         {
           text: 'JavaSript',
           items: [
-            { text: 'JavaSript编码规范', link: '/frontend/javascript/style' },
+            { text: 'JavaScript注释规范', link: '/frontend/engineering/guide/coding-standards/javascript-comment' },
+            { text: 'JavaScript代码格式规范', link: '/frontend/engineering/guide/coding-standards/javascript-format' },
+            { text: 'JavaScript最佳实践', link: '/frontend/engineering/guide/coding-standards/javascript-best-practices' },
             { text: 'JavaSript精度问题', link: '/frontend/javascript/precision' },
             { text: 'repalceAll匹配标记', link: '/frontend/javascript/replaceAll' },
             { text: '数据字典', link: '/frontend/javascript/dictionaries-map' },
