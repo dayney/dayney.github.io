@@ -12,12 +12,14 @@
 - [组件结构规范](/frontend/javascript/vue2/component-structure)
 - [生命周期使用规范](/frontend/javascript/vue2/lifecycle)
 - [状态管理规范](/frontend/javascript/vue2/state-management)
+- [性能优化](/frontend/javascript/vue2/performance-optimization)
 
 ### Vue3
 - [命名规范](/efficiency/namingStyle/vue3-naming.md){:target="_blank"}
 - [组件结构规范](/frontend/javascript/vue3/component-structure)
 - [生命周期使用规范](/frontend/javascript/vue3/lifecycle)
 - [状态管理规范](/frontend/javascript/vue3/state-management)
+- [性能优化](/frontend/javascript/vue3/performance-optimization)
 
 ## CSS 规范
 - [命名规范](/efficiency/namingStyle/css.md){:target="_blank"}

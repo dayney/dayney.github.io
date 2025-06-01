@@ -142,7 +142,8 @@ export default defineConfig({
               items: [
                 { text: '组件结构规范', link: '/frontend/javascript/vue2/component-structure' },
                 { text: '生命周期使用规范', link: '/frontend/javascript/vue2/lifecycle' },
-                { text: '状态管理规范', link: '/frontend/javascript/vue2/state-management' }
+                { text: '状态管理规范', link: '/frontend/javascript/vue2/state-management' },
+                { text: '性能优化', link: '/frontend/javascript/vue2/performance-optimization' },
               ]
             },
             {
@@ -150,7 +151,8 @@ export default defineConfig({
               items: [
                 { text: '组件结构规范', link: '/frontend/javascript/vue3/component-structure' },
                 { text: '生命周期使用规范', link: '/frontend/javascript/vue3/lifecycle' },
-                { text: '状态管理规范', link: '/frontend/javascript/vue3/state-management' }
+                { text: '状态管理规范', link: '/frontend/javascript/vue3/state-management' },
+                { text: '性能优化', link: '/frontend/javascript/vue3/performance-optimization' },
               ]
             },
             { text: 'Vue3.x - composition自动引入', link: '/frontend/vue/composition' },
