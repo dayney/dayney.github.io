@@ -31,7 +31,7 @@ const members = [
       关于小宇
     </template>
     <template #lead>
-      多年前端开发经验，目前已经拥有PMP证书，有2年的前端管理经验，主要是用VUE全家桶技术栈。
+      多年前端开发经验，目前已经拥有PMP证书，有3.5年的前端管理经验，主要是用VUE全家桶技术栈。
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers

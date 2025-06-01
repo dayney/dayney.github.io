@@ -1,36 +1,72 @@
-# 编码规范与最佳实践
+---
+title: 编码规范
+description: 前端编码规范指南
+---
 
-## JavaScript 规范
-- [命名规范](/efficiency/namingStyle/js.md){:target="_blank"}
-- [注释规范](./coding-standards/javascript-comment)
-- [代码格式](./coding-standards/javascript-format)
-- [最佳实践](./coding-standards/javascript-best-practices)
+# 编码规范
+
+## JavaScript 编码规范
+
+[查看详细规范](/frontend/index/guide/coding-standards#javascript)
+
+### 注释规范
+1. 文件头部注释
+2. 函数注释
+3. 变量注释
+4. 代码注释
+
+### 代码格式
+1. 缩进规范
+2. 空格规范
+3. 换行规范
+4. 分号规范
+
+### 最佳实践
+1. 变量声明
+2. 函数定义
+3. 条件判断
+4. 循环处理
 
 ## Vue 编码规范
-### Vue2
-- [命名规范](/efficiency/namingStyle/js.md){:target="_blank"}
-- [组件结构规范](/frontend/javascript/vue2/component-structure)
-- [生命周期使用规范](/frontend/javascript/vue2/lifecycle)
-- [状态管理规范](/frontend/javascript/vue2/state-management)
-- [性能优化](/frontend/javascript/vue2/performance-optimization)
 
-### Vue3
-- [命名规范](/efficiency/namingStyle/vue3-naming.md){:target="_blank"}
-- [组件结构规范](/frontend/javascript/vue3/component-structure)
-- [生命周期使用规范](/frontend/javascript/vue3/lifecycle)
-- [状态管理规范](/frontend/javascript/vue3/state-management)
-- [性能优化](/frontend/javascript/vue3/performance-optimization)
+[查看详细规范](/frontend/index/guide/coding-standards#vue)
 
-## CSS 规范
-- [命名规范](/efficiency/namingStyle/css.md){:target="_blank"}
-    - [BEM 命名规范](/efficiency/namingStyle/bem.md){:target="_blank"}
-    - [SASS 命名规范](/efficiency/namingStyle/sass.md){:target="_blank"}
-- [样式组织](/frontend/css/style-organization)
-- [响应式设计](/frontend/css/responsive-design)
-- [性能优化](/frontend/css/performance-optimization)
+### 组件规范
+1. 组件结构
+2. 组件通信
+3. 生命周期
+4. 状态管理
 
-## Git 规范
-- 分支管理
-- 提交信息
-- 代码审查
-- 版本控制 
+### 模板规范
+1. 模板语法
+2. 指令使用
+3. 事件处理
+4. 样式处理
+
+### 最佳实践
+1. 性能优化
+2. 代码复用
+3. 错误处理
+4. 测试规范
+
+## CSS 编码规范
+
+[查看详细规范](/frontend/index/guide/coding-standards#css)
+
+### 样式规范
+1. 选择器规范
+2. 属性规范
+3. 值规范
+4. 单位规范
+
+### 布局规范
+1. 盒模型
+2. 定位方式
+3. 浮动处理
+4. 弹性布局
+
+### 最佳实践
+1. 性能优化
+2. 兼容性处理
+3. 响应式设计
+4. 主题定制 

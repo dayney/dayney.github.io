@@ -1,38 +1,48 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
-layout: doc
-title: 前端工程化
-editLink: true
-
+outline: deep
+editLink: false
 ---
 
-# 前端工程化的定义
-   chatgpt的解释是指将某一项技术、流程或操作系统化、标准化，使其更高效、可靠并易于大规模应用的过程。在软件开发中，工程化通常包括以下几个方面：模范化、自动化、模块化、持续集成与持续交付（CI/CD）、可维护性、质量保障。我个人的理解就是标准化，如同一个大学军训的方阵一样，大家采用统一的标准来输出，才能达到一个步调一致的动作出来。持续稳定的高质量的交付。后续整体，我主要是以以下的顺序来介绍，我在前端项目中做了哪些事。
+# 前端工程化
 
----
+## 规范化
+- [命名规范](/frontend/engineering/guide/naming)
+- [编码规范](/frontend/engineering/guide/coding-standards)
+- [gitflow规范](/frontend/engineering/guide/gitflow)
+- [commmit规范](/frontend/engineering/guide/commit)
+- [workflow规范](/frontend/index/guide/workflow)
+- [技术方案规范](/frontend/engineering/guide/tech)
+- [开发及部署流程规范](/frontend/engineering/guide/deploy)
 
-:::tip
-  目前前端采用的编辑器是 vsCode，一下所有的配置都是针对前端，使用vscode相关的插件。
-:::
-
-##  规范化
-   通过制定代码规范、文档标准、项目结构等，确保团队成员的开发工作一致性。
-    - 编码规范化（环境：vscode，主要是使用vscode相关插件来约定编码规范）。
-    - [git commi](./git.md)t的规范话，commit提交的规范化（方便从commit中知道每次的任务是什么，方便快速的code review）。
-    - api规范化（与后端约定什么样的格式的api，方便前端抽离公共的axios封装的http request）。
-    - 项目结构的规范化。
 ## 模块化
-   将复杂的系统分解为独立的模块，便于开发、测试、维护和扩展。
-   - 使用各种私有包管理平台，**GitHub Packages**、**Nexus Repository (Sonatype)**、**Verdaccio**
+- [项目目录结构](/frontend/engineering/guide/project-structure)
+- [公共方法（含私服）](/frontend/engineering/guide/public-method)
+- [公共组件（含私服）](/frontend/engineering/guide/public-component)
+
 ## 可维护性
-   通过良好的架构设计和编码规范，确保项目在后续的迭代中易于维护和扩展。
-   - **代码规范化**、**详细的注释和文档**，其他就是**单元测试和自动化测试**、**良好的代码结构和设计模式**， 后面这两个主要是根据项目的特性（如公共工具需要写单元测试，业务项目一般不需要）和团队成员的能力的提升来加强（**code review**是一个重要的方式）。
-##  质量保障
-   通过单元测试、集成测试等手段，保证代码质量。
-   - 目前常用的就是公共的utils使用vitest来写自动化测试脚本和`code review`来保障代码的质量。
+- [文档和注释](/frontend/engineering/guide/doc-comment)
+- [文档记录](/frontend/engineering/guide/doc-record)
+- [code review](/frontend/engineering/guide/code-review)
+- [测试脚本](/frontend/engineering/guide/test-script)
+
 ## 自动化
-   通过工具或脚本将手动的开发、测试、部署等流程自动化，以减少人为错误和重复劳动。
-   - 打包相关的**gulp**，**webpack**，**vite**等常用的，此处我还是希望可以使用统一的一个来实现，主要是方便维护和降低学习成本。
-##  持续集成与持续交付（CI/CD）
-   通过集成工具，自动化代码的集成、测试和部署，使得代码可以快速且高质量地交付。
-   - 当前本blog使用的就是 `github action`,实际工作环境中使用的是`Jenkins`。
+- [scripts中脚本的功能](/frontend/engineering/guide/scripts)
+
+## 持续集成与持续交付（CI/CD）
+- [Jenkins使用文档](/frontend/engineering/guide/jenkins)
+- [gitlab actions](/frontend/engineering/guide/gitlab-actions)
+
+## 相关配置
+- [新版本框架配置](/frontend/engineering/example/framework)
+- [编码格式editorconfig](/frontend/engineering/example/editorconfig)
+- [gitignore常规配置](/frontend/engineering/example/gitignore)
+- [prettierrc常规配置](/frontend/engineering/example/prettierrc)
+- [prettierignore常规配置](/frontend/engineering/example/prettierignore)
+- [stylelint常规配置](/frontend/engineering/example/stylelint)
+- [browserslistrc](/frontend/engineering/example/browserslistrc)
+- [eslintrc](/frontend/engineering/example/eslintrc)
+- [npmrc](/frontend/engineering/example/npmrc)
+
+## 使用小技巧
+- [git commit规范](/frontend/engineering/guide/git-commit)
+- [git合并commit](/frontend/engineering/guide/git-merge-commit) 
