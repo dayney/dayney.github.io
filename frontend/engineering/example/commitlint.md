@@ -7,7 +7,7 @@ editLink: false
 # commit规范
 
 使用的是`cz-git`来管理的
-
+// commitlint.config.js
 ```/** @type {import('cz-git').UserConfig} */
 // eslint-disable-next-line no-undef
 module.exports = {

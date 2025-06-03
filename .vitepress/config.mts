@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-06-01 23:37:58
+ * @LastEditTime: 2025-06-03 10:59:25
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -231,7 +231,7 @@ export default defineConfig({
                 { text: 'eslintignore', link: '/frontend/engineering/example/eslintignore' },
                 { text: 'eslintrc', link: '/frontend/engineering/example/eslintrc' },
                 { text: 'npmrc', link: '/frontend/engineering/example/npmrc' },
-                { text: 'commit配置', link: '/frontend/engineering/example/commitlint' }
+                { text: 'commitlint', link: '/frontend/engineering/example/commitlint' }
               ]
             },
             {
