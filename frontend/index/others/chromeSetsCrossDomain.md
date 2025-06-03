@@ -30,11 +30,11 @@ open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --user-d
    ```
    open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --user-data-dir=/Users/[yourname]/MyChromeDevUserData/
    ```
-   ![操作步骤图1](./cors001.jpg)
+   ![操作步骤图1](/frontend/index/others/cors001.jpg)
 
 
 4. 关闭并重命名，选择好位置，保存到应用程序，点击存储
    
-   ![操作步骤图2](./cors002.jpg)
+   ![操作步骤图2](/frontend/index/others/cors002.jpg)
 
 5. 查看 Launchpad 中，就有这个跨域的图标了

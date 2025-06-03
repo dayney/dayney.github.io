@@ -20,22 +20,22 @@ editLink: false
 
 1. 打开YAPI应该可以看到如下的区域,界面中显示的【Mock地址】，就是我们后续使用的地址
 
-![第一步](./yapi001.jpg)
+![第一步](/frontend/index/skill/yapi001.jpg)
 
 2. 制作mockData
 - 方式一
-![第20步](./yapi0020.jpg)
-![第21步](./yapi0021.jpg)
+![第20步](/frontend/index/skill/yapi0020.jpg)
+![第21步](/frontend/index/skill/yapi0021.jpg)
 
 
 - 方式二
-![第30步](./yapi0030.jpg)
-![第31步](./yapi0031.png)
-![第33步](./yapi0032.jpg)
+![第30步](/frontend/index/skill/yapi0030.jpg)
+![第31步](/frontend/index/skill/yapi0031.png)
+![第33步](/frontend/index/skill/yapi0032.jpg)
 
 
 ##### YAPI有自动的提示
-![YAPI提示](./yapi0040.jpg)
+![YAPI提示](/frontend/index/skill/yapi0040.jpg)
 
 
 参考文档

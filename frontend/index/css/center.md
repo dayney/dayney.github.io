@@ -80,4 +80,4 @@ editLink: false
 ```
 
 演示效果
-![子元素居中对齐效果截图](./center.jpg)
+![子元素居中对齐效果截图](/frontend/index/css/center.jpg)

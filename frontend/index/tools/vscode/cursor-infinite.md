@@ -32,4 +32,4 @@ curl -fsSL https://raw.githubusercontent.com/isboyjc/cursor-reset/main/scripts/r
 
 遇到的问题
 1. cursor会封一些后缀的邮箱，如果出现以下的错误，重新换一个邮箱注册即可，网上有很多临时邮箱，可以用来接收cursor的验证码。
-![cursor-error](./images/cursor-error.jpg)
+![cursor-error](/frontend/index/tools/vscode/images/cursor-error.jpg)

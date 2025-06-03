@@ -16,10 +16,10 @@ export default defineConfig({
   
   outDir: './docs',
   // cacheDir: './.vitepress/.vite', // 缓存文件的路径
+  ignoreDeadLinks: true, // 忽略死链接
 
   // base: '/blog/',
   // srcDir: './',
-  // ignoreDeadLinks: true, // 忽略死链接
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'og:type', content: 'website' }],

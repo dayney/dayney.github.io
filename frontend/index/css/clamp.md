@@ -32,4 +32,4 @@ editLink: false
   </div>
 ```
 演示效果
-![超行使用省略号效果截图](./clamp.jpg)
+![超行使用省略号效果截图](/frontend/index/css/clamp.jpg)

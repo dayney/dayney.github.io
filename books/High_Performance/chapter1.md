@@ -6,4 +6,4 @@ outline: deep
 
 书中主要描述的是在代码层面的优化，除了这些，在平时的工作中还可以增加带宽，做服务器集群等措施来面对实际的高访问量的事件。
 
-![高性能JavaScript](./High_Performance.jpg)
+![高性能JavaScript](/books/High_Performance/High_Performance.jpg)

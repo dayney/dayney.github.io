@@ -20,30 +20,30 @@ editLink: false
 
 > node 最好>20 因为eslint9的需要 本次项目node为20.15.1
 
-![image-20250324161250475](../images/node-version.jpg)
+![image-20250324161250475](/frontend/engineering/example/images/node-version.jpg)
 
 ### 包管理器
 
 > 包管理器 暂时采用yarn(或者npm) 后续有机会换pnpm
 
-![yarn-version](../images/yarn-version.jpg)
+![yarn-version](/frontend/engineering/example/images/yarn-version.jpg)
 
 ### vscode 插件
 
 > vscode 插件 eslint  prettier stylelint unocss  vue-official  postcss
 
 
-![image-eslint](../images/eslint.png)
+![image-eslint](/frontend/engineering/example/images/eslint.png)
 
-![image-prettier](../images/prettier.png)
+![image-prettier](/frontend/engineering/example/images/prettier.png)
 
-![image-vue-officical](../images/vue-offficial.png)
+![image-vue-officical](/frontend/engineering/example/images/vue-offficial.png)
 
-![image-stylelint](../images/stylelint.png)
+![image-stylelint](/frontend/engineering/example/images/stylelint.png)
 
-![image-unocss](../images/unocss.png)
+![image-unocss](/frontend/engineering/example/images/unocss.png)
 
-![image-postcss](../images/postcss.png)
+![image-postcss](/frontend/engineering/example/images/postcss.png)
 
 ### git 
 
@@ -58,7 +58,7 @@ editLink: false
 yarn create vue
 ```
 
-![image-20240829165427030](../images/create-project.png)
+![image-20240829165427030](/frontend/engineering/example/images/create-project.png)
 
 ## 1 styleLint 【采用】
 
@@ -249,7 +249,7 @@ npm install -D sass postcss postcss-html postcss-scss sass stylelint stylelint-c
 npx @antfu/eslint-config@latest
 ```
 
-![image-20240828111807759](../images/antfu.png)
+![image-20240828111807759](/frontend/engineering/example/images/antfu.png)
 
 ### 依赖包
 

@@ -15,7 +15,7 @@ background-position: center;
 ```
 
 效果展示截图
-![mask效果截图](./mask.jpg)
+![mask效果截图](/frontend/index/css/mask.jpg)
 
 参考文档
 

@@ -6,11 +6,11 @@ editLink: false
 # Git提交规范--适配 node V14.x的版本
 
 ## 1. 效果演示
-![git-commit-001](./git-commit-001.png)
+![git-commit-001](/frontend/engineering/example/git-commit-001.png)
 
-![git-commit-002](./git-commit-002.png)
+![git-commit-002](/frontend/engineering/example/git-commit-002.png)
 
-![git-commit-003](./git-commit-003.png)
+![git-commit-003](/frontend/engineering/example/git-commit-003.png)
 
 ## 2. 主要插件
 
@@ -155,17 +155,17 @@ npx --no-install commitlint --edit "$1"
 
 #### 4.2  使用 git cz 代替 git commit
 
-![git-commit-004](./git-commit-004.png)
+![git-commit-004](/frontend/engineering/example/git-commit-004.png)
 
 #### 4.3  正常使用 git push 提交代码
 
 #### 4.4 错误演示
 
-![git-commit-005](./git-commit-005.png)
+![git-commit-005](/frontend/engineering/example/git-commit-005.png)
 
 #### 4.5 gitlab上查看效果
 
-![git-commit-006](./git-commit-006.png)
+![git-commit-006](/frontend/engineering/example/git-commit-006.png)
 
 
 

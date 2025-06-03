@@ -13,7 +13,7 @@ editLink: false
 安装的方式有很多，我采用**vs code**的插件方式来安装了使用
 
 1.	打开 VSCode。
-2.	确保已安装 Prettier 插件（“Prettier - Code formatter”）。
+2.	确保已安装 Prettier 插件（"Prettier - Code formatter"）。
 3.	在 VSCode 中，打开项目的根目录。
 4.	打开命令面板（Ctrl + Shift + P），输入 Prettier: Create Configuration File。
 5.	按下回车键，这将自动在项目根目录中生成 .prettierrc 文件。  
@@ -50,7 +50,7 @@ editLink: false
 1. 选中项目中一个文件
 
 2. 有件格式化当前文件
-   ![image-20240920151439128](./prettierrc-001.png)
+   ![image-20240920151439128](/frontend/engineering/example/prettierrc-001.png)
 
 3. 查看是否按照 **.prettierrc**的方式来格式化文件的
 

@@ -17,7 +17,7 @@ editLink: false
 
 ## 2. 效果展示 
 
-![git提交规范](./git-style.jpg)
+![git提交规范](/frontend/engineering/example/git-style.jpg)
 
 ## 3. 在项目中如何添加
 
@@ -25,7 +25,7 @@ editLink: false
 
 - 需要在使用的时候全局安装 **commitizen**，不安装会出现如下提示
 
-  ![git-cz](./git-cz.jpg)
+  ![git-cz](/frontend/engineering/example/git-cz.jpg)
 
   安装命令
 
@@ -147,7 +147,7 @@ module.exports = {
     }
   }
 ```
-![git提交规范](./git-style-002.jpg)
+![git提交规范](/frontend/engineering/example/git-style-002.jpg)
 
 ### 3.4 使用方式
 
@@ -258,7 +258,7 @@ echo "npm run commitlint \${1}" > .husky/commit-msg
 ```
 换行的时候，使用 \n 来换行
 ```
-![换行示例](./huanhang.jpg)
+![换行示例](/frontend/engineering/example/huanhang.jpg)
 
 ## 参考文件
 

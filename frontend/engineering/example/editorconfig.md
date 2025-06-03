@@ -10,7 +10,7 @@ editLink: false
 
 ## 2. 生成 **editorconfig** 配置
 
-![editorconfig配置](./editorconfig.jpg)
+![editorconfig配置](/frontend/engineering/example/editorconfig.jpg)
 
 
 ```
