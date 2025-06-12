@@ -57,7 +57,7 @@ git restore .：恢复所有未暂存的修改，恢复后文件会回到上一�
 git restore <file_name>：只恢复指定文件的更改。
 
 # 明明已经更新了.gitignore文件，但是还是可以看到文件的跟踪记录，此时可能是gitignore有缓存了，需要清理缓存之后再开始添加
-git rm -r cache .
+git rm -r cached .
 git add .
 git commit -m "更新 .gitignore"
 ```
