@@ -159,4 +159,4 @@ const VueRouterPlugin = {
 
 ## 其他规范
 
-- [命名规范](/frontend/index/js/naming-style.md){:target="_blank"} 
+- [命名规范](/frontend/index/javascript/naming-style.md){:target="_blank"} 
