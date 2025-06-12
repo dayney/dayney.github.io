@@ -113,3 +113,5 @@ editLink: false
 - [ ] 表单控件有对应的 label
 - [ ] 使用 async 或 defer 加载脚本
 - [ ] 使用 lazy 加载图片 
+
+[o2team/guide](https://github.com/o2team/guide) 

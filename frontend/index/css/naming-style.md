@@ -171,3 +171,5 @@ $spacing-unit: 8px;
 - [ ] 使用布局类命名规范
 - [ ] 使用状态类命名规范
 - [ ] 使用 JavaScript 钩子命名规范 
+
+[o2team/guide](https://github.com/o2team/guide) 

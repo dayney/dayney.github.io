@@ -77,3 +77,5 @@ function calculateTotal(items, taxRate, discount) {
 - [ ] 函数之间保持低耦合
 - [ ] 避免函数之间的循环依赖
 - [ ] 函数结构清晰 
+
+[o2team/guide](https://github.com/o2team/guide) 

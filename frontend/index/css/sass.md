@@ -567,3 +567,5 @@ _forms.scss
 6. 保持代码组织清晰
 7. 使用有意义的命名
 8. 遵循 BEM 命名方法
+
+[o2team/guide](https://github.com/o2team/guide)

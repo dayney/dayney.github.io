@@ -88,3 +88,5 @@ BEM 命名规则
 2. 可以任意为一套系统定义前缀**PREFIX**，方便管理
 3. 增加了**class**的使用记忆成本 
 4. 这个主要是参考vant中的源码 
+
+[o2team/guide](https://github.com/o2team/guide) 

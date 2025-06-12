@@ -83,3 +83,5 @@ UserProfile.jsx
 4. 私有成员：_camelCase
 5. 模块和文件：kebab-case
 6. 组件文件：PascalCase 
+
+[o2team/guide](https://github.com/o2team/guide) 

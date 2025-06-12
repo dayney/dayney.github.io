@@ -61,3 +61,5 @@ user-profile/
 - [ ] 模块之间通过接口通信
 - [ ] 避免模块之间的循环依赖
 - [ ] 模块结构清晰 
+
+[o2team/guide](https://github.com/o2team/guide) 
