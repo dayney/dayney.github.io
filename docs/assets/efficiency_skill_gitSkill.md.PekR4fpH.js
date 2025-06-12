@@ -1,4 +1,4 @@
-import{_ as s,c as n,o as a,V as p}from"./chunks/framework.CsbsVE7l.js";const _=JSON.parse('{"title":"Git 使用小技巧","description":"","frontmatter":{"outline":"deep","editLink":false},"headers":[],"relativePath":"efficiency/skill/gitSkill.md","filePath":"efficiency/skill/gitSkill.md","lastUpdated":1749694102000}'),e={name:"efficiency/skill/gitSkill.md"},l=p(`<h1 id="git-使用小技巧" tabindex="-1">Git 使用小技巧 <a class="header-anchor" href="#git-使用小技巧" aria-label="Permalink to &quot;Git 使用小技巧&quot;">​</a></h1><hr><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>创建一个干净的分支（无历史记录的分支）</span></span>
+import{_ as s,c as n,o as a,V as p}from"./chunks/framework.CsbsVE7l.js";const _=JSON.parse('{"title":"Git 使用小技巧","description":"","frontmatter":{"outline":"deep","editLink":false},"headers":[],"relativePath":"efficiency/skill/gitSkill.md","filePath":"efficiency/skill/gitSkill.md","lastUpdated":1749710561000}'),e={name:"efficiency/skill/gitSkill.md"},l=p(`<h1 id="git-使用小技巧" tabindex="-1">Git 使用小技巧 <a class="header-anchor" href="#git-使用小技巧" aria-label="Permalink to &quot;Git 使用小技巧&quot;">​</a></h1><hr><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>创建一个干净的分支（无历史记录的分支）</span></span>
 <span class="line"><span>git checkout --orphan branchNane</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 基于标签 v1.0 创建并切换到新分支</span></span>
@@ -47,6 +47,6 @@ import{_ as s,c as n,o as a,V as p}from"./chunks/framework.CsbsVE7l.js";const _=
 <span class="line"><span>git restore &lt;file_name&gt;：只恢复指定文件的更改。</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 明明已经更新了.gitignore文件，但是还是可以看到文件的跟踪记录，此时可能是gitignore有缓存了，需要清理缓存之后再开始添加</span></span>
-<span class="line"><span>git rm -r cache .</span></span>
+<span class="line"><span>git rm -r cached .</span></span>
 <span class="line"><span>git add .</span></span>
 <span class="line"><span>git commit -m &quot;更新 .gitignore&quot;</span></span></code></pre></div>`,3),i=[l];function t(c,o,r,g,m,d){return a(),n("div",null,i)}const u=s(e,[["render",t]]);export{_ as __pageData,u as default};
