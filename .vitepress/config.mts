@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-06-12 22:33:12
+ * @LastEditTime: 2025-06-13 11:03:23
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -87,6 +87,7 @@ export default defineConfig({
             { text: '立即执行函数', link: '/frontend/index/javascript/iife' },
             { text: 'Web Component', link: '/frontend/index/javascript/webComponent' },
             { text: 'promise.race应用', link: '/frontend/index/javascript/promiseRace' },
+            { text: 'IntersectionObserver应用', link: '/frontend/index/javascript/IntersectionObserver' },
             { text: 'Javascirpt脚本加载策略', link: '/frontend/index/javascript/scriptLoading' },
           ]
         },
@@ -183,7 +184,8 @@ export default defineConfig({
               items: [
                 { text: '命名规范', link: '/frontend/engineering/guide/naming' },
                 { text: '编码规范', link: '/frontend/engineering/guide/coding-standards' },
-                { text: 'gitflow规范', link: '/frontend/engineering/guide/gitflow' },
+                { text: '分支管理', link: '/frontend/engineering/guide/branch-management' },
+                { text: 'git提交规范', link: '/frontend/engineering/example/git' },
                 { text: 'commmit规范', link: '/frontend/engineering/guide/commit' },
                 { text: 'workflow规范', link: '/frontend/engineering/guide/workflow' },
                 { text: '技术方案规范', link: '/frontend/engineering/guide/tech' },

@@ -30,7 +30,8 @@
 - [性能优化](/frontend/index/css/performance-optimization.md)
 
 ## Git 规范
-- [分支管理](/frontend/index/guide/git/branch-management.md)
+- [分支管理](/frontend/engineering/guide/branch-management.md)
+- [Git提交规范](/frontend/engineering/example/git.md)
 - [提交信息](/frontend/index/guide/git/commit-message.md)
 - [代码审查](/frontend/index/guide/git/code-review.md)
 - [版本控制](/frontend/index/guide/git/version-control.md) 
