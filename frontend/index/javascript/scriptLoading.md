@@ -1,6 +1,8 @@
 ---
 outline: deep
 editLink: false
+title: JavaScript 脚本加载策略详解
+description: JavaScript 脚本加载策略详解
 ---
 
 # JavaScript 脚本加载策略详解
