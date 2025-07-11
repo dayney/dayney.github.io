@@ -96,7 +96,7 @@ description: Git Flow 工作流程规范
 - `develop`: 开发分支，用于开发环境
 
 ### 辅助分支，是以关键词开口
-- `feat-*`: 功能分支
+- `feature-*`: 功能分支
 - `release-*`: 发布分支
 - `hotfix-*`: 紧急修复分支
 - `bugfix-*`: 问题修复分支
@@ -120,12 +120,12 @@ description: Git Flow 工作流程规范
 ## 分支命名规范
 
 ### 功能分支
-- 格式：`feat-功能名称（小驼峰命名法）`
-- 示例：`feat-useLogin`
+- 格式：`feature-功能名称（小驼峰命名法）`
+- 示例：`feature-useLogin`
 
 #### 分支功能命名规范个人推荐，便于团队协作
-- 格式：`feat-功能名称（小驼峰命名法）`-开发者名称-分支创建的日期
-- 示例：`feat-useLogin-zhangsan-20250613`
+- 格式：`feature-功能名称（小驼峰命名法）`-开发者名称-分支创建的日期
+- 示例：`feature-useLogin-zhangsan-20250613`
 
 ### 发布分支
 - 格式：`release/版本号`， 版本号取自当前项目的`package.json`文件中version
@@ -156,7 +156,7 @@ description: Git Flow 工作流程规范
 | `develop` | 主分支 | 开发环境 | 开发主分支，日常开发 | - | - | - |
 | `test` | 主分支 | 测试环境 | 功能测试和集成测试 | - | - | - |
 | `uat` | 主分支 | 用户验收环境 | 用户验收测试 | - | - | - |
-| `feat-xxx` | 功能分支 | 开发环境 | 新功能开发 | `develop` | `develop` | `feat-userLogin-zhangsan-20240315` |
+| `feature-xxx` | 功能分支 | 开发环境 | 新功能开发 | `develop` | `develop` | `feature-userLogin-zhangsan-20240315` |
 | `fix-xxx` | 修复分支 | 开发环境 | Bug修复 | `develop` | `develop` | `fix-loginError-zhangsan-20240315` |
 | `refactor-xxx` | 重构分支 | 开发环境 | 代码重构 | `develop` | `develop` | `refactor-authModule-zhangsan-20240315` |
 | `perf-xxx` | 优化分支 | 开发环境 | 性能优化 | `develop` | `develop` | `perf-apiCache-zhangsan-20240315` |
