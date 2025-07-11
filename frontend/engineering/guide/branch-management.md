@@ -105,7 +105,7 @@ description: Git Flow 工作流程规范
 
 ### 功能开发
 1. 从 `develop` 创建 `feature` 分支
-2. 在 `feat` 分支开发, 有的团队使用`feature`,此处只是个人习惯
+2. 在 `feature` 分支开发, 有的团队使用`feature`,此处只是个人习惯
 3. 完成后合并回 `develop`
 
 ### 版本发布
