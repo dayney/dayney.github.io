@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-07-15 15:16:53
+ * @LastEditTime: 2025-09-16 10:27:16
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -50,6 +50,7 @@ export default defineConfig({
         items: [
           { text: '前端知识', link: '/frontend/index/index' },
           { text: '前端工程化', link: '/frontend/engineering/index' },
+          { text: '爱好收集', link: '/frontend/scene/index' },
         ]
       },
       { text: '提效', link: '/efficiency/index' },
@@ -245,6 +246,15 @@ export default defineConfig({
                 { text: 'git合并commit', link: '/frontend/engineering/example/git-merge-commit' }
               ]
             }
+          ]
+        }
+      ],
+      '/frontend/scene/': [
+        {
+          text: '场景及平时收集',
+          items: [
+            { text: '目录结构', link: '/frontend/scene/index' },
+            { text: '算法复杂度详解', link: '/frontend/scene/algorithm-complexity' },
           ]
         }
       ],
