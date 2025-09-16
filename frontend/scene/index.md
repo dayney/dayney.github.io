@@ -6,7 +6,8 @@
 
 - [算法复杂度详解：时间复杂度 vs 空间复杂度](/frontend/scene/algorithm-complexity.md)
 - [apply与function一起使用，返回高阶函数](/frontend/scene/apply-function.md)
-- [找出重复次数](/frontend/scene/repeat-number.md)
+- [找出重复次数](/frontend/scene/find-repeat-number.md)
+- [找出深度路径](/frontend/scene/find-path.md)
 
 <!-- ## JavaScript
 
