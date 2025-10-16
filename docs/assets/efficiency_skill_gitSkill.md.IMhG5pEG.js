@@ -1,4 +1,4 @@
-import{_ as s,c as n,o as a,V as p}from"./chunks/framework.CsbsVE7l.js";const u=JSON.parse('{"title":"Git 使用小技巧","description":"","frontmatter":{"outline":"deep","editLink":false},"headers":[],"relativePath":"efficiency/skill/gitSkill.md","filePath":"efficiency/skill/gitSkill.md","lastUpdated":1759228079000}'),i={name:"efficiency/skill/gitSkill.md"},l=p(`<h1 id="git-使用小技巧" tabindex="-1">Git 使用小技巧 <a class="header-anchor" href="#git-使用小技巧" aria-label="Permalink to &quot;Git 使用小技巧&quot;">​</a></h1><hr><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>创建一个干净的分支（无历史记录的分支）</span></span>
+import{_ as s,c as n,o as a,V as p}from"./chunks/framework.CsbsVE7l.js";const u=JSON.parse('{"title":"Git 使用小技巧","description":"","frontmatter":{"outline":"deep","editLink":false},"headers":[],"relativePath":"efficiency/skill/gitSkill.md","filePath":"efficiency/skill/gitSkill.md","lastUpdated":1760610355000}'),i={name:"efficiency/skill/gitSkill.md"},l=p(`<h1 id="git-使用小技巧" tabindex="-1">Git 使用小技巧 <a class="header-anchor" href="#git-使用小技巧" aria-label="Permalink to &quot;Git 使用小技巧&quot;">​</a></h1><hr><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code><span class="line"><span>创建一个干净的分支（无历史记录的分支）</span></span>
 <span class="line"><span>git checkout --orphan branchNane</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 基于标签 v1.0 创建并切换到新分支</span></span>
@@ -90,4 +90,13 @@ import{_ as s,c as n,o as a,V as p}from"./chunks/framework.CsbsVE7l.js";const u=
 <span class="line"><span></span></span>
 <span class="line"><span>接着我们可以使用 使用 git commit --amend 来修改 commit 内容，将上面3次的commit内容合并成1个，</span></span>
 <span class="line"><span>也可以使用 git commit --amend --no-edit 来覆盖上一次提交：</span></span>
-<span class="line"><span>之后就是正常的 git push操作了</span></span></code></pre></div>`,3),e=[l];function c(t,o,m,g,r,d){return a(),n("div",null,e)}const _=s(i,[["render",c]]);export{u as __pageData,_ as default};
+<span class="line"><span>之后就是正常的 git push操作了</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 将分支 rebase merge 到dev 同事不产生merge记录，只有feature中的每次commit提交记录</span></span>
+<span class="line"><span>git checkout dev &amp;&amp; git rebase feature</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 想远程同步 dev 时也不产生， 此时本地的分支是 feature </span></span>
+<span class="line"><span>git pull --rebase origin dev</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 想只保留一个总提交（不保留中间 commit）</span></span>
+<span class="line"><span>git merge --squash feature</span></span></code></pre></div>`,3),e=[l];function c(t,m,o,g,r,d){return a(),n("div",null,e)}const f=s(i,[["render",c]]);export{u as __pageData,f as default};
