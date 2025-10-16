@@ -102,6 +102,16 @@ git rebase -i = 交互式改写提交历史，让你可以 合并、修改、删
 也可以使用 git commit --amend --no-edit 来覆盖上一次提交：
 之后就是正常的 git push操作了
 
+// 将分支 rebase merge 到dev 同事不产生merge记录，只有feature中的每次commit提交记录
+git checkout dev && git rebase feature
+
+// 想远程同步 dev 时也不产生， 此时本地的分支是 feature 
+git pull --rebase origin dev
+
+// 想只保留一个总提交（不保留中间 commit）
+git merge --squash feature
+
+
 ```
 
 
