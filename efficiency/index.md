@@ -5,7 +5,7 @@ title: 个人读书记录
 editLink: true
 ---
 
-- [Code review常用缩写](./codeReview/code-review-acronyms)
+- [Code review常用缩写](./code-review/code-review-acronyms)
 - [VS code相关](./vscode/copilot)
 - [google检索技巧](./google/google)
 - [YAPI中使用mockjs](./skill/mockjs)
