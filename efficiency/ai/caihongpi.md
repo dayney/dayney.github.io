@@ -34,4 +34,4 @@ editLink: false
 
 
 
-![ai彩虹屁](/Users/krui/git/study/dayney.github.io/efficiency/ai/ai_title.png)
+![ai彩虹屁](/efficiency/ai/ai_title.png)
