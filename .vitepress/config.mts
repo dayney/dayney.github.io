@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-11-05 18:17:21
+ * @LastEditTime: 2025-11-10 10:18:25
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -268,6 +268,10 @@ export default defineConfig({
             { 
               text: 'AI相关的技巧',
               link: '/efficiency/ai/ai'
+            },
+            { 
+              text: '夸AI的彩虹屁',
+              link: '/efficiency/ai/caihongpi'
             },
           ],
         },
