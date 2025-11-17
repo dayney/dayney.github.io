@@ -27,7 +27,7 @@ git reset <commit>
 # 移动 HEAD 指针，同时清空暂存区，并将工作区恢复到指定提交的状态。
 git reset --hard <commit>
 
-git git rm --cached 【文件路径】    // 将文件从缓存区中删除，并保留文件
+git rm --cached 【文件路径】    // 将文件从缓存区中删除，并保留文件
 
 # 给分支重新命名
 git branch -m old-name new-name
