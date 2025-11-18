@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-11-17 18:43:31
+ * @LastEditTime: 2025-11-18 16:08:02
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -276,6 +276,26 @@ export default defineConfig({
             { 
               text: 'Cursor 熟悉项目指南',
               link: '/efficiency/ai/cursor-guide'
+            },
+            { 
+              text: '项目配置Cursor指南',
+              link: '/efficiency/ai/cursor-project-guide'
+            },
+            { 
+              text: 'Cursor配置详情',
+              items: [
+                { text: 'Axios 风格指南', link: '/efficiency/ai/style-guides/axios-style-guide' },
+                { text: 'Element Plus 风格指南', link: '/efficiency/ai/style-guides/elementplus-style-guide' },
+                { text: 'ESLint/Prettier/Stylelint 风格指南', link: '/efficiency/ai/style-guides/eslint-prettier-stylelint-style-guide' },
+                { text: 'Pinia 风格指南', link: '/efficiency/ai/style-guides/pinia-style-guide' },
+                { text: 'Sass/Scss 风格指南', link: '/efficiency/ai/style-guides/sass-scss-style-guide' },
+                { text: 'TypeScript 风格指南', link: '/efficiency/ai/style-guides/typescript-style-guide' },
+                { text: 'UnoCSS 风格指南', link: '/efficiency/ai/style-guides/unocss-style-guide' },
+                { text: 'Vite 风格指南', link: '/efficiency/ai/style-guides/vite-style-guide' },
+                { text: 'Vue3 风格指南', link: '/efficiency/ai/style-guides/vue3-style-guide' },
+                { text: 'Vue I18n 风格指南', link: '/efficiency/ai/style-guides/vuei18n-style-guide' },
+                { text: 'Vue Router 风格指南', link: '/efficiency/ai/style-guides/vuerouter-style-guide' },
+              ]
             },
           ],
         },
