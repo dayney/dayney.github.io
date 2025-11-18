@@ -3,6 +3,24 @@ outline: deep
 editLink: false
 ---
 
+## 在本仓库中正确使用 Cursor（必读）
+
+- 基本规范：
+  - 始终使用中文沟通；链接一律使用无后缀绝对路径（例如：/efficiency/ai/style-guides/vue3-style-guide）。
+  - 不修改 docs/ 构建产物；只修改源 Markdown。
+- 常用指令模板：
+  - 引用文件并让 Cursor 生成检查清单：
+    > 请读取 @file /efficiency/ai/style-guides/vue3-style-guide.md，为我生成一份针对 @file src/views/xxx.vue 的检查清单，并指出不符合项与修改建议。
+  - 生成可用代码片段（结合场景）：
+    > 请从 @file /efficiency/ai/style-guides/axios-style-guide.md 中选择 A-1/A-3 的示例，结合我的场景 @file src/api/xxx.ts，生成最终可用的代码片段。
+  - 批量改链接/导航（说明范围与规则）：
+    > 请将 .vitepress/config.mts 下“Cursor配置详情”的 items 中所有 link 调整为小写、无 .md/.html 后缀，并与 efficiency/ai/cursor-project-guide.md 两处索引保持一致。
+- 文档新增/重命名流程：
+  1) 在 efficiency/ai/style-guides/ 下以小写中划线命名新建文档，并添加统一 frontmatter；
+  2) 更新 .vitepress/config.mts 的“Cursor配置详情”分组；
+  3) 更新 /efficiency/ai/cursor-project-guide.md 两处索引；
+  4) 重启 dev 服务并强刷新验证链接。
+
 # 新工程师使用 Cursor 融入项目的终极指南 (架构师优化版)
 
 ## **阶段一：自动化项目考古 (Automated Project Archeology)**
@@ -39,8 +57,8 @@ editLink: false
   - [Pinia](/efficiency/ai/style-guides/pinia-style-guide)
   - [Sass/SCSS](/efficiency/ai/style-guides/sass-scss-style-guide)
   - [TypeScript](/efficiency/ai/style-guides/typescript-style-guide)
-  - [UnoCSS](/efficiency/ai/style-guides/UnoCSS-style-guide)
-  - [Vite](/efficiency/ai/style-guides/Vite-style-guide)
+  - [UnoCSS](/efficiency/ai/style-guides/unocss-style-guide)
+  - [Vite](/efficiency/ai/style-guides/vite-style-guide)
   - [ESLint/Prettier/Stylelint](/efficiency/ai/style-guides/eslint-prettier-stylelint-style-guide)
 
 ---
@@ -118,8 +136,8 @@ editLink: false
 - [Pinia](/efficiency/ai/style-guides/pinia-style-guide)
 - [Sass/SCSS](/efficiency/ai/style-guides/sass-scss-style-guide)
 - [TypeScript](/efficiency/ai/style-guides/typescript-style-guide)
-- [UnoCSS](/efficiency/ai/style-guides/UnoCSS-style-guide)
-- [Vite](/efficiency/ai/style-guides/Vite-style-guide)
+- [UnoCSS](/efficiency/ai/style-guides/unocss-style-guide)
+- [Vite](/efficiency/ai/style-guides/vite-style-guide)
 - [ESLint/Prettier/Stylelint](/efficiency/ai/style-guides/eslint-prettier-stylelint-style-guide)
 
 2) IDE 必备插件与设置

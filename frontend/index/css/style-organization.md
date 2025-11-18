@@ -40,7 +40,7 @@ styles/
   ```
 
 ### 组件样式
-- [BEM 命名规范](/efficiency/namingStyle/bem){:target="_blank"}
+- [BEM 命名规范](/frontend/index/css/bem){:target="_blank"}
 - 组件样式与组件代码放在同一目录
 - 避免样式污染
 

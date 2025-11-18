@@ -1,0 +1,125 @@
+# Cursor 项目规则（dayney.github.io / VitePress 文档站）
+
+project:
+  name: dayney.github.io
+  description: 个人 VitePress 文档与笔记站点。源码与文档混合在仓库根目录，构建产物输出到 docs/ 目录用于 GitHub Pages 发布。
+  stack:
+    - VitePress + Vite
+    - Markdown 文档（中文为主）
+    - TypeScript/Vue（部分示例）
+    - Lint: ESLint / Prettier / Stylelint（参考风格指南）
+
+assistant:
+  defaults:
+    language: zh-CN  # 回答一律使用中文
+    tone: concise    # 简洁、可执行
+  reading_order:
+    - .vitepress/config.mts
+    - package.json
+    - efficiency/**
+    - frontend/**
+    - books/**
+    - nav/**
+
+constraints:
+  - 绝对不要改动 docs/ 目录中的构建产物（那是 VitePress build 输出）。如需修改页面，请改源 Markdown。
+  - 侧边栏与站内链接采用“无 .md/.html 后缀”的漂亮链接。例如：/efficiency/ai/style-guides/vue3-style-guide。
+  - efficiency/ai/style-guides 下的文件名全部小写、使用中划线；链接也必须与之完全一致。
+  - 所有新增的 style-guide 文档，头部必须包含 frontmatter：
+    """
+    ---
+    outline: deep
+    editLink: false
+    ---
+    """
+  - 不得在组件/页面中硬编码 .html 后缀链接（开发模式下会空白）。
+  - 不要提交临时实验内容到主分支；新增文档请加入合适的 sidebar。
+
+when_making_changes:
+  navigation_and_docs:
+    - 如需新增风格指南：
+      1) 在 efficiency/ai/style-guides/ 以小写中划线文件名创建 .md；加上统一 frontmatter；
+      2) 在 .vitepress/config.mts 的“Cursor配置详情”下追加 { text(中文), link(无后缀) }；
+      3) 在 efficiency/ai/cursor-project-guide.md 的两处索引中加入对应链接（无后缀）。
+    - 如需重命名风格指南：同步更新上述两处配置与站内索引的链接。
+  content_rules:
+    - 严格遵循各 style-guides（Vue3 / Router / I18n / Axios / Element Plus / Pinia / Sass-Scss / TS / UnoCSS / Vite / ESLint-Prettier-Stylelint）。
+    - 文案与示例代码尽量中文注释，避免歧义。
+  git_and_commits:
+    - 提交前本地执行（如存在脚本）：pnpm lint:eslint && pnpm lint:style && pnpm lint:format。
+    - 提交信息建议使用约定式提交（feat/fix/docs/chore 等）。
+
+guardrails:
+  - 禁止：
+    * 修改 docs/** 构建产物
+    * 在链接中使用 .md 或 .html 后缀
+    * 在 style-guides 中使用非小写文件名或空 frontmatter
+  - 变更 .vitepress/config.mts 时：
+    * 保持 items 数组内 text 使用中文标题，link 使用无后缀的绝对路径
+    * 不随意调整现有分组与顺序，除非需求明确
+
+cookbooks:
+  add_style_guide:
+    steps:
+      - 在 efficiency/ai/style-guides/ 新建: new-topic-style-guide.md（小写中划线）
+      - 在首部添加统一 frontmatter
+      - 根据现有文档结构撰写 A/B + PJ 内容
+      - 更新 .vitepress/config.mts -> “Cursor配置详情” items
+      - 更新 efficiency/ai/cursor-project-guide.md 的两个索引列表
+  rename_style_guide:
+    steps:
+      - 重命名文件（保持小写中划线）
+      - 全局搜索替换所有指向旧路径的链接（config.mts 与 cursor-project-guide.md 至少两处）
+
+references:
+  - VitePress: https://vitepress.dev/
+  - 本仓库风格指南：/efficiency/ai/style-guides/vue3-style-guide 等
+
+notes:
+  - 如需给出代码，请给出完整可粘贴片段；避免省略号导致使用者复制报错。
+  - 如需做批量重命名/替换，请说明会影响的文件与具体替换规则，以便代码审查。
+
+promptTemplate: |-
+  你是我的资深前端架构协作者。基于本仓库规则，完成本次任务并给出可直接执行的产物与步骤。
+
+  本次目标
+  - {goal}（一句话描述，如：修复某段落、批量规范链接、补一个风格指南、修死链等）
+
+  上下文与硬性约束（必须遵守）
+  - 站点：VitePress 文档站。构建产物在 docs/，禁止修改 docs/ 下任意文件；仅改源 md/配置文件。
+  - 链接：站内链接一律使用“无后缀绝对路径”（例如 /efficiency/ai/style-guides/vue3-style-guide）。
+  - 风格指南（style-guides）：
+    - 文件名：全小写 + 中划线
+    - 文首 frontmatter 固定：
+      ---
+      outline: deep
+      editLink: false
+      ---
+    - 新增/重命名后，务必同步：
+      1) .vitepress/config.mts → “Cursor配置详情” items：text 用中文标题；link 用无后缀绝对路径（全小写）
+      2) efficiency/ai/cursor-project-guide.md → 两处索引列表
+  - 构建与预览：pnpm vitepress build；pnpm vitepress preview（默认 4173）
+  - 死链与规范校验：
+    - 仅检查站内页面链接（过滤 /assets 与外链）
+    - 必要时新增 index.md（作为目录页首页）或占位文档（含 frontmatter），以消除 404
+  - 只改这些路径：{allowed_paths}（例如：efficiency/、frontend/、.vitepress/）
+  - 禁止修改：{forbidden_paths}（例如：docs/、public/、node_modules/）
+
+  输出格式（严格按此结构返回）
+  1) 方案与取舍（为什么这样做，如何符合上述约束）
+  2) 变更清单
+     - 文件路径 → 具体修改点（如“插入 frontmatter”、“替换链接：/a/b.md → /a/b”）
+     - 如涉及批量规则，给出正则/匹配与替换说明
+  3) 完整产物
+     - 逐文件给出“最终可粘贴”的完整片段（不要省略号）
+     - 配置项改动（.vitepress/config.mts / cursor-project-guide.md）请给出最终 items/列表完整结果
+  4) 验收自测
+     - 构建：pnpm vitepress build（必须通过）
+     - 预览：pnpm vitepress preview
+     - 死链复扫（仅站内页面链接，排除 /assets 与外链）：说明检查要点（目录页必要时使用 /xxx/ 或补 index.md）
+  5) 风险与回滚建议（若有）
+
+  补充上下文（当我提供文件或指明范围时）
+  - 相关文件/位置：{files_or_snippets}
+  - 成品风格参考：沿用现有风格指南（Vue3/Router/I18n/Axios/ElementPlus/Pinia/Sass-Scss/TS/UnoCSS/Vite/ESLint-Prettier-Stylelint）
+  - 语言与文案：中文为主，必要中文注释；代码片段可直接粘贴使用

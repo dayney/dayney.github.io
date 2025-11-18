@@ -146,7 +146,7 @@ description: Git Flow 工作流程规范
 2. `npm version minor`  升级中号
 3. `npm version major`  升级大号
 
-参考 [Npm 使用小技巧](/efficiency/skill/npmVersion.md)
+参考 [Npm 使用小技巧](/efficiency/skill/npmVersion)
 
 ## 分支管理总表
 

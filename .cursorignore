@@ -1,0 +1,29 @@
+# 排除 Cursor 上下文扫描的目录/文件，减少噪声与提升速度
+# 构建/打包产物
+/docs/
+dist/
+.temp/
+.vitepress/cache/
+.vitepress/dist/
+
+# 依赖与缓存
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+
+# IDE/系统文件
+.DS_Store
+Thumbs.db
+.vscode/*.history
+
+# 测试/覆盖率/日志
+coverage/
+*.log
+
+# 图片与大资源（如需让 Cursor 阅读具体图片，请临时移除此规则）
+**/*.{png,jpg,jpeg,gif,svg,ico,webp}
+
+# 其它无需纳入 AI 上下文的目录
+public/
+

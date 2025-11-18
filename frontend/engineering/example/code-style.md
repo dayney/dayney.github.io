@@ -454,4 +454,4 @@ npx @antfu/eslint-config@latest
 
 ## 4 代码提交检查
 
-#### 可以使用 [git commit 规范](/frontend/engineering/git.html)
+#### 可以使用 [git commit 规范](/frontend/engineering/guide/git-commit)

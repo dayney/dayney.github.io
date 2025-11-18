@@ -2,7 +2,7 @@
 
 ## 开发工具
 - VS Code
-- Chrome（开发app的时候，需要使用跨域模式， [chrome设置成跨域](/frontend/index/others/chromeSetsCrossDomain.html)）
+- Chrome（开发app的时候，需要使用跨域模式， [chrome设置成跨域](/frontend/index/others/chromeSetsCrossDomain)）
 - Git
 - Node.js(20及以上，推荐使用22.x)
 - pnpm 10.x
@@ -34,7 +34,7 @@
 
    - **EditorConfig for VS Code**  
      统一和维护不同开发者之间的代码缩进、换行符、编码等编辑器基础设置，保证团队代码风格一致。
-     [详细说明](/frontend/index/example/editorconfig.html)
+     [详细说明](/frontend/engineering/example/editorconfig)
 
 2. 浏览器插件推荐
 

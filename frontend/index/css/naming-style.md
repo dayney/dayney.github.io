@@ -6,7 +6,7 @@ editLink: false
 # CSS 命名规范
 
 ## BEM 命名方法
-关于 BEM 命名方法的详细说明，请参考 [BEM 命名方式](./bem.md)
+关于 BEM 命名方法的详细说明，请参考 [BEM 命名方式](/frontend/index/css/bem)
 
 ## 其他CSS命名规范
 
@@ -79,7 +79,7 @@ editLink: false
 
 ## 3. SASS 命名规范
 
-关于 SASS 命名方法的详细说明，请参考 [SASS 命名方式](./sass.md)
+关于 SASS 命名方法的详细说明，请参考 [SASS 命名方式](/frontend/index/css/sass)
 
 ### 3.1 变量命名
 
