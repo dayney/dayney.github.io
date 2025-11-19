@@ -50,7 +50,7 @@ export const NAV_DATA: NavData[] = [
         title: "文心一言",
         link: "https://yiyan.baidu.com",
       },
-      
+
       {
         badge: "VS code插件好用",
         icon: "/icons/icon-tongyi.png",
@@ -200,13 +200,13 @@ export const NAV_DATA: NavData[] = [
         link: "https://www.zhangxinxu.com/wordpress",
       },
       {
-        icon: "/icons/ascoders.png",
+        icon: "https://github.com/fluidicon.png",
         title: "前端精读周刊",
         desc: "帮你理解最前沿、实用的技术",
         link: "https://github.com/ascoders/weekly",
       },
       {
-        icon: "/icons/mqyqingfeng.jpeg",
+        icon: "https://github.githubassets.com/favicons/favicon.svg",
         title: "冴羽博客",
         desc: "四个系列：JavaScript深入系列、JavaScript专题系列、ES6系列、React系列",
         link: "https://github.com/mqyqingfeng/Blog",
@@ -361,7 +361,7 @@ export const NAV_DATA: NavData[] = [
         link: "https://unocss.dev",
       },
       {
-        icon: "/icons/you-need-to-know-css.ico",
+        icon: "https://lhammer.cn/You-need-to-know-css/favicon.ico",
         title: "You-need-to-know-css",
         desc: "Web开发者应该掌握的CSS tricks",
         link: "https://lhammer.cn/You-need-to-know-css/#/zh-cn/",
@@ -464,7 +464,7 @@ export const NAV_DATA: NavData[] = [
         link: "https://expressjs.com",
       },
       {
-        icon: "/icons/koa.svg",
+        icon: "https://koajs.com/public/images/koa-logo.png",
         title: "Koa",
         desc: "基于 Node.js 平台的下一代 web 开发框架",
         link: "https://koajs.com",
@@ -618,13 +618,13 @@ export const NAV_DATA: NavData[] = [
       },
     ],
   },
-  
+
   {
     title: "社区",
     items: [
       {
         title: "Github",
-        icon: '/icons/icon-electron.svg',
+        icon: "/icons/icon-electron.svg",
         desc: "一个面向开源及私有软件项目的托管平台",
         link: "https://github.com",
       },
