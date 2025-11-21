@@ -87,8 +87,9 @@ export default defineConfig({
             { text: "立即执行函数", link: "/frontend/index/javascript/iife" },
             { text: "Web Component", link: "/frontend/index/javascript/webComponent" },
             { text: "promise.race应用", link: "/frontend/index/javascript/promiseRace" },
-            { text: "IntersectionObserver应用", link: "/frontend/index/javascript/IntersectionObserver" },
+            { text: "js加载时机async、defer等应用", link: "/frontend/index/javascript/async-defer" },
             { text: "Javascirpt脚本加载策略", link: "/frontend/index/javascript/scriptLoading" },
+            { text: "IntersectionObserver的应用", link: "/frontend/index/javascript/IntersectionObserver" },
           ],
         },
         {
