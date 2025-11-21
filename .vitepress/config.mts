@@ -68,6 +68,7 @@ export default defineConfig({
             { text: "项目介绍", link: "/frontend/index/guide/project-intro" },
             { text: "项目熟悉指南", link: "/frontend/index/guide/project-familiar" },
             { text: "技术分享与指导", link: "/frontend/index/guide/tech-sharing" },
+            { text: "前端运行环境", link: "/frontend/index/guide/run-environment" },
           ],
         },
         {
