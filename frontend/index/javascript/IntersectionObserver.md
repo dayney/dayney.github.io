@@ -3,413 +3,418 @@ outline: deep
 editLink: false
 ---
 
-# IntersectionObserver在前端优化中的使用
+# Intersection Observer API 工作流程与使用指南
 
-## 1. 脚本加载策略概述
+本文档总结了 Intersection Observer API 的完整执行流程，包括配置、触发机制、回调处理以及生命周期管理。
 
-### 1.1 为什么需要不同的加载策略
-在现代 Web 开发中，JavaScript 脚本的加载策略对页面性能有着至关重要的影响。不同的加载策略可以帮助我们：
-- 优化首屏加载速度
-- 提升用户体验
-- 合理利用网络资源
-- 处理脚本间的依赖关系
+## 1. 核心概念与配置 (Configuration)
 
-### 1.2 对页面性能的影响
-- 阻塞渲染：不当的脚本加载会导致页面白屏时间延长
-- 资源加载顺序：影响关键资源的加载时机
-- 执行时机：影响 DOM 操作和事件绑定的时机
+在使用 Intersection Observer 之前，首先需要定义**"在什么情况下触发通知"**。这是通过配置对象 `options` 来实现的。
 
-## 2. 三种主要加载方式详解
-
-### 2.1 常规加载（阻塞式）
-```html
-<script src="normal-script.js"></script>
-```
-特点：
-- 立即下载并执行
-- 阻塞 HTML 解析
-- 保证执行顺序
-
-适用场景：
-- 页面核心功能脚本
-- 需要立即执行的代码
-- 依赖 DOM 结构的脚本
-
-实际项目案例：
 ```javascript
-// 电商网站首页核心功能
-// 1. 用户登录状态检查
-// 2. 购物车数据初始化
-// 3. 商品推荐算法初始化
-
-// core.js
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. 检查用户登录状态
-    const userToken = localStorage.getItem('userToken');
-    if (userToken) {
-        initializeUserSession(userToken);
-    }
-
-    // 2. 初始化购物车
-    const cartData = JSON.parse(localStorage.getItem('cartData') || '{}');
-    initializeShoppingCart(cartData);
-
-    // 3. 初始化商品推荐
-    const userPreferences = getUserPreferences();
-    initializeRecommendations(userPreferences);
-});
-
-// 在 HTML 中的使用
-<script src="/js/core.js"></script>
+const options = {
+  root: null,        // 视口元素 (默认是浏览器视口)
+  rootMargin: '0px', // 视口的外边距 (用于扩大或缩小判定范围)
+  threshold: 0       // 触发阈值 (0.0 - 1.0)
+};
 ```
 
-### 2.2 异步加载（async）
-```html
-<script async src="async-script.js"></script>
-```
-特点：
-- 异步下载
-- 下载完成后立即执行
-- 不保证执行顺序
+- **root**: 谁是容器？(默认为浏览器窗口)。
+- **rootMargin**: 提前还是延后触发？(例如 `100px` 表示在元素进入视口前 100px 就触发)。
+- **threshold**: 出现多少时触发？
+  - `0`: 只要露头（或完全离开）就触发。
+  - `0.5`: 出现一半时触发。
+  - `1.0`: 完全进入视野时触发。
+  - `[0, 0.5, 1]`: 在这三个时刻都会触发。
 
-适用场景：
-- 统计代码
-- 广告脚本
-- 第三方插件
-- 独立功能模块
+## 2. 初始化与绑定 (Initialization & Binding)
 
-实际项目案例：
+配置好后，需要创建一个观察器实例，并告诉它要观察哪个 DOM 元素。
+
 ```javascript
-// 新闻网站的文章页面
-// 1. 文章阅读时长统计
-// 2. 相关文章推荐
-// 3. 社交分享功能
+// 创建观察器实例
+const observer = new IntersectionObserver(callback, options);
 
-// article-analytics.js
-async function trackArticleReading() {
-    const articleId = document.querySelector('[data-article-id]').dataset.articleId;
-    const startTime = Date.now();
-    
-    // 监听用户滚动事件
-    window.addEventListener('scroll', debounce(() => {
-        const readingTime = Math.floor((Date.now() - startTime) / 1000);
-        sendAnalyticsData({
-            articleId,
-            readingTime,
-            scrollDepth: calculateScrollDepth()
-        });
-    }, 1000));
-}
-
-// 在 HTML 中的使用
-<script async src="/js/article-analytics.js"></script>
-<script async src="/js/social-share.js"></script>
-<script async src="/js/related-articles.js"></script>
+// 开始观察目标元素
+const target = document.querySelector('#target');
+observer.observe(target);
 ```
 
-### 2.3 延迟加载（defer）
-```html
-<script defer src="defer-script.js"></script>
-```
-特点：
-- 异步下载
-- 等待 HTML 解析完成后执行
-- 保证执行顺序
+**执行流程：**
 
-适用场景：
-- 非关键功能脚本
-- 需要操作 DOM 的脚本
-- 有依赖关系的脚本
+1. 浏览器创建 `observer` 实例。
+2. `observer.observe(target)` 将目标元素加入观察列表。
+3. **注意**：观察器创建后，会立即触发一次回调（即使目标不在视口中），用于报告目标的初始状态（`isIntersecting: false`）。
 
-实际项目案例：
+## 3. 触发机制 (Triggering)
+
+浏览器会在后台持续监测目标元素与根元素（视口）的交叉状态。
+
+**触发条件：** 当目标元素的可见比例 (`intersectionRatio`) 跨越了你设定的 阈值 (`threshold`) 时，回调函数会被放入任务队列。
+
+- **进入时**：可见比例从 `< 阈值` 变为 `>= 阈值`。
+- **离开时**：可见比例从 `>= 阈值` 变为 `< 阈值`。
+- **异步特性**： Intersection Observer 是异步的，回调函数会在主线程空闲时执行，不会阻塞页面滚动。
+
+## 4. 回调处理 (Callback Usage)
+
+当触发条件满足时，浏览器执行定义的回调函数。
+
 ```javascript
-// 在线教育平台的课程页面
-// 1. 课程评论系统
-// 2. 学习进度保存
-// 3. 笔记功能
-
-// course-features.js
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. 初始化评论系统
-    initializeComments({
-        courseId: getCourseId(),
-        userId: getUserId()
-    });
-
-    // 2. 初始化学习进度跟踪
-    initializeProgressTracking({
-        courseId: getCourseId(),
-        userId: getUserId(),
-        autoSave: true
-    });
-
-    // 3. 初始化笔记功能
-    initializeNoteTaking({
-        courseId: getCourseId(),
-        userId: getUserId(),
-        syncInterval: 30000
-    });
-});
-
-// 在 HTML 中的使用
-<script defer src="/js/course-features.js"></script>
+const callback = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // 目标进入视口（或达到阈值）
+      console.log('进入视口');
+      // 常用操作：加载图片、播放视频、添加动画类名
+    } else {
+      // 目标离开视口
+      console.log('离开视口');
+    }
+  });
+};
 ```
 
-### 2.4 动态加载
-适用场景：
-- 按需加载的功能模块
-- 用户交互触发的功能
-- 条件性功能
+- **entries**: 一个数组，包含所有状态发生变化的目标（通常是一个，但也可能有多个）。
+- **entry.isIntersecting**: 最常用的属性，判断是“进”还是“出”。
+- **entry.intersectionRatio**: 当前具体的可见比例。
 
-实际项目案例：
-```javascript
-// CRM系统中集成腾讯会议功能
-// 1. 动态加载腾讯会议 JSSDK
-// 2. 初始化会议功能
-// 3. 处理会议相关事件
+## 5. 生命周期控制 (Lifecycle Methods)
 
-// tencent-meeting.js
-class TencentMeetingLoader {
-    static async loadSDK() {
-        if (window.TencentMeeting) {
-            return window.TencentMeeting;
-        }
+你可以随时控制观察器的行为：
 
-        return new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = 'https://meeting.tencent.com/sdk/v1.0.0/meeting.js';
-            script.async = true;
-            
-            script.onload = () => {
-                // SDK 加载完成后的初始化
-                window.TencentMeeting.init({
-                    sdkAppID: 'your-sdk-app-id',
-                    userID: getCurrentUserId(),
-                    userSig: generateUserSig(),
-                    // 其他配置项...
-                }).then(() => {
-                    resolve(window.TencentMeeting);
-                }).catch(reject);
-            };
-            
-            script.onerror = reject;
-            document.head.appendChild(script);
-        });
-    }
+| 方法 | 描述 | 场景 |
+| :--- | :--- | :--- |
+| `observer.observe(el)` | 开始观察某个元素 | 初始化时，或动态添加新内容时。 |
+| `observer.unobserve(el)` | 停止观察某个元素 | 图片加载完成后（不再需要观察）、元素被移除前。 |
+| `observer.disconnect()` | 停止观察所有元素 | 页面卸载、组件销毁时，释放资源。 |
+| `observer.takeRecords()` | 获取并清空挂起的记录 | 极少使用。用于在断开连接前，手动获取尚未处理的回调记录。 |
 
-    static async createMeeting(options) {
-        try {
-            const meeting = await this.loadSDK();
-            return await meeting.createMeeting({
-                topic: options.topic,
-                startTime: options.startTime,
-                duration: options.duration,
-                // 其他会议参数...
-            });
-        } catch (error) {
-            console.error('创建会议失败:', error);
-            throw error;
-        }
-    }
-}
+## 总结流程图
 
-// 使用示例
-document.getElementById('create-meeting-btn').addEventListener('click', async () => {
-    try {
-        const meeting = await TencentMeetingLoader.createMeeting({
-            topic: '客户需求沟通会议',
-            startTime: new Date(),
-            duration: 60
-        });
-        
-        // 处理会议创建成功
-        showMeetingInfo(meeting);
-    } catch (error) {
-        // 处理错误
-        showErrorMessage('创建会议失败，请稍后重试');
-    }
-});
+```mermaid
+graph TD
+    A[配置 Options] -->|定义规则 root, threshold| B[创建 New]
+    B -->|生成观察者| C[观察 Observe]
+    C -->|锁定目标| D[滚动/变化]
+    D -->|浏览器自动监测| E{触发 Callback?}
+    E -- 达到阈值 --> F[执行回调]
+    F --> G[更新 UI]
+    E -- 未达阈值 --> D
+    H[停止 Unobserve/Disconnect] -->|任务完成| I[释放资源]
 ```
 
-### 2.5 预加载
-适用场景：
-- 关键资源预加载
-- 用户可能访问的页面
-- 大型资源文件
+## 完整示例
 
-实际项目案例：
-```javascript
-// 商城网站图片懒加载优化
-// 1. 预加载可视区域图片
-// 2. 预加载下一屏图片
-// 3. 预加载用户可能感兴趣的商品图片
+```html [11.html]
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-// image-preloader.js
-class ImagePreloader {
-    constructor() {
-        this.observer = null;
-        this.preloadQueue = new Set();
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intersection Observer API 全面演示</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      height: 100vh;
+      box-sizing: border-box;
+      overflow: hidden;
+      /* 防止 body 滚动，强制使用内部容器滚动 */
     }
 
-    // 初始化懒加载
-    init() {
-        // 创建 Intersection Observer
-        // 使用IntersectionObserver需要注意兼容性
-        this.observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        this.loadImage(entry.target);
-                        // 预加载下一张图片
-                        this.preloadNextImage(entry.target);
-                    }
-                });
-            },
-            {
-                rootMargin: '50px 0px', // 提前 50px 开始加载
-                threshold: 0.1
-            }
-        );
-
-        // 观察所有需要懒加载的图片
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            this.observer.observe(img);
-        });
+    /* 左侧控制和日志区 */
+    .sidebar {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: auto;
+      padding-right: 10px;
+      border-right: 1px solid #ccc;
     }
 
-    // 加载图片
-    loadImage(img) {
-        if (img.dataset.src) {
-            // 创建预加载链接
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = img.dataset.src;
-            document.head.appendChild(link);
-
-            // 设置图片源
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-            
-            // 从预加载队列中移除
-            this.preloadQueue.delete(img);
-        }
+    .controls {
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 8px;
     }
 
-    // 预加载下一张图片
-    preloadNextImage(currentImg) {
-        const nextImg = currentImg.nextElementSibling;
-        if (nextImg && nextImg.tagName === 'IMG' && nextImg.dataset.src) {
-            this.preloadQueue.add(nextImg);
-            this.loadImage(nextImg);
-        }
+    button {
+      display: block;
+      width: 100%;
+      margin-bottom: 5px;
+      padding: 8px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
     }
 
-    // 预加载推荐商品图片
-    preloadRecommendedImages() {
-        const recommendedProducts = document.querySelectorAll('.recommended-product img[data-src]');
-        recommendedProducts.forEach(img => {
-            this.preloadQueue.add(img);
-            this.loadImage(img);
-        });
+    button:hover {
+      background-color: #0056b3;
     }
-}
 
-// 使用示例
-document.addEventListener('DOMContentLoaded', () => {
-    const preloader = new ImagePreloader();
-    preloader.init();
+    button.danger {
+      background-color: #dc3545;
+    }
 
-    // 当用户滚动到推荐商品区域时
-    const recommendedSection = document.querySelector('.recommended-products');
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            preloader.preloadRecommendedImages();
-            observer.disconnect();
-        }
-    });
-    observer.observe(recommendedSection);
-});
+    button.danger:hover {
+      background-color: #a71d2a;
+    }
 
-// HTML 示例
-<img data-src="/images/products/product1.jpg" alt="商品1" class="lazy">
-<img data-src="/images/products/product2.jpg" alt="商品2" class="lazy">
-<img data-src="/images/products/product3.jpg" alt="商品3" class="lazy">
-```
+    #log {
+      font-family: monospace;
+      font-size: 12px;
+      white-space: pre-wrap;
+      background: #222;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 4px;
+      flex: 1;
+      overflow-y: auto;
+    }
 
-## 3. 最佳实践建议
+    /* 右侧演示区 */
+    .demo-area {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-### 3.1 脚本位置优化
-- 关键脚本放在 `<head>` 中
-- 非关键脚本放在 `</body>` 前
-- 使用 `defer` 或 `async` 属性优化加载
+    /* 滚动容器 (root) */
+    #scrollContainer {
+      width: 400px;
+      height: 400px;
+      border: 4px solid #333;
+      overflow-y: scroll;
+      position: relative;
+      background-color: #fff;
+    }
 
-### 3.2 加载策略选择
-- 根据依赖关系选择加载方式
-- 根据执行时机选择加载方式
-- 根据功能重要性选择加载方式
+    /* 占位空间，确保有滚动条 */
+    .spacer {
+      height: 600px;
+      background: linear-gradient(to bottom, #eef, #ccf);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
 
-### 3.3 性能优化技巧
-- 合并压缩脚本
-- 使用 CDN
-- 预加载关键资源
-- 实现代码分割
-- 使用 HTTP/2
+    /* 目标元素 (target) */
+    #target {
+      width: 100px;
+      height: 100px;
+      background-color: #ff6b6b;
+      margin-top: 400px;
+      /* 放在中间位置 */
+      margin-bottom: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
 
-## 4. 常见问题解决方案
+    #target.intersecting {
+      background-color: #51cf66;
+      /* 可见时变绿 */
+    }
 
-### 4.1 脚本加载失败处理
-```javascript
-function loadScriptWithRetry(src, maxRetries = 3) {
-    return new Promise((resolve, reject) => {
-        let retries = 0;
-        
-        function attempt() {
-            loadScript(src)
-                .then(resolve)
-                .catch(error => {
-                    if (retries < maxRetries) {
-                        retries++;
-                        setTimeout(attempt, 1000 * retries);
-                    } else {
-                        reject(error);
-                    }
-                });
-        }
-        
-        attempt();
-    });
-}
-```
+    /* 辅助线：Root Margin 可视化 (大致模拟) */
+    .root-margin-visual {
+      position: absolute;
+      border: 2px dashed rgba(0, 0, 0, 0.2);
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(0, 0, 0, 0.4);
+      font-size: 12px;
+    }
+  </style>
+</head>
 
-### 4.2 加载状态监控
-```javascript
-// 监控脚本加载状态
-function monitorScriptLoading() {
-    const scripts = document.getElementsByTagName('script');
-    const loadingStatus = {};
-    
-    Array.from(scripts).forEach(script => {
-        const startTime = performance.now();
-        script.onload = () => {
-            const loadTime = performance.now() - startTime;
-            loadingStatus[script.src] = {
-                status: 'loaded',
-                loadTime
-            };
+<body>
+
+  <div class="sidebar">
+    <div class="controls">
+      <h3>操作控制台</h3>
+      <p>滚动右侧容器来触发回调。</p>
+      <button onclick="startObserver()">1. 开始观察 (observe)</button>
+      <button class="danger" onclick="stopObserver()">2. 停止观察 (unobserve)</button>
+      <button class="danger" onclick="disconnectObserver()">3. 断开连接 (disconnect)</button>
+      <button onclick="checkRecords()">4. 获取挂起记录 (takeRecords)</button>
+      <hr>
+      <p><strong>当前配置:</strong></p>
+      <ul style="font-size: 12px; padding-left: 20px;">
+        <li>root: #scrollContainer</li>
+        <li>rootMargin: '-10% 0px -10% 0px' (收缩检测区域)</li>
+        <li>threshold: [0, 0.5, 1.0]</li>
+      </ul>
+    </div>
+    <div id="log">日志将显示在这里...</div>
+  </div>
+
+  <div class="demo-area">
+    <h3>滚动容器 (Root)</h3>
+    <div id="scrollContainer">
+      <div class="root-margin-visual">Root Margin 区域 (上下各缩减 10%)</div>
+      <div class="spacer">
+        <p>向下滚动寻找目标...</p>
+        <div id="target">Target</div>
+        <p>继续向下滚动...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 获取 DOM 元素
+    const target = document.getElementById('target');
+    const scrollContainer = document.getElementById('scrollContainer');
+    const logArea = document.getElementById('log');
+
+    let observer; // 保存观察器实例
+
+    // --- 1. 配置选项 (IntersectionObserverInit) ---
+    const options = {
+      // root: 用作视口的元素。必须是目标的祖先。
+      // 如果为 null，则默认为浏览器视口 (viewport)。
+      root: scrollContainer,
+
+      // rootMargin: 根元素的外边距。类似于 CSS margin。
+      // 用于在计算交叉点之前扩大或缩小根元素的判定范围。
+      // 这里设置为上下各缩小 10%，意味着目标必须进入容器内部 10% 的位置才算"可见"。
+      rootMargin: '-10% 0px -10% 0px',
+
+      // threshold: 阈值。规定了什么时候触发回调。
+      // 可以是单个数字 (0.0 - 1.0) 或数字数组。
+      // [0, 0.5, 1.0] 意味着：
+      // 1. 刚刚出现 (0)
+      // 2. 出现一半 (0.5)
+      // 3. 完全出现 (1.0)
+      // 这三个时刻都会触发回调。
+      threshold: [0, 0.5, 1.0]
+    };
+
+    // --- 2. 回调函数 (IntersectionObserverCallback) ---
+    // 当目标元素的可见性跨越了阈值时调用
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        // entry 是 IntersectionObserverEntry 对象，包含所有核心信息
+
+        const info = {
+          time: Math.round(entry.time), // 时间戳
+          isIntersecting: entry.isIntersecting, // 是否相交
+          intersectionRatio: entry.intersectionRatio.toFixed(2), // 相交比例
+          target: entry.target.id, // 目标元素
+
+          // 矩形信息 (DOMRectReadOnly)
+          boundingClientRect: formatRect(entry.boundingClientRect), // 目标尺寸
+          rootBounds: formatRect(entry.rootBounds), // 根元素尺寸 (如果 root 为 null，视浏览器实现可能为 null)
+          intersectionRect: formatRect(entry.intersectionRect) // 相交区域
         };
-        script.onerror = () => {
-            loadingStatus[script.src] = {
-                status: 'error',
-                loadTime: performance.now() - startTime
-            };
-        };
-    });
-    
-    return loadingStatus;
-}
-```
 
-### 参考文档
-- [MDN Web Docs - Script loading strategies](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript#script_loading_strategies)
-- [Google Developers - Loading JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript)
+        // 视觉反馈：改变目标颜色
+        if (entry.isIntersecting) {
+          entry.target.classList.add('intersecting');
+        } else {
+          entry.target.classList.remove('intersecting');
+        }
+
+        log(`[Callback] 触发! 阈值跨越。\n${JSON.stringify(info, null, 2)}`);
+      });
+    };
+
+    // 辅助函数：格式化矩形信息
+    function formatRect(rect) {
+      if (!rect) return 'null';
+      return `Top: ${Math.round(rect.top)}, H: ${Math.round(rect.height)}`;
+    }
+
+    // --- 3. 方法演示 ---
+
+    function startObserver() {
+      if (observer) {
+        log('观察器已存在，请勿重复创建。');
+        return;
+      }
+
+      // 创建实例
+      observer = new IntersectionObserver(callback, options);
+
+      // observe(): 开始观察一个目标元素
+      observer.observe(target);
+
+      log('>>> 观察器已创建并开始观察 #target');
+      log(`配置: root=${options.root.id}, rootMargin=${options.rootMargin}, threshold=${options.threshold}`);
+    }
+
+    function stopObserver() {
+      if (!observer) return;
+
+      // unobserve(): 停止观察特定目标
+      observer.unobserve(target);
+      log('>>> 已停止观察 #target (unobserve)');
+    }
+
+    function disconnectObserver() {
+      if (!observer) return;
+
+      // disconnect(): 停止观察所有目标
+      observer.disconnect();
+      observer = null; // 清理引用
+      log('>>> 观察器已断开连接并销毁 (disconnect)');
+    }
+
+    function checkRecords() {
+      if (!observer) {
+        log('没有活跃的观察器。');
+        return;
+      }
+
+      // takeRecords(): 返回所有观察目标的 IntersectionObserverEntry 对象数组，
+      // 这些对象目前还在队列中等待被回调处理。
+      // 调用此方法会清空队列，因此回调函数将不会收到这些记录。
+      const records = observer.takeRecords();
+
+      if (records.length > 0) {
+        log(`>>> takeRecords() 获取到 ${records.length} 条挂起记录:`);
+        records.forEach(entry => {
+          log(` - Target: ${entry.target.id}, Ratio: ${entry.intersectionRatio}`);
+        });
+      } else {
+        log('>>> takeRecords() 没有挂起的记录。');
+      }
+    }
+
+    // --- 日志辅助 ---
+    function log(message) {
+      const div = document.createElement('div');
+      div.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+      div.style.borderBottom = '1px solid #333';
+      div.style.paddingBottom = '5px';
+      div.style.marginBottom = '5px';
+      logArea.prepend(div); // 最新日志在最上面
+    }
+
+    // 自动启动
+    startObserver();
+
+  </script>
+</body>
+
+</html>
+```
