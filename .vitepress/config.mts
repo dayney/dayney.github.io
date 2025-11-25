@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-11-18 16:08:02
+ * @LastEditTime: 2025-11-25 22:19:33
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -272,8 +272,12 @@ export default defineConfig({
               link: "/efficiency/ai/caihongpi",
             },
             {
-              text: "Cursor 熟悉项目指南",
+              text: "Cursor熟悉项目指南",
               link: "/efficiency/ai/cursor-guide",
+            },
+            {
+              text: "Cursorc v2.0.77模型的特点分析",
+              link: "/efficiency/ai/ai-model",
             },
             {
               text: "项目配置Cursor指南",
