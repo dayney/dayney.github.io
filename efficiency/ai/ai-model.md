@@ -3,7 +3,7 @@ outline: deep
 editLink: false
 ---
 
-# 模型对比分析
+# cursor v2.0.77模型对比分析
 
 # 模型选择开关
 - **Auto**：由 Cursor 根据任务自动选择模型，适合不想手动挑选时使用。
