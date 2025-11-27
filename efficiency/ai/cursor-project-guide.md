@@ -3,7 +3,7 @@ outline: deep
 editLink: false
 ---
 
-## 在本仓库中正确使用 Cursor（必读）
+# 在本仓库中正确使用 Cursor（必读）
 
 - 基本规范：
   - 始终使用中文沟通；链接一律使用无后缀绝对路径（例如：/efficiency/ai/style-guides/vue3-style-guide）。
@@ -21,9 +21,9 @@ editLink: false
   3) 更新 /efficiency/ai/cursor-project-guide.md 两处索引；
   4) 重启 dev 服务并强刷新验证链接。
 
-# 新工程师使用 Cursor 融入项目的终极指南 (架构师优化版)
+## 新工程师使用 Cursor 融入项目的终极指南 (架构师优化版)
 
-## **阶段一：自动化项目考古 (Automated Project Archeology)**
+### **阶段一：自动化项目考古 (Automated Project Archeology)**
 
 **目的**：利用 AI 的强大分析能力，在 1 小时内完成过去需要数天才能完成的项目熟悉工作。
 
@@ -63,7 +63,7 @@ editLink: false
 
 ---
 
-## **阶段二：个性化 AI 配置 (Personalizing Your AI Assistant)**
+### **阶段二：个性化 AI 配置 (Personalizing Your AI Assistant)**
 
 **目的**：在创建任何配置前，先诊断现状，并将评估结果文档化，然后根据这份文档精准地补充缺失的配置，确保每一步操作都有据可依。
 
@@ -84,7 +84,7 @@ editLink: false
 
 ---
 
-## **阶段三：聚焦与实践 (Focus and Practice)**
+### **阶段三：聚焦与实践 (Focus and Practice)**
 
 **目的**：从宏观转向微观，通过一个真实的、低风险的模块，将理论知识付诸实践。
 
@@ -102,7 +102,7 @@ editLink: false
 
 ---
 
-## **阶段四：掌握高级工具 (Mastering Advanced Tools)**
+### **阶段四：掌握高级工具 (Mastering Advanced Tools)**
 
 **目的**：在学习高级工具前，先诊断出真实的代码库中适合使用这些工具的场景，并将分析结果文档化，然后带着明确的目标去实践。
 
