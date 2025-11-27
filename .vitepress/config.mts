@@ -2,7 +2,7 @@
  * @Author: krui krui0728@gmail.com
  * @Date: 2024-01-19 18:13:09
  * @LastEditors: krui krui0728@gmail.com
- * @LastEditTime: 2025-11-25 22:19:33
+ * @LastEditTime: 2025-11-27 14:34:23
  * @FilePath: /.github/Users/krui/git/study/demo/.vitepress/config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -185,6 +185,10 @@ export default defineConfig({
               text: "规范化",
               items: [
                 { text: "命名规范", link: "/frontend/engineering/guide/naming" },
+                {
+                  text: "接口中命名规范",
+                  link: "/frontend/engineering/guide/data-type-naming",
+                },
                 { text: "编码规范", link: "/frontend/engineering/guide/coding-standards" },
                 { text: "分支管理", link: "/frontend/engineering/guide/branch-management" },
                 { text: "git提交规范", link: "/frontend/engineering/example/git" },
